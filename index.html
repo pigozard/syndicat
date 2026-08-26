@@ -102,10 +102,25 @@
   .news-meta { margin-top: 16px; display: flex; align-items: center; gap: 10px; }
   .news-date { font-size: 11px; color: var(--gray-500); }
 
+  .news-list { display: flex; flex-direction: column; gap: 12px; }
+  .news-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
+  .news-card-accent { width: 4px; height: 100%; min-height: 60px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+  .news-card-body { flex: 1; }
+  .news-card-body .pill-row { margin-bottom: 8px; }
+  .news-card-body h3 { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black); line-height: 1.3; margin-bottom: 6px; }
+  .news-card-body p { font-size: 12px; color: var(--gray-500); line-height: 1.55; }
+  .news-card-footer { margin-top: 10px; display: flex; align-items: center; gap: 8px; }
+
   .pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 20px; }
   .pill-red { background: #fde8e8; color: #8a0007; }
+  .pill-green { background: #e6f4e8; color: #1e6626; }
+  .pill-blue { background: #e4effe; color: #1a4fa0; }
+  .pill-amber { background: #fef3e2; color: #8a5700; }
   .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
   .dot-red { background: var(--red); }
+  .dot-green { background: #27a43a; }
+  .dot-blue { background: #2563eb; }
+  .dot-amber { background: #d97706; }
 
   .s-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 20px; margin-bottom: 16px; }
   .s-title { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px; }
@@ -145,6 +160,12 @@
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 14px 32px; max-width: 1140px; margin: 0 auto; }
   .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.25); }
 
+  .cta-band { background: var(--red); border-radius: var(--radius); padding: 32px; max-width: 1140px; margin: 0 auto 32px; text-align: center; }
+  .cta-band h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 14px; }
+  .cta-band h3 span { color: #fde08a; }
+  .cta-band p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.8; }
+  .cta-band a { color: #fde08a; text-decoration: none; font-weight: 600; }
+
   .page-section { display: none; }
   .page-section.active { display: block; }
 
@@ -167,6 +188,10 @@
   .bureau-info h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 2px; }
   .bureau-role { font-size: 11px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
   .bureau-info p { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+
+  .pdf-gallery { display: flex; gap: 12px; overflow-x: auto; padding: 4px 4px 12px; -webkit-overflow-scrolling: touch; }
+  .pdf-gallery img { height: 400px; width: auto; border-radius: 10px; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; cursor: pointer; }
+  @media (max-width: 600px) { .pdf-gallery img { height: 280px; } }
 
   .fei-block { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 28px; margin-bottom: 20px; }
   .fei-block h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--black); margin-bottom: 12px; }
@@ -198,7 +223,16 @@
 </head>
 <body>
 
-
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>CGT Santé &amp; Action Sociale · Section CH Charles Perrens · Bordeaux</span>
+    <div class="topbar-links">
+      <a href="mailto:syndicat.cgt@ch-perrens.fr">syndicat.cgt@ch-perrens.fr</a>
+      <a href="#">@cgt.perrens</a>
+      <a href="#">Facebook.com/cgt.perrens</a>
+    </div>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -211,7 +245,7 @@
       <a href="#" id="nav-droits" onclick="showPage('droits');return false;">Vos droits</a>
       <a href="#" id="nav-fei" onclick="showPage('fei');return false;">Événements indésirables</a>
       <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">Le bureau</a>
-      <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Documents</a>
+      <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Ressources</a>
       <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
     </nav>
     <div class="header-cta">
@@ -231,7 +265,7 @@
         <p class="hero-sub">Grilles de salaires, conditions de travail, temps de repos — la CGT vous informe, vous accompagne et vous représente dans toutes les instances de l'établissement.</p>
         <div class="hero-actions">
           <div class="btn-white" role="button" tabindex="0" onclick="showPage('droits');return false;">Connaître vos droits</div>
-          <div class="btn-outline-w" role="button" tabindex="0" onclick="showPage('docs');return false;">Télécharger nos documents</div>
+          <div class="btn-outline-w" role="button" tabindex="0" onclick="showPage('docs');return false;">Voir nos ressources</div>
         </div>
       </div>
     </div>
@@ -239,8 +273,8 @@
 
   <div class="breaking">
     <div class="breaking-inner">
-      <span class="breaking-badge">Info</span>
-      <span class="breaking-text"><strong>[TEXTE À COMPLÉTER]</strong> — annonce ou actualité urgente à afficher ici.</span>
+      <span class="breaking-badge">Le saviez-vous</span>
+      <span class="breaking-text">Se syndiquer est un <strong>droit constitutionnel</strong> — aucune obligation d'en informer votre employeur, la discrimination syndicale est punie par la loi.</span>
     </div>
   </div>
 
@@ -254,11 +288,38 @@
         <div class="news-featured-img"><div class="img-placeholder"><div class="news-img-overlay"></div></div></div>
         <div class="news-featured-body">
           <div>
-            <div class="pill-row"><span class="pill pill-red"><span class="dot dot-red" style="margin-right:4px"></span>[Catégorie]</span></div>
-            <h3>[TEXTE À COMPLÉTER — titre de l'actu]</h3>
-            <p>[TEXTE À COMPLÉTER — chapô de l'actu, 2-3 phrases]</p>
+            <div class="pill-row"><span class="pill pill-red"><span class="dot dot-red" style="margin-right:4px"></span>Communiqué de presse</span></div>
+            <h3>Psychiatrie : un déni honteux de la réalité</h3>
+            <p>Face aux annonces de la ministre de la Santé, la Fédération CGT Santé et sa Commission Nationale de Psychiatrie dénoncent une psychiatrie publique laminée depuis 30 ans par les politiques successives.</p>
           </div>
-          <div class="news-meta"><span class="news-date">[date]</span></div>
+          <div class="news-meta"><span class="news-date">9 juin 2026</span></div>
+        </div>
+      </div>
+
+      <div class="news-list">
+        <div class="news-card anim anim-d1">
+          <div class="news-card-accent" style="background:#2563eb;"></div>
+          <div class="news-card-body">
+            <div class="pill-row"><span class="pill pill-blue">Conseils CGT</span></div>
+            <h3>Entretien professionnel 2026 : les 5 critères qui font la différence</h3>
+            <p>Maîtrise de soi, comportement avec autrui, travail en équipe, adaptation, rigueur : nos conseils pour préparer votre auto-évaluation et défendre votre avancement.</p>
+          </div>
+        </div>
+        <div class="news-card anim anim-d2">
+          <div class="news-card-accent" style="background:#d97706;"></div>
+          <div class="news-card-body">
+            <div class="pill-row"><span class="pill pill-amber">Vigilance</span></div>
+            <h3>Entretien informel : attention à la conversation qui vous échappe</h3>
+            <p>Sans convocation ni cadre défini, un échange informel peut peser sur votre situation professionnelle. Vous avez le droit d'en demander la formalisation et d'être accompagné par la CGT.</p>
+          </div>
+        </div>
+        <div class="news-card anim anim-d3">
+          <div class="news-card-accent" style="background:#27a43a;"></div>
+          <div class="news-card-body">
+            <div class="pill-row"><span class="pill pill-green">Histoire</span></div>
+            <h3>Un peu d'histoire : le rôle de la CGT dans la création du festival de Cannes</h3>
+            <p>Né en 1946 comme contre-festival antifasciste, le festival de Cannes doit beaucoup à des ouvriers CGT — la Fédération du spectacle siège encore aujourd'hui à son comité d'organisation.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -270,8 +331,8 @@
           Agenda syndical
         </div>
         <div class="agenda-item">
-          <div class="agenda-date"><div class="dd">—</div><div class="mm">—</div></div>
-          <div class="agenda-info"><span class="agenda-type at-permanence">Permanence</span><h4>[TEXTE À COMPLÉTER]</h4><p>[lieu / horaire]</p></div>
+          <div class="agenda-date"><div class="dd">Mer.</div><div class="mm">12h-14h</div></div>
+          <div class="agenda-info"><span class="agenda-type at-permanence">Permanence juridique</span><h4>Permanence CGT-LDAJ</h4><p>Local CGT · avocats et intervenants juridiques · ouvert à tous</p></div>
         </div>
       </div>
 
@@ -281,6 +342,7 @@
           <div class="perk"><div class="perk-check"></div><span>Accompagnement personnalisé tout au long de votre carrière</span></div>
           <div class="perk"><div class="perk-check"></div><span>Défense en cas de conflit avec l'employeur</span></div>
           <div class="perk"><div class="perk-check"></div><span>Accès à nos permanences et ressources juridiques</span></div>
+          <div class="perk"><div class="perk-check"></div><span>Aucune obligation d'en informer votre employeur</span></div>
         </div>
         <div class="join-btn" role="button" tabindex="0" onclick="showPage('adherent');return false;">Remplir le formulaire d'adhésion →</div>
       </div>
@@ -298,13 +360,95 @@
     </div>
   </div>
   <div class="droits-grid">
-    <div class="droit-card anim"><div class="droit-icon" style="background:#fde8e8;">🩺</div><h3>Congés maladie</h3><p>[TEXTE À COMPLÉTER — congé maladie ordinaire, longue maladie, longue durée : droits et procédures.]</p><a href="#" class="droit-link">Lire le guide →</a></div>
-    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🎁</div><h3>CGOS</h3><p>[TEXTE À COMPLÉTER — prestations sociales, aides et loisirs du Comité de Gestion des Œuvres Sociales.]</p><a href="#" class="droit-link">Découvrir les aides →</a></div>
-    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#fde8e8;">🚨</div><h3>Harcèlement</h3><p>[TEXTE À COMPLÉTER — reconnaître, signaler, se faire accompagner en cas de harcèlement moral ou sexuel.]</p><a href="#" class="droit-link">Que faire →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#fde8e8;">🩺</div><h3>Congés maladie</h3><p>CMO : jusqu'à 1 an (3 mois à 90% + 9 mois à demi-traitement). CLM : jusqu'à 3 ans pour pathologies invalidantes (1 an plein traitement + 2 ans à 60%). CLD : jusqu'à 5 ans pour maladies spécifiques (3 ans plein traitement + 2 ans à demi-traitement). Certificat médical à transmettre sous 48h.</p><a href="#detail-conges" class="droit-link">Lire le guide complet →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🎁</div><h3>CGOS</h3><p>Naissance, décès, maladie, prestations vacances, aides financières, prestations scolaires : contractuels, stagiaires, titulaires, tout le monde est concerné. Créez votre dossier sur www.cgos.info dès votre arrivée — sans dossier, pas de prestation.</p><a href="#detail-cgos" class="droit-link">Direction cgos.info →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#fde8e8;">🚨</div><h3>Harcèlement</h3><p>Le harcèlement moral est un délit (art. L1152-1) : agissements répétés, dégradation des conditions de travail, atteinte aux droits ou à la santé. Plusieurs démarches possibles — alerter le CSE, l'inspection du travail, saisir les prud'hommes. La CGT écoute, protège, agit à vos côtés.</p><a href="#detail-harcelement" class="droit-link">Agir avec la CGT →</a></div>
     <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#e6f4e8;">📅</div><h3>Autorisation d'absence spécifique</h3><p>[TEXTE À COMPLÉTER — événements familiaux, syndicaux, examens médicaux : quelles autorisations existent.]</p><a href="#" class="droit-link">Voir les cas →</a></div>
-    <div class="droit-card anim"><div class="droit-icon" style="background:#f3e8ff;">♿</div><h3>RQTH</h3><p>[TEXTE À COMPLÉTER — reconnaissance de la qualité de travailleur handicapé, démarches et droits associés.]</p><a href="#" class="droit-link">En savoir plus →</a></div>
-    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#fef3e2;">⚖️</div><h3>Droit syndical</h3><p>[TEXTE À COMPLÉTER — heures de délégation, droit de grève, protection des représentants du personnel.]</p><a href="#" class="droit-link">Consulter →</a></div>
-    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#e4effe;">💰</div><h3>Grilles de salaires</h3><p>[TEXTE À COMPLÉTER — grilles indiciaires par catégorie, primes, indemnités.]</p><a href="#" class="droit-link">Accéder aux grilles →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#f3e8ff;">♿</div><h3>RQTH</h3><p>Surveillance médicale adaptée, aménagements de poste, sécurisation du parcours professionnel. Démarche volontaire auprès de la MDPH de votre département — aucune obligation légale d'en informer votre employeur.</p><a href="#detail-rqth" class="droit-link">Comment l'obtenir →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#fef3e2;">⚖️</div><h3>Droit syndical</h3><p>La CGT vous défend individuellement (sanctions, entretiens disciplinaires, harcèlement), vous représente en CAP, F3SCT, CSE, et vous ouvre l'accès à des formations syndicales — même non syndiqué, vous avez droit à 12 jours de formation par an.</p><a href="#detail-syndical" class="droit-link">Ce que le syndicat fait pour vous →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#e4effe;">💰</div><h3>Grilles de salaires</h3><p>Grilles indiciaires par catégorie (A, B, C), valeur du point d'indice, CTI, primes et indemnités : la Fédération CGT Santé publie chaque année les grilles à jour de la Fonction Publique Hospitalière.</p><a href="#detail-salaires" class="droit-link">Comprendre ma paie →</a></div>
+    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#fef3e2;">⏱️</div><h3>Temps de travail</h3><p>Durée légale : 35h/semaine, maximum 1607h/an (1476h de nuit). Repos minimum 12h consécutives, 48h max/semaine. En arrêt maladie, un agent ne doit rendre aucune heure et ne génère pas de RTT — le demander est illégal.</p><a href="#detail-travail" class="droit-link">J'ai droit à quoi →</a></div>
+  </div>
+
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim" id="detail-conges">
+      <h3>🩺 Congés maladie — le tract complet</h3>
+      <div class="pdf-gallery">
+        <img src="images/conges-maladie-1.jpg" alt="Congés maladie - page 1" onclick="window.open(this.src)">
+        <img src="images/conges-maladie-2.jpg" alt="Congés maladie - page 2" onclick="window.open(this.src)">
+        <img src="images/conges-maladie-3.jpg" alt="Congés maladie - page 3" onclick="window.open(this.src)">
+        <img src="images/conges-maladie-4.jpg" alt="Congés maladie - page 4" onclick="window.open(this.src)">
+        <img src="images/conges-maladie-5.jpg" alt="Congés maladie - page 5" onclick="window.open(this.src)">
+      </div>
+      <div class="fei-note">Besoin d'aide pour un arrêt contesté ou une procédure ? Contactez la permanence CGT.</div>
+    </div>
+
+    <div class="fei-block anim" id="detail-cgos">
+      <h3>🎁 CGOS — le tract complet</h3>
+      <div class="pdf-gallery">
+        <img src="images/cgos-1.jpg" alt="CGOS - page 1" onclick="window.open(this.src)">
+        <img src="images/cgos-2.jpg" alt="CGOS - page 2" onclick="window.open(this.src)">
+        <img src="images/cgos-3.jpg" alt="CGOS - page 3" onclick="window.open(this.src)">
+        <img src="images/cgos-4.jpg" alt="CGOS - page 4" onclick="window.open(this.src)">
+        <img src="images/cgos-5.jpg" alt="CGOS - page 5" onclick="window.open(this.src)">
+        <img src="images/cgos-6.jpg" alt="CGOS - page 6" onclick="window.open(this.src)">
+      </div>
+      <div class="fei-note">Nouveauté 2026 : plus de date limite pour la prestation étude — elle est versée dès que le dossier est validé.</div>
+    </div>
+
+    <div class="fei-block anim" id="detail-harcelement">
+      <h3>🚨 Harcèlement moral — le tract complet</h3>
+      <div class="pdf-gallery">
+        <img src="images/harcelement-1.jpg" alt="Harcèlement moral au travail" onclick="window.open(this.src)">
+      </div>
+      <div class="fei-note">Le rôle du syndicat : écouter, protéger, agir. L'employeur a l'obligation légale de protéger votre santé physique et mentale (Code du travail, art. L4121-1).</div>
+    </div>
+
+    <div class="fei-block anim" id="detail-rqth">
+      <h3>♿ RQTH — le tract complet</h3>
+      <div class="pdf-gallery">
+        <img src="images/rqth-1.jpg" alt="La RQTH : préserver sa santé et éviter l'inaptitude" onclick="window.open(this.src)">
+      </div>
+      <div class="fei-note">Aucune obligation légale d'informer votre employeur de votre état de santé — l'initiative de se déclarer revient uniquement à l'agent.</div>
+    </div>
+
+    <div class="fei-block anim" id="detail-syndical">
+      <h3>⚖️ Droit syndical — le tract complet</h3>
+      <div class="pdf-gallery">
+        <img src="images/syndicat-1.jpg" alt="Ce que votre syndicat peut faire pour vous - page 1" onclick="window.open(this.src)">
+        <img src="images/syndicat-2.jpg" alt="page 2" onclick="window.open(this.src)">
+        <img src="images/syndicat-3.jpg" alt="page 3" onclick="window.open(this.src)">
+        <img src="images/syndicat-4.jpg" alt="page 4" onclick="window.open(this.src)">
+        <img src="images/syndicat-5.jpg" alt="page 5" onclick="window.open(this.src)">
+        <img src="images/syndicat-6.jpg" alt="page 6" onclick="window.open(this.src)">
+        <img src="images/syndicat-7.jpg" alt="page 7" onclick="window.open(this.src)">
+        <img src="images/syndicat-8.jpg" alt="page 8" onclick="window.open(this.src)">
+      </div>
+      <div class="fei-note">Même sans être syndiqué, vous avez droit à 12 jours de formation syndicale par an.</div>
+    </div>
+
+    <div class="fei-block anim" id="detail-salaires">
+      <h3>💰 Grilles de salaires — comprendre ma paie</h3>
+      <p>Le traitement mensuel de base se calcule ainsi : <strong>Indice Majoré × Valeur du point d'indice</strong>. S'y ajoutent éventuellement le CTI (complément de traitement indiciaire), la NBI, l'indemnité de résidence, le supplément familial, et les primes propres à certains grades ou sujétions. Les cotisations (RAFP, CNRACL, CSG, CRDS) et le transfert primes-points sont ensuite déduits.</p>
+      <p>Les grilles complètes (catégories A, B et C, tous corps et grades) sont publiées chaque année par la Fédération CGT Santé et Action Sociale.</p>
+      <a class="droit-link" href="pdfs/grilles-salaires.pdf" target="_blank">Télécharger le livret complet des grilles →</a>
+    </div>
+
+    <div class="fei-block anim" id="detail-travail">
+      <h3>⏱️ Temps de travail — le tract complet</h3>
+      <div class="pdf-gallery">
+        <img src="images/temps-travail-1.jpg" alt="Temps de travail - page 1" onclick="window.open(this.src)">
+        <img src="images/temps-travail-2.jpg" alt="page 2" onclick="window.open(this.src)">
+        <img src="images/temps-travail-3.jpg" alt="page 3" onclick="window.open(this.src)">
+        <img src="images/temps-travail-4.jpg" alt="page 4" onclick="window.open(this.src)">
+        <img src="images/temps-travail-5.jpg" alt="page 5" onclick="window.open(this.src)">
+        <img src="images/temps-travail-6.jpg" alt="page 6" onclick="window.open(this.src)">
+        <img src="images/temps-travail-7.jpg" alt="page 7" onclick="window.open(this.src)">
+        <img src="images/temps-travail-8.jpg" alt="page 8" onclick="window.open(this.src)">
+        <img src="images/temps-travail-9.jpg" alt="page 9" onclick="window.open(this.src)">
+      </div>
+      <div class="fei-note">En arrêt maladie, un agent ne doit rendre aucune heure et ne génère pas de RTT — le demander est illégal.</div>
+    </div>
   </div>
 </div>
 
@@ -348,20 +492,42 @@
   </div>
 </div>
 
-<!-- PAGE: DOCUMENTS -->
+<!-- PAGE: RESSOURCES -->
 <div id="page-docs" class="page-section">
   <div class="droits-hero">
     <div class="droits-hero-inner">
       <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Bibliothèque syndicale</div>
-      <h2>Documents à télécharger</h2>
-      <p>Tracts, guides pratiques, grilles de salaires, comptes-rendus.</p>
+      <h2>Ressources pratiques</h2>
+      <p>Communiqués, conseils et actualités du syndicat, à lire directement ici.</p>
     </div>
   </div>
-  <div style="max-width:1140px;margin:0 auto;padding:0 32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-    <div class="droit-card anim" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
-      <div class="doc-ico doc-ico-red" style="width:42px;height:42px;font-size:11px;">PDF</div>
-      <div style="flex:1;"><div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">[TEXTE À COMPLÉTER — nom du document]</div><div style="font-size:12px;color:var(--gray-500);">[description courte]</div></div>
-      <div class="contact-btn" role="button" tabindex="0">↓ PDF</div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <h3>📢 Communiqué de presse — Psychiatrie : un déni honteux de la réalité</h3>
+      <p style="font-size:12px;color:var(--gray-500);margin-bottom:14px;">Fédération CGT Santé et Action Sociale · Commission Nationale de Psychiatrie · 9 juin 2026</p>
+      <div class="pdf-gallery">
+        <img src="images/communique-1.jpg" alt="Communiqué de presse - psychiatrie" onclick="window.open(this.src)">
+      </div>
+    </div>
+
+    <div class="fei-block anim anim-d1">
+      <h3>📋 Entretien professionnel 2026 : les 5 critères qui font la différence</h3>
+      <div class="pdf-gallery">
+        <img src="images/entretien-pro-1.jpg" alt="Entretien professionnel 2026 - conseils CGT" onclick="window.open(this.src)">
+      </div>
+    </div>
+
+    <div class="fei-block anim anim-d2">
+      <h3>⚠️ L'entretien informel : la conversation qui peut vous échapper</h3>
+      <div class="pdf-gallery">
+        <img src="images/entretien-informel-1.jpg" alt="L'entretien informel" onclick="window.open(this.src)">
+      </div>
+    </div>
+
+    <div class="fei-block anim anim-d3">
+      <h3>💰 Grilles de salaires — le livret complet</h3>
+      <p>Grilles indiciaires détaillées pour toutes les catégories (A, B, C), tous corps et grades de la Fonction Publique Hospitalière, publiées par la Fédération CGT Santé et Action Sociale. Ce document est volumineux (plus de 30 pages de tableaux) — il reste disponible en téléchargement plutôt qu'affiché en ligne.</p>
+      <a class="droit-link" href="pdfs/grilles-salaires.pdf" target="_blank">Télécharger le livret →</a>
     </div>
   </div>
 </div>
@@ -375,9 +541,11 @@
     <div class="s-card anim">
       <div class="s-title">Permanence syndicale</div>
       <div style="font-size:14px;color:var(--gray-700);line-height:1.8;">
-        <div style="margin-bottom:10px;"><strong>[jours]</strong><br>[horaires]</div>
-        <div style="margin-bottom:10px;"><strong>Local CGT</strong><br>[localisation]</div>
-        <div><strong>Email</strong><br><a href="mailto:cgt@ch-perrens.fr" style="color:var(--red);">cgt@ch-perrens.fr</a></div>
+        <div style="margin-bottom:10px;"><strong>Permanence syndicale</strong><br>[jours et horaires à préciser]</div>
+        <div style="margin-bottom:10px;"><strong>Permanence juridique CGT-LDAJ</strong><br>Les mercredis de 12h à 14h · local CGT · ouvert aux syndiqués comme aux non-syndiqués</div>
+        <div style="margin-bottom:10px;"><strong>Téléphone</strong><br>05.56.56.35.65</div>
+        <div style="margin-bottom:10px;"><strong>Email</strong><br><a href="mailto:syndicat.cgt@ch-perrens.fr" style="color:var(--red);">syndicat.cgt@ch-perrens.fr</a></div>
+        <div><strong>Réseaux</strong><br>Facebook.com/cgt.perrens · Instagram @cgt.perrens</div>
       </div>
     </div>
   </div>
@@ -396,6 +564,12 @@
   </div>
 </div>
 
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:syndicat.cgt@ch-perrens.fr">syndicat.cgt@ch-perrens.fr</a> · 05.56.56.35.65 · Facebook.com/cgt.perrens · @cgt.perrens</p>
+</div>
+
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
@@ -403,8 +577,8 @@
       <p>Section syndicale CGT du Centre Hospitalier Charles Perrens. Affiliée à la Fédération CGT Santé et Action Sociale.</p>
     </div>
     <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">Actualités</a><a href="#" onclick="showPage('bureau');return false;">Le bureau</a></div>
-    <div class="footer-col"><h5>Ressources</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('fei');return false;">Événements indésirables</a><a href="#" onclick="showPage('docs');return false;">Documents</a></div>
-    <div class="footer-col"><h5>Contact</h5><a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a><a href="#" onclick="showPage('adherent');return false;">Adhérer</a></div>
+    <div class="footer-col"><h5>Ressources</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('fei');return false;">Événements indésirables</a><a href="#" onclick="showPage('docs');return false;">Ressources pratiques</a></div>
+    <div class="footer-col"><h5>Contact</h5><a href="mailto:syndicat.cgt@ch-perrens.fr">syndicat.cgt@ch-perrens.fr</a><a href="#">05.56.56.35.65</a><a href="#" onclick="showPage('adherent');return false;">Adhérer</a></div>
   </div>
   <div class="footer-bottom"><p>© 2026 CGT CH Charles Perrens</p></div>
 </footer>
