@@ -193,6 +193,9 @@
   .pdf-gallery img { height: 400px; width: auto; border-radius: 10px; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; cursor: pointer; }
   @media (max-width: 600px) { .pdf-gallery img { height: 280px; } }
 
+  .fei-thumb { width: 130px; height: auto; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); float: left; margin: 0 18px 12px 0; cursor: pointer; }
+  @media (max-width: 500px) { .fei-thumb { width: 90px; margin: 0 14px 8px 0; } }
+
   .fei-block { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 28px; margin-bottom: 20px; }
   .fei-block h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--black); margin-bottom: 12px; }
   .fei-block p { font-size: 14px; color: var(--gray-700); line-height: 1.7; margin-bottom: 10px; }
@@ -372,59 +375,54 @@
 
   <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
     <div class="fei-block anim" id="detail-conges">
-      <h3>🩺 Congés maladie — le tract complet</h3>
-      <div class="pdf-gallery">
-        <img src="images/conges-maladie-1.jpg" alt="Congés maladie - page 1" onclick="window.open(this.src)">
-        <img src="images/conges-maladie-2.jpg" alt="Congés maladie - page 2" onclick="window.open(this.src)">
-        <img src="images/conges-maladie-3.jpg" alt="Congés maladie - page 3" onclick="window.open(this.src)">
-        <img src="images/conges-maladie-4.jpg" alt="Congés maladie - page 4" onclick="window.open(this.src)">
-        <img src="images/conges-maladie-5.jpg" alt="Congés maladie - page 5" onclick="window.open(this.src)">
-      </div>
-      <div class="fei-note">Besoin d'aide pour un arrêt contesté ou une procédure ? Contactez la permanence CGT.</div>
+      <img class="fei-thumb" src="images/conges-maladie-1.jpg" alt="Tract congés maladie" onclick="window.open(this.src)">
+      <h3>🩺 Congés maladie — le détail</h3>
+      <p><strong>CMO — Congé de Maladie Ordinaire :</strong> jusqu'à 1 an maximum. 3 mois à 90% du salaire (avec un jour de carence) + 9 mois à demi-traitement. Certificat médical à transmettre dans les 48h.</p>
+      <p><strong>CLM — Congé Longue Maladie :</strong> pour pathologies invalidantes (selon liste réglementée), jusqu'à 3 ans. 1 an à plein traitement + 2 ans à 60% du salaire.</p>
+      <p><strong>CLD — Congé Longue Durée :</strong> pour maladies spécifiques (cancer, tuberculose, etc.), jusqu'à 5 ans. 3 ans à plein traitement + 2 ans à demi-traitement.</p>
+      <p><strong>Accident du travail :</strong> événement soudain survenu dans le cadre du travail (le trajet domicile-travail peut être inclus). Délai de déclaration : 15 jours maximum, avec certificat médical initial.</p>
+      <p><strong>Maladie professionnelle :</strong> maladie reconnue comme liée au travail. Délai de déclaration : 2 ans à partir de la première constatation médicale, ou à partir du lien établi avec l'activité professionnelle.</p>
+      <div class="fei-note" style="clear:both;">Besoin d'aide pour un arrêt contesté ou une procédure ? Contactez la permanence CGT.</div>
     </div>
 
     <div class="fei-block anim" id="detail-cgos">
-      <h3>🎁 CGOS — le tract complet</h3>
-      <div class="pdf-gallery">
-        <img src="images/cgos-1.jpg" alt="CGOS - page 1" onclick="window.open(this.src)">
-        <img src="images/cgos-2.jpg" alt="CGOS - page 2" onclick="window.open(this.src)">
-        <img src="images/cgos-3.jpg" alt="CGOS - page 3" onclick="window.open(this.src)">
-        <img src="images/cgos-4.jpg" alt="CGOS - page 4" onclick="window.open(this.src)">
-        <img src="images/cgos-5.jpg" alt="CGOS - page 5" onclick="window.open(this.src)">
-        <img src="images/cgos-6.jpg" alt="CGOS - page 6" onclick="window.open(this.src)">
-      </div>
-      <div class="fei-note">Nouveauté 2026 : plus de date limite pour la prestation étude — elle est versée dès que le dossier est validé.</div>
+      <img class="fei-thumb" src="images/cgos-1.jpg" alt="Tract CGOS" onclick="window.open(this.src)">
+      <h3>🎁 CGOS — le détail</h3>
+      <p>De la naissance d'un enfant au décès d'un proche, d'une maladie aux prestations vacances, des aides financières aux prestations scolaires : nous avons tous besoin un jour du CGOS. Contractuels, stagiaires, titulaires — tout le monde est concerné.</p>
+      <p><strong>Direction votre espace agent :</strong> www.cgos.info. Il est important de faire votre dossier dès l'ouverture pour ne pas perdre de temps le jour où vous en aurez besoin — sans dossier, pas de prestation.</p>
+      <p><strong>Pour ouvrir un dossier la première fois :</strong> numéro de sécurité sociale, dernier bulletin de paie, dernier avis d'imposition, RIB.</p>
+      <p><strong>Si vous avez déjà un dossier</strong> (votre numéro CGOS reste le même) : dernier avis d'imposition suffit. Pour les prestations enfants : certificat de scolarité (secondaire), certificat d'hébergement (internat, CROUS...), attestation CAF si garde alternée.</p>
+      <div class="fei-note" style="clear:both;">Nouveauté 2026 : plus de date limite pour la prestation étude — elle est versée dès que le dossier est validé.</div>
     </div>
 
     <div class="fei-block anim" id="detail-harcelement">
-      <h3>🚨 Harcèlement moral — le tract complet</h3>
-      <div class="pdf-gallery">
-        <img src="images/harcelement-1.jpg" alt="Harcèlement moral au travail" onclick="window.open(this.src)">
-      </div>
-      <div class="fei-note">Le rôle du syndicat : écouter, protéger, agir. L'employeur a l'obligation légale de protéger votre santé physique et mentale (Code du travail, art. L4121-1).</div>
+      <img class="fei-thumb" src="images/harcelement-1.jpg" alt="Tract harcèlement moral" onclick="window.open(this.src)">
+      <h3>🚨 Harcèlement moral — le détail</h3>
+      <p>« Aucun·e salarié·e ne doit subir les agissements répétés de harcèlement moral qui ont pour objet ou pour effet une dégradation de ses conditions de travail susceptible de porter atteinte à ses droits et à sa dignité, d'altérer sa santé physique ou mentale ou de compromettre son avenir professionnel » (article L1152-1, défini en termes identiques dans le Code du travail et le Code général de la Fonction Publique).</p>
+      <p><strong>3 conditions pour le caractériser :</strong> des agissements répétés (un acte isolé, même grave, ne suffit pas) ; une dégradation des conditions de travail ; une atteinte aux droits, à la dignité, à la santé ou à l'avenir professionnel.</p>
+      <p>Le harcèlement moral n'est pas « un conflit entre deux personnes » : c'est un mécanisme de domination souvent lié à une organisation du travail toxique, qui peut se dérouler au vu et au su de tous.</p>
+      <p><strong>Comment ça se manifeste :</strong> dévalorisations, critiques injustifiées, sarcasmes répétés, brimades, isolement, exclusion du collectif, surcharge ou absence de travail, humiliations, pressions, menaces, refus de communication.</p>
+      <p><strong>Démarches possibles</strong> (non cumulatives) : prévenir l'employeur, alerter le CSE, alerter l'inspection du travail, engager une médiation, saisir le conseil des prud'hommes ou le tribunal administratif, saisir le défenseur des droits.</p>
+      <div class="fei-note" style="clear:both;">Le rôle du syndicat : écouter, protéger, agir. L'employeur a l'obligation légale de protéger votre santé physique et mentale (Code du travail, art. L4121-1).</div>
     </div>
 
     <div class="fei-block anim" id="detail-rqth">
-      <h3>♿ RQTH — le tract complet</h3>
-      <div class="pdf-gallery">
-        <img src="images/rqth-1.jpg" alt="La RQTH : préserver sa santé et éviter l'inaptitude" onclick="window.open(this.src)">
-      </div>
-      <div class="fei-note">Aucune obligation légale d'informer votre employeur de votre état de santé — l'initiative de se déclarer revient uniquement à l'agent.</div>
+      <img class="fei-thumb" src="images/rqth-1.jpg" alt="Tract RQTH" onclick="window.open(this.src)">
+      <h3>♿ RQTH — le détail</h3>
+      <p>La Reconnaissance en Qualité de Travailleur Handicapé est une démarche <strong>personnelle et volontaire</strong> réalisée auprès de la MDPH (Maison Départementale des Personnes Handicapées) de votre département de résidence.</p>
+      <p><strong>Elle permet :</strong> une surveillance médicale particulière, des conditions de travail adaptées (aménagement de l'organisation, matériel adapté), de sécuriser son parcours professionnel en cas d'évolution de son état de santé. La visite auprès du médecin du travail permet de clarifier vos besoins spécifiques.</p>
+      <p><strong>Comment l'obtenir :</strong> complétez le dossier RQTH disponible sur le site de la MDPH de votre département ; faites compléter le Cerfa 13788*01 par votre médecin traitant ou spécialiste ; transmettez le dossier accompagné des pièces médicales à la MDPH.</p>
+      <div class="fei-note" style="clear:both;">Aucune obligation légale d'informer votre employeur de votre état de santé — l'initiative de se déclarer revient uniquement à l'agent.</div>
     </div>
 
     <div class="fei-block anim" id="detail-syndical">
-      <h3>⚖️ Droit syndical — le tract complet</h3>
-      <div class="pdf-gallery">
-        <img src="images/syndicat-1.jpg" alt="Ce que votre syndicat peut faire pour vous - page 1" onclick="window.open(this.src)">
-        <img src="images/syndicat-2.jpg" alt="page 2" onclick="window.open(this.src)">
-        <img src="images/syndicat-3.jpg" alt="page 3" onclick="window.open(this.src)">
-        <img src="images/syndicat-4.jpg" alt="page 4" onclick="window.open(this.src)">
-        <img src="images/syndicat-5.jpg" alt="page 5" onclick="window.open(this.src)">
-        <img src="images/syndicat-6.jpg" alt="page 6" onclick="window.open(this.src)">
-        <img src="images/syndicat-7.jpg" alt="page 7" onclick="window.open(this.src)">
-        <img src="images/syndicat-8.jpg" alt="page 8" onclick="window.open(this.src)">
-      </div>
-      <div class="fei-note">Même sans être syndiqué, vous avez droit à 12 jours de formation syndicale par an.</div>
+      <img class="fei-thumb" src="images/syndicat-1.jpg" alt="Tract ce que votre syndicat peut faire" onclick="window.open(this.src)">
+      <h3>⚖️ Droit syndical — ce que la CGT fait pour vous</h3>
+      <p><strong>Vous défendre individuellement :</strong> accompagnement en cas de sanction, d'entretien disciplinaire, de refus de mobilité, d'arrêt de travail contesté ; aide à la rédaction de courriers officiels, recours, demandes administratives ; soutien en cas de harcèlement moral ou sexuel, de souffrance au travail ou de mal-être.</p>
+      <p><strong>Vous informer sur vos droits :</strong> explications claires sur vos droits statutaires, votre fiche de paie, vos congés, votre carrière et votre rémunération ; suivi des évolutions réglementaires ; réunions d'information syndicale ; mise en lien avec des avocats lors des permanences juridiques du mercredi.</p>
+      <p><strong>Agir collectivement :</strong> mobilisation contre les injustices locales, négociation collective sur les conditions de travail, les horaires, les primes, action commune contre des décisions injustes ou arbitraires.</p>
+      <p><strong>Vous représenter dans les instances :</strong> CAP (Commission Administrative Paritaire), F3SCT (Formation Spécialisée Santé, Sécurité et Conditions de Travail), CSE (Comité Social d'Établissement) — pour porter votre voix face à l'administration.</p>
+      <div class="fei-note" style="clear:both;">Même sans être syndiqué, vous avez droit à 12 jours de formation syndicale par an pour vous outiller et vous rendre plus fort face à l'institution.</div>
     </div>
 
     <div class="fei-block anim" id="detail-salaires">
@@ -435,19 +433,13 @@
     </div>
 
     <div class="fei-block anim" id="detail-travail">
-      <h3>⏱️ Temps de travail — le tract complet</h3>
-      <div class="pdf-gallery">
-        <img src="images/temps-travail-1.jpg" alt="Temps de travail - page 1" onclick="window.open(this.src)">
-        <img src="images/temps-travail-2.jpg" alt="page 2" onclick="window.open(this.src)">
-        <img src="images/temps-travail-3.jpg" alt="page 3" onclick="window.open(this.src)">
-        <img src="images/temps-travail-4.jpg" alt="page 4" onclick="window.open(this.src)">
-        <img src="images/temps-travail-5.jpg" alt="page 5" onclick="window.open(this.src)">
-        <img src="images/temps-travail-6.jpg" alt="page 6" onclick="window.open(this.src)">
-        <img src="images/temps-travail-7.jpg" alt="page 7" onclick="window.open(this.src)">
-        <img src="images/temps-travail-8.jpg" alt="page 8" onclick="window.open(this.src)">
-        <img src="images/temps-travail-9.jpg" alt="page 9" onclick="window.open(this.src)">
-      </div>
-      <div class="fei-note">En arrêt maladie, un agent ne doit rendre aucune heure et ne génère pas de RTT — le demander est illégal.</div>
+      <img class="fei-thumb" src="images/temps-travail-1.jpg" alt="Tract temps de travail" onclick="window.open(this.src)">
+      <h3>⏱️ Temps de travail — le détail</h3>
+      <p><strong>Durée légale :</strong> 35 heures par semaine, avec un maximum annuel de 1 607 heures, réduit à 1 582h pour certains agents et à 1 476h pour le travail de nuit.</p>
+      <p><strong>Garanties légales :</strong> maximum 48 heures par semaine, 9 heures par jour pour les équipes de jour, repos minimum de 12 heures consécutives.</p>
+      <p><strong>Cycles et horaires :</strong> le travail est organisé en cycles définis par service ou fonction. Le planning doit être affiché au moins 15 jours avant son application, et toute modification inscrite au moins 48 heures à l'avance.</p>
+      <p><strong>Congés annuels :</strong> 25 jours ouvrés par an. Les congés non pris pour cause de maladie sont reportés automatiquement à l'année suivante, dans la limite de 4 semaines après reprise (report possible jusqu'à 15 mois maximum).</p>
+      <div class="fei-note" style="clear:both;">En arrêt maladie, un agent ne doit rendre aucune heure à son administration (absence égale à 1/5e des obligations hebdomadaires, art. 14 du décret 2002-9) et ne génère pas de RTT (loi 2021-1657). Demander à compenser des heures non faites en maladie est illégal.</div>
     </div>
   </div>
 </div>
@@ -503,25 +495,35 @@
   </div>
   <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
     <div class="fei-block anim">
+      <img class="fei-thumb" src="images/communique-1.jpg" alt="Communiqué de presse - psychiatrie" onclick="window.open(this.src)">
       <h3>📢 Communiqué de presse — Psychiatrie : un déni honteux de la réalité</h3>
       <p style="font-size:12px;color:var(--gray-500);margin-bottom:14px;">Fédération CGT Santé et Action Sociale · Commission Nationale de Psychiatrie · 9 juin 2026</p>
-      <div class="pdf-gallery">
-        <img src="images/communique-1.jpg" alt="Communiqué de presse - psychiatrie" onclick="window.open(this.src)">
-      </div>
+      <p>Depuis 30 ans, rapports, expertises et comités de suivi se sont multipliés sur la psychiatrie, dont le seul effet aura été de détruire la psychiatrie publique et de secteur — transformée en un grand marché de la santé mentale ouvert aux opérateurs privés lucratifs.</p>
+      <p>Le service public de psychiatrie a été démembré par la multiplication d'équipes mobiles, de projets soi-disant innovants, la disparition de formations spécifiques et un nouveau mode de financement.</p>
+      <p>Alors que le Ministère feint de s'intéresser à la prise en charge des enfants et des adolescents, la Fédération rappelle que les lits de pédopsychiatrie de la Fondation Vallée ont été fermés du jour au lendemain, que la pédopsychiatrie du CH Camille Claudel est en grand danger, que celle de l'Yonne est sinistrée, que 48 postes sont menacés à St Egrève, et que partout en France les listes d'attente s'allongent dans les CMPEA.</p>
+      <p style="clear:both;">Pour la Fédération, les annonces ministérielles (enveloppe de 65 millions d'euros, dispositifs coupe-file, objectif « zéro contention » d'ici 2030) sont un affront supplémentaire aux professionnels et aux patients de psychiatrie, face à une réalité catastrophique que la ministre continue d'ignorer.</p>
     </div>
 
     <div class="fei-block anim anim-d1">
+      <img class="fei-thumb" src="images/entretien-pro-1.jpg" alt="Entretien professionnel 2026" onclick="window.open(this.src)">
       <h3>📋 Entretien professionnel 2026 : les 5 critères qui font la différence</h3>
-      <div class="pdf-gallery">
-        <img src="images/entretien-pro-1.jpg" alt="Entretien professionnel 2026 - conseils CGT" onclick="window.open(this.src)">
-      </div>
+      <p>Pour votre avancement, l'entretien évalue 5 critères — pour chacun, valorisez une situation concrète que vous avez bien gérée :</p>
+      <p><strong>1. Maîtrise de soi :</strong> gérer son stress, prendre du recul, garder un comportement professionnel dans les situations difficiles (tension, surcharge, urgence, conflit).</p>
+      <p><strong>2. Comportement adapté à autrui :</strong> communiquer avec respect, collaborer avec ses collègues, adapter son attitude aux patients et familles, respecter la confidentialité.</p>
+      <p><strong>3. Capacité à travailler en équipe :</strong> partager les informations utiles, contribuer à la cohésion, participer aux projets collectifs, coopérer avec les autres professionnels.</p>
+      <p><strong>4. Capacité d'adaptation :</strong> s'adapter aux changements, intégrer de nouvelles organisations, utiliser de nouveaux outils, faire évoluer ses pratiques.</p>
+      <p><strong>5. Rigueur :</strong> réaliser un travail fiable, respecter les délais et les procédures, garantir la qualité des prises en charge.</p>
+      <p><strong>Vos droits :</strong> convocation au moins 8 jours avant l'entretien, document d'auto-évaluation, 15 jours pour formuler vos observations. Signer ne veut pas dire être d'accord avec le contenu — vous pouvez demander une révision et exercer un recours.</p>
+      <div class="fei-note" style="clear:both;">Les 5 conseils CGT : préparez votre auto-évaluation, listez vos réalisations de l'année, préparez un exemple concret par critère, faites inscrire les difficultés rencontrées (conditions de travail, moyens, organisation), relisez attentivement votre compte-rendu avant de signer. Rappel : l'atteinte des objectifs dépend aussi des effectifs, des moyens et de l'organisation — vous n'êtes pas responsable de tout ce qui dysfonctionne dans l'établissement.</div>
     </div>
 
     <div class="fei-block anim anim-d2">
+      <img class="fei-thumb" src="images/entretien-informel-1.jpg" alt="L'entretien informel" onclick="window.open(this.src)">
       <h3>⚠️ L'entretien informel : la conversation qui peut vous échapper</h3>
-      <div class="pdf-gallery">
-        <img src="images/entretien-informel-1.jpg" alt="L'entretien informel" onclick="window.open(this.src)">
-      </div>
+      <p>Un entretien informel est un échange « spontané » : sans convocation officielle, sans cadre clairement défini. Parler, échanger, faire confiance, c'est sain — mais ce qui se dit sans formalisme peut peser sur votre situation professionnelle et avoir des conséquences réelles : mutation, évaluation, pression sur le poste.</p>
+      <p><strong>Que pouvez-vous faire ?</strong> Vous avez le droit de mettre fin à cet échange : « Je ne souhaite pas poursuivre cet échange dans ce cadre » ou « Pouvez-vous préciser l'objet de cet entretien ? ». Vous pouvez à tout moment demander qu'un échange soit formalisé et être accompagné par la CGT.</p>
+      <p><strong>Et après ?</strong> Ne restez pas seul, contactez la CGT. Notez les éléments de l'échange (date, heure, interlocuteur, circonstances) et envoyez un mail qui résume ce qui a été dit (« Suite à notre discussion de ce jour... ») — ce que vous avez dit sans préparation peut être nuancé, précisé, rectifié par écrit.</p>
+      <div class="fei-note" style="clear:both;">Dans la fonction publique, vous pouvez être assisté d'un représentant CGT dans toute situation où vos intérêts professionnels sont en jeu, pas seulement en disciplinaire (loi n°83-634, art. 19).</div>
     </div>
 
     <div class="fei-block anim anim-d3">
