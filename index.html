@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CGT — Centre Hospitalier Saint-Jean</title>
+<title>CGT — CH Charles Perrens</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -26,462 +26,164 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--gray-50); color: var(--gray-900); line-height: 1.6; }
 
-  body {
-    font-family: var(--sans);
-    background: var(--gray-50);
-    color: var(--gray-900);
-    line-height: 1.6;
-  }
-
-  /* ── TOPBAR ── */
-  .topbar {
-    background: var(--gray-900);
-    padding: 7px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .topbar-inner {
-    max-width: 1140px; margin: 0 auto; padding: 0 32px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .topbar span, .topbar a {
-    font-size: 11.5px; color: rgba(255,255,255,0.45);
-    text-decoration: none; letter-spacing: 0.03em;
-  }
+  .topbar { background: var(--gray-900); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .topbar-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar span, .topbar a { font-size: 11.5px; color: rgba(255,255,255,0.45); text-decoration: none; letter-spacing: 0.03em; }
   .topbar a:hover { color: rgba(255,255,255,0.75); }
   .topbar-links { display: flex; gap: 20px; }
 
-  /* ── HEADER ── */
-  .site-header {
-    background: var(--white);
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-    position: sticky; top: 0; z-index: 100;
-  }
-  .header-inner {
-    max-width: 1140px; margin: 0 auto; padding: 0 32px;
-    display: flex; align-items: center; gap: 24px; height: 70px;
-  }
+  .site-header { background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.07); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 24px; height: 70px; }
   .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-  .logo-mark {
-    width: 46px; height: 46px; background: var(--red); border-radius: var(--radius-sm);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0; flex-shrink: 0;
-  }
-  .logo-mark .l1 {
-    font-family: var(--serif); font-size: 16px; color: #fff;
-    font-weight: 600; line-height: 1; letter-spacing: -0.5px;
-  }
+  .logo-mark { width: 46px; height: 46px; background: var(--red); border-radius: var(--radius-sm); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; flex-shrink: 0; }
+  .logo-mark .l1 { font-family: var(--serif); font-size: 16px; color: #fff; font-weight: 600; line-height: 1; letter-spacing: -0.5px; }
   .logo-mark .l2 { font-size: 8px; color: rgba(255,255,255,0.6); letter-spacing: 0.14em; margin-top: 1px; }
   .logo-text h1 { font-family: var(--serif); font-size: 17px; color: var(--black); font-weight: 600; }
   .logo-text p { font-size: 11px; color: var(--gray-500); margin-top: 1px; }
 
-  nav { display: flex; gap: 2px; margin-left: auto; }
-  nav a {
-    font-size: 13px; color: var(--gray-700); text-decoration: none;
-    padding: 8px 12px; border-radius: var(--radius-sm); font-weight: 500;
-    transition: background 0.15s, color 0.15s;
-  }
+  nav { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
+  nav a { font-size: 12.5px; color: var(--gray-700); text-decoration: none; padding: 8px 10px; border-radius: var(--radius-sm); font-weight: 500; transition: background 0.15s, color 0.15s; white-space: nowrap; }
   nav a:hover { background: var(--gray-100); color: var(--black); }
   nav a.active { color: var(--red); background: var(--red-light); }
 
-  .header-cta {
-    display: flex; gap: 8px; align-items: center; margin-left: 8px;
-  }
+  .header-cta { display: flex; gap: 8px; align-items: center; margin-left: 8px; }
   .btn { font-family: var(--sans); font-size: 13px; font-weight: 600; border-radius: var(--radius-sm); padding: 9px 18px; cursor: pointer; border: none; transition: opacity 0.15s, transform 0.1s; }
   .btn:hover { opacity: 0.88; }
   .btn:active { transform: scale(0.98); }
   .btn-ghost { background: none; border: 1.5px solid var(--gray-300); color: var(--gray-700); }
   .btn-red { background: var(--red); color: var(--white); }
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--red);
-    overflow: hidden;
-    position: relative;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(
-      -55deg,
-      transparent,
-      transparent 60px,
-      rgba(0,0,0,0.03) 60px,
-      rgba(0,0,0,0.03) 61px
-    );
-    pointer-events: none;
-  }
-  .hero-inner {
-    max-width: 1140px; margin: 0 auto; padding: 64px 32px 0;
-    display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: end;
-    position: relative;
-  }
+  .hero { background: var(--red); overflow: hidden; position: relative; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(0,0,0,0.03) 60px, rgba(0,0,0,0.03) 61px); pointer-events: none; }
+  .hero-inner { max-width: 1140px; margin: 0 auto; padding: 64px 32px 0; position: relative; }
   .hero-text { padding-bottom: 60px; }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85);
-    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 20px; margin-bottom: 20px;
-    border: 1px solid rgba(255,255,255,0.15);
-  }
+  .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.15); }
   .hero-tag::before { content: ''; width: 6px; height: 6px; background: rgba(255,255,255,0.7); border-radius: 50%; }
-  .hero h2 {
-    font-family: var(--serif); font-size: 44px; color: #fff; font-weight: 600;
-    line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.5px;
-  }
+  .hero h2 { font-family: var(--serif); font-size: 44px; color: #fff; font-weight: 600; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.5px; }
   .hero h2 em { font-style: italic; font-weight: 400; }
-  .hero-sub {
-    font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.7;
-    margin-bottom: 28px; max-width: 440px;
-  }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; max-width: 440px; }
   .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .btn-white { background: #fff; color: var(--red); font-size: 13px; font-weight: 700; padding: 11px 22px; border-radius: var(--radius-sm); border: none; cursor: pointer; font-family: var(--sans); transition: opacity 0.15s; }
   .btn-outline-w { background: transparent; color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 500; padding: 11px 22px; border-radius: var(--radius-sm); border: 1.5px solid rgba(255,255,255,0.3); cursor: pointer; font-family: var(--sans); transition: border-color 0.15s; }
   .btn-white:hover { opacity: 0.9; }
   .btn-outline-w:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
 
-  .hero-stats-panel {
-    background: var(--white);
-    border-radius: 14px 14px 0 0;
-    padding: 28px;
-    align-self: end;
-  }
-  .hero-stats-panel .panel-label {
-    font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--gray-500); margin-bottom: 20px;
-  }
+  .hero-stats-panel { background: var(--white); border-radius: 14px 14px 0 0; padding: 28px; align-self: end; }
+  .hero-stats-panel .panel-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-500); margin-bottom: 20px; }
   .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .stat-item {}
-  .stat-item .n {
-    font-family: var(--serif); font-size: 32px; color: var(--red); font-weight: 600;
-    line-height: 1; margin-bottom: 4px;
-  }
+  .stat-item .n { font-family: var(--serif); font-size: 32px; color: var(--red); font-weight: 600; line-height: 1; margin-bottom: 4px; }
   .stat-item .l { font-size: 12px; color: var(--gray-500); line-height: 1.3; }
-  .stat-divider {
-    margin: 20px 0; height: 1px; background: var(--gray-100);
-  }
-  .last-election {
-    display: flex; align-items: center; gap: 10px;
-  }
-  .election-bar { flex: 1; height: 6px; background: var(--gray-100); border-radius: 3px; overflow: hidden; }
-  .election-fill { height: 100%; background: var(--red); border-radius: 3px; width: 38%; }
-  .election-label { font-size: 12px; color: var(--gray-500); white-space: nowrap; }
-  .election-pct { font-size: 13px; font-weight: 600; color: var(--red); }
 
-  /* ── BREAKING STRIP ── */
-  .breaking {
-    background: var(--gray-900); padding: 10px 0;
-    overflow: hidden;
-  }
-  .breaking-inner {
-    max-width: 1140px; margin: 0 auto; padding: 0 32px;
-    display: flex; align-items: center; gap: 16px;
-  }
-  .breaking-badge {
-    background: var(--red); color: #fff;
-    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 3px; white-space: nowrap; flex-shrink: 0;
-  }
+  .breaking { background: var(--gray-900); padding: 10px 0; overflow: hidden; }
+  .breaking-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 16px; }
+  .breaking-badge { background: var(--red); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
   .breaking-text { font-size: 13px; color: rgba(255,255,255,0.75); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .breaking-text strong { color: #fff; font-weight: 600; }
   .breaking-link { font-size: 12px; color: var(--red); text-decoration: none; white-space: nowrap; margin-left: auto; flex-shrink: 0; font-weight: 500; }
 
-  /* ── MAIN LAYOUT ── */
-  .main {
-    max-width: 1140px; margin: 0 auto; padding: 40px 32px;
-    display: grid; grid-template-columns: 1fr 320px; gap: 32px;
-  }
+  .main { max-width: 1140px; margin: 0 auto; padding: 40px 32px; display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
 
-  /* ── SECTION LABELS ── */
-  .sec-head {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  .sec-title {
-    font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--black);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .sec-title::before {
-    content: ''; width: 4px; height: 20px; background: var(--red); border-radius: 2px; flex-shrink: 0;
-  }
-  .sec-more {
-    font-size: 12px; color: var(--red); text-decoration: none; font-weight: 600;
-    letter-spacing: 0.02em;
-  }
+  .sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .sec-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--black); display: flex; align-items: center; gap: 10px; }
+  .sec-title::before { content: ''; width: 4px; height: 20px; background: var(--red); border-radius: 2px; flex-shrink: 0; }
+  .sec-more { font-size: 12px; color: var(--red); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; }
 
-  /* ── NEWS CARDS ── */
-  .news-featured {
-    background: var(--white); border-radius: var(--radius); overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.07); margin-bottom: 16px;
-    display: grid; grid-template-columns: 1fr 1fr;
-    transition: border-color 0.15s;
-    cursor: pointer;
-  }
-  .news-featured:hover { border-color: rgba(0,0,0,0.14); }
-  .news-featured-img {
-    background: var(--gray-900);
-    min-height: 220px;
-    position: relative;
-    overflow: hidden;
-    display: flex; align-items: flex-end;
-  }
-  .news-img-overlay {
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(-45deg, rgba(193,0,10,0.15) 0px, rgba(193,0,10,0.15) 1px, transparent 1px, transparent 8px);
-  }
-  .news-featured-img .img-placeholder {
-    width: 100%; height: 100%; background: #1c1c1c;
-    display: flex; align-items: center; justify-content: center;
-  }
+  .news-featured { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.07); margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; }
+  .news-featured-img { background: var(--gray-900); min-height: 220px; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+  .news-img-overlay { position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, rgba(193,0,10,0.15) 0px, rgba(193,0,10,0.15) 1px, transparent 1px, transparent 8px); }
+  .news-featured-img .img-placeholder { width: 100%; height: 100%; background: #1c1c1c; }
   .news-featured-body { padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
   .news-featured-body .pill-row { margin-bottom: 14px; }
-  .news-featured-body h3 {
-    font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--black);
-    line-height: 1.25; margin-bottom: 12px;
-  }
+  .news-featured-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--black); line-height: 1.25; margin-bottom: 12px; }
   .news-featured-body p { font-size: 13px; color: var(--gray-500); line-height: 1.65; }
   .news-meta { margin-top: 16px; display: flex; align-items: center; gap: 10px; }
   .news-date { font-size: 11px; color: var(--gray-500); }
-  .news-pdf {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 12px; color: var(--red); font-weight: 600; text-decoration: none;
-    margin-left: auto; padding: 5px 10px; background: var(--red-light); border-radius: 4px;
-  }
-  .news-pdf svg { width: 12px; height: 12px; }
 
-  .news-list { display: flex; flex-direction: column; gap: 12px; }
-  .news-card {
-    background: var(--white); border-radius: var(--radius);
-    border: 1px solid rgba(0,0,0,0.07); padding: 20px;
-    cursor: pointer; transition: border-color 0.15s, transform 0.1s;
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-  .news-card:hover { border-color: rgba(193,0,10,0.25); transform: translateX(2px); }
-  .news-card-accent {
-    width: 4px; height: 100%; min-height: 60px; border-radius: 2px;
-    flex-shrink: 0; margin-top: 2px;
-  }
-  .news-card-body { flex: 1; }
-  .news-card-body .pill-row { margin-bottom: 8px; }
-  .news-card-body h3 {
-    font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black);
-    line-height: 1.3; margin-bottom: 6px;
-  }
-  .news-card-body p { font-size: 12px; color: var(--gray-500); line-height: 1.55; }
-  .news-card-footer { margin-top: 10px; display: flex; align-items: center; gap: 8px; }
-
-  /* ── PILLS ── */
-  .pill {
-    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
-    text-transform: uppercase; padding: 4px 9px; border-radius: 20px;
-  }
+  .pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 20px; }
   .pill-red { background: #fde8e8; color: #8a0007; }
-  .pill-green { background: #e6f4e8; color: #1e6626; }
-  .pill-blue { background: #e4effe; color: #1a4fa0; }
-  .pill-amber { background: #fef3e2; color: #8a5700; }
-  .pill-gray { background: var(--gray-100); color: var(--gray-700); }
-
   .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
   .dot-red { background: var(--red); }
-  .dot-green { background: #27a43a; }
-  .dot-blue { background: #2563eb; }
-  .dot-amber { background: #d97706; }
 
-  /* ── SIDEBAR ── */
-  .sidebar {}
-
-  .s-card {
-    background: var(--white); border-radius: var(--radius);
-    border: 1px solid rgba(0,0,0,0.07); padding: 20px; margin-bottom: 16px;
-  }
-  .s-title {
-    font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black);
-    margin-bottom: 16px; padding-bottom: 12px;
-    border-bottom: 1px solid var(--gray-100);
-    display: flex; align-items: center; gap: 8px;
-  }
+  .s-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 20px; margin-bottom: 16px; }
+  .s-title { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px; }
   .s-title svg { width: 16px; height: 16px; color: var(--red); flex-shrink: 0; }
 
-  .agenda-item {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 12px 0; border-bottom: 1px solid var(--gray-100);
-  }
+  .agenda-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--gray-100); }
   .agenda-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .agenda-date {
-    min-width: 42px; background: var(--red); color: #fff;
-    border-radius: var(--radius-sm); text-align: center; padding: 8px 4px; flex-shrink: 0;
-  }
+  .agenda-date { min-width: 42px; background: var(--red); color: #fff; border-radius: var(--radius-sm); text-align: center; padding: 8px 4px; flex-shrink: 0; }
   .agenda-date .dd { font-family: var(--serif); font-size: 18px; font-weight: 600; line-height: 1; }
   .agenda-date .mm { font-size: 9px; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1px; }
-  .agenda-info {}
   .agenda-info h4 { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 2px; line-height: 1.3; }
   .agenda-info p { font-size: 11px; color: var(--gray-500); }
   .agenda-type { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 3px; margin-bottom: 4px; }
-  .at-greve { background: #fde8e8; color: #8a0007; }
-  .at-reunion { background: #e4effe; color: #1a4fa0; }
   .at-permanence { background: #e6f4e8; color: #1e6626; }
 
-  .doc-item {
-    display: flex; align-items: center; gap: 12px;
-    padding: 11px 0; border-bottom: 1px solid var(--gray-100); cursor: pointer;
-  }
-  .doc-item:last-child { border-bottom: none; }
-  .doc-item:hover .doc-name { color: var(--red); }
-  .doc-ico {
-    width: 34px; height: 34px; border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700; flex-shrink: 0;
-  }
+  .doc-ico { width: 34px; height: 34px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
   .doc-ico-red { background: #fde8e8; color: var(--red); }
-  .doc-ico-blue { background: #e4effe; color: #1a4fa0; }
-  .doc-info {}
-  .doc-name { font-size: 12px; font-weight: 600; color: var(--black); line-height: 1.3; transition: color 0.15s; }
-  .doc-sub { font-size: 11px; color: var(--gray-500); margin-top: 1px; }
-  .doc-arrow { margin-left: auto; color: var(--gray-300); font-size: 16px; flex-shrink: 0; }
 
-  /* ── JOIN BOX ── */
-  .join-box {
-    background: var(--gray-900);
-    border-radius: var(--radius); padding: 24px;
-    margin-bottom: 16px; position: relative; overflow: hidden;
-  }
-  .join-box::before {
-    content: '';
-    position: absolute; top: -20px; right: -20px;
-    width: 100px; height: 100px;
-    background: var(--red);
-    border-radius: 50%;
-    opacity: 0.15;
-  }
-  .join-box h3 {
-    font-family: var(--serif); font-size: 20px; font-weight: 600; color: #fff;
-    line-height: 1.2; margin-bottom: 10px; position: relative;
-  }
-  .join-box p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 18px; position: relative; }
-  .join-btn {
-    width: 100%; background: var(--red); color: #fff;
-    font-family: var(--sans); font-size: 13px; font-weight: 700;
-    padding: 12px; border-radius: var(--radius-sm); border: none; cursor: pointer;
-    transition: background 0.15s; letter-spacing: 0.01em; position: relative;
-  }
-  .join-btn:hover { background: var(--red-dark); }
+  .join-box { background: var(--gray-900); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; position: relative; overflow: hidden; }
+  .join-box::before { content: ''; position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--red); border-radius: 50%; opacity: 0.15; }
+  .join-box h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: #fff; line-height: 1.2; margin-bottom: 10px; position: relative; }
   .join-perks { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; position: relative; }
   .perk { display: flex; align-items: flex-start; gap: 8px; }
-  .perk-check {
-    width: 16px; height: 16px; background: rgba(193,0,10,0.2); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
-  }
+  .perk-check { width: 16px; height: 16px; background: rgba(193,0,10,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
   .perk-check::after { content: '✓'; font-size: 9px; color: #ff8080; }
   .perk span { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.4; }
+  .join-btn { width: 100%; background: var(--red); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 700; padding: 12px; border-radius: var(--radius-sm); border: none; cursor: pointer; position: relative; }
 
-  /* ── CONTACT STRIP ── */
-  .contact-strip {
-    background: var(--white); border-radius: var(--radius);
-    border: 1px solid rgba(0,0,0,0.07); padding: 16px 20px;
-    display: flex; align-items: center; gap: 16px;
-    margin-bottom: 16px;
-  }
-  .contact-icon {
-    width: 38px; height: 38px; background: var(--red-light);
-    border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .contact-icon svg { width: 18px; height: 18px; color: var(--red); }
-  .contact-text h4 { font-size: 13px; font-weight: 600; color: var(--black); }
-  .contact-text p { font-size: 11px; color: var(--gray-500); margin-top: 1px; }
-  .contact-btn {
-    margin-left: auto; font-size: 12px; font-weight: 600;
-    color: var(--red); background: var(--red-light);
-    border: none; padding: 7px 14px; border-radius: 5px; cursor: pointer; font-family: var(--sans);
-    white-space: nowrap;
-  }
+  .contact-btn { font-size: 12px; font-weight: 600; color: var(--red); background: var(--red-light); border: none; padding: 7px 14px; border-radius: 5px; cursor: pointer; font-family: var(--sans); white-space: nowrap; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--gray-900);
-    margin-top: 32px;
-  }
-  .footer-main {
-    max-width: 1140px; margin: 0 auto; padding: 40px 32px;
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
-  }
+  footer { background: var(--gray-900); margin-top: 32px; }
+  .footer-main { max-width: 1140px; margin: 0 auto; padding: 40px 32px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
   .footer-brand .logo-mark { margin-bottom: 14px; }
   .footer-brand p { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 220px; }
-  .footer-col h5 {
-    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.4); margin-bottom: 14px;
-  }
-  .footer-col a {
-    display: block; font-size: 13px; color: rgba(255,255,255,0.55);
-    text-decoration: none; margin-bottom: 8px; transition: color 0.15s;
-  }
-  .footer-col a:hover { color: rgba(255,255,255,0.9); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding: 14px 32px;
-    max-width: 1140px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-  }
+  .footer-col h5 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+  .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 8px; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 14px 32px; max-width: 1140px; margin: 0 auto; }
   .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.25); }
-  .footer-bottom-links { display: flex; gap: 20px; }
-  .footer-bottom-links a { font-size: 11px; color: rgba(255,255,255,0.25); text-decoration: none; }
-  .footer-bottom-links a:hover { color: rgba(255,255,255,0.55); }
 
-  /* ── PAGE SECTIONS ── */
   .page-section { display: none; }
   .page-section.active { display: block; }
 
-  /* ── DROITS PAGE ── */
-  .droits-hero {
-    background: var(--gray-900); padding: 40px 0; margin-bottom: 32px;
-  }
+  .droits-hero { background: var(--gray-900); padding: 40px 0; margin-bottom: 32px; }
   .droits-hero-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
-  .droits-hero h2 {
-    font-family: var(--serif); font-size: 36px; font-weight: 600; color: #fff;
-    margin-bottom: 10px;
-  }
+  .droits-hero h2 { font-family: var(--serif); font-size: 36px; font-weight: 600; color: #fff; margin-bottom: 10px; }
   .droits-hero p { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; }
 
-  .droits-grid {
-    max-width: 1140px; margin: 0 auto; padding: 0 32px 48px;
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
-  }
-  .droit-card {
-    background: var(--white); border-radius: var(--radius);
-    border: 1px solid rgba(0,0,0,0.07); padding: 24px;
-    cursor: pointer; transition: border-color 0.15s, transform 0.1s;
-  }
-  .droit-card:hover { border-color: rgba(193,0,10,0.3); transform: translateY(-2px); }
-  .droit-icon {
-    width: 44px; height: 44px; border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px; font-size: 20px;
-  }
+  .droits-grid { max-width: 1140px; margin: 0 auto; padding: 0 32px 48px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .droit-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 24px; }
+  .droit-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
   .droit-card h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
   .droit-card p { font-size: 13px; color: var(--gray-500); line-height: 1.6; margin-bottom: 14px; }
   .droit-link { font-size: 12px; font-weight: 600; color: var(--red); text-decoration: none; }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .anim { animation: fadeUp 0.35s ease both; }
-  .anim-d1 { animation-delay: 0.05s; }
-  .anim-d2 { animation-delay: 0.1s; }
-  .anim-d3 { animation-delay: 0.15s; }
-  .anim-d4 { animation-delay: 0.2s; }
+  .bureau-grid { max-width: 1140px; margin: 0 auto; padding: 0 32px 48px; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .bureau-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); overflow: hidden; }
+  .bureau-photo { width: 100%; aspect-ratio: 1; background: var(--gray-100); display: flex; align-items: center; justify-content: center; color: var(--gray-300); font-size: 11px; }
+  .bureau-info { padding: 16px; }
+  .bureau-info h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 2px; }
+  .bureau-role { font-size: 11px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+  .bureau-info p { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
 
-  /* ── RESPONSIVE ── */
+  .fei-block { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 28px; margin-bottom: 20px; }
+  .fei-block h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--black); margin-bottom: 12px; }
+  .fei-block p { font-size: 14px; color: var(--gray-700); line-height: 1.7; margin-bottom: 10px; }
+  .fei-note { background: var(--red-light); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 12.5px; color: var(--red-dark); line-height: 1.6; margin-top: 14px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .anim { animation: fadeUp 0.35s ease both; }
+  .anim-d1 { animation-delay: 0.05s; } .anim-d2 { animation-delay: 0.1s; } .anim-d3 { animation-delay: 0.15s; }
+
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-stats-panel { border-radius: 14px; margin-bottom: 32px; }
     .main { grid-template-columns: 1fr; }
     .news-featured { grid-template-columns: 1fr; }
-    .news-featured-img { min-height: 180px; }
     .droits-grid { grid-template-columns: 1fr 1fr; }
+    .bureau-grid { grid-template-columns: 1fr 1fr; }
     .footer-main { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
@@ -490,6 +192,7 @@
     .hero h2 { font-size: 30px; }
     .main { padding: 24px 16px; }
     .droits-grid { grid-template-columns: 1fr; }
+    .bureau-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -497,11 +200,10 @@
 
 <div class="topbar">
   <div class="topbar-inner">
-    <span>CGT Santé &amp; Action Sociale · Section CH Saint-Jean · Bordeaux</span>
+    <span>CGT Santé &amp; Action Sociale · Section CH Charles Perrens · Bordeaux</span>
     <div class="topbar-links">
-      <a href="mailto:cgt@ch-saintjean.fr">cgt@ch-saintjean.fr</a>
-      <a href="#">Newsletter</a>
-      <a href="#">CGT Nationale</a>
+      <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a>
+      <a href="#">Instagram</a>
     </div>
   </div>
 </div>
@@ -509,68 +211,35 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="#" onclick="showPage('accueil');return false;">
-      <div class="logo-mark">
-        <span class="l1">CGT</span>
-        <span class="l2">santé</span>
-      </div>
-      <div class="logo-text">
-        <h1>CGT — CH Saint-Jean</h1>
-        <p>Section syndicale · Fonction Publique Hospitalière</p>
-      </div>
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
     </a>
     <nav>
       <a href="#" id="nav-accueil" class="active" onclick="showPage('accueil');return false;">Actualités</a>
       <a href="#" id="nav-droits" onclick="showPage('droits');return false;">Vos droits</a>
+      <a href="#" id="nav-fei" onclick="showPage('fei');return false;">Événements indésirables</a>
+      <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">Le bureau</a>
       <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Documents</a>
-      <a href="#" id="nav-instances" onclick="showPage('instances');return false;">Les instances</a>
       <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
     </nav>
     <div class="header-cta">
-      <button class="btn btn-ghost" onclick="showPage('contact');return false;">Permanence</button>
-      <button class="btn btn-red" onclick="showPage('adherent');return false;">Adhérer →</button>
+      <div class="btn btn-ghost" role="button" tabindex="0" onclick="showPage('contact');return false;">Permanence</div>
+      <div class="btn btn-red" role="button" tabindex="0" onclick="showPage('adherent');return false;">Adhérer →</div>
     </div>
   </div>
 </header>
 
 <!-- PAGE: ACCUEIL -->
 <div id="page-accueil" class="page-section active">
-
   <div class="hero">
     <div class="hero-inner">
       <div class="hero-text anim">
-        <div class="hero-tag">Section syndicale active depuis 1978</div>
+        <div class="hero-tag">Section syndicale CGT — CH Charles Perrens</div>
         <h2>Ensemble, défendons <em>nos droits</em> à l'hôpital</h2>
         <p class="hero-sub">Grilles de salaires, conditions de travail, temps de repos — la CGT vous informe, vous accompagne et vous représente dans toutes les instances de l'établissement.</p>
         <div class="hero-actions">
-          <button class="btn-white" onclick="showPage('droits');return false;">Connaître vos droits</button>
-          <button class="btn-outline-w" onclick="showPage('docs');return false;">Télécharger nos documents</button>
-        </div>
-      </div>
-      <div class="hero-stats-panel anim anim-d2">
-        <div class="panel-label">Résultats élections 2025</div>
-        <div class="stat-grid">
-          <div class="stat-item">
-            <div class="n">38%</div>
-            <div class="l">des suffrages exprimés</div>
-          </div>
-          <div class="stat-item">
-            <div class="n">214</div>
-            <div class="l">adhérents actifs</div>
-          </div>
-          <div class="stat-item">
-            <div class="n">12</div>
-            <div class="l">élus en instances</div>
-          </div>
-          <div class="stat-item">
-            <div class="n">6</div>
-            <div class="l">victoires syndicales en 2025</div>
-          </div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="last-election">
-          <span class="election-pct">38%</span>
-          <div class="election-bar"><div class="election-fill"></div></div>
-          <span class="election-label">1ère organisation</span>
+          <div class="btn-white" role="button" tabindex="0" onclick="showPage('droits');return false;">Connaître vos droits</div>
+          <div class="btn-outline-w" role="button" tabindex="0" onclick="showPage('docs');return false;">Télécharger nos documents</div>
         </div>
       </div>
     </div>
@@ -578,9 +247,8 @@
 
   <div class="breaking">
     <div class="breaking-inner">
-      <span class="breaking-badge">Urgent</span>
-      <span class="breaking-text"><strong>Préavis de grève — pôle urgences :</strong> Rassemblement le 22 avril à 8h devant l'entrée principale. Rejoignez le mouvement.</span>
-      <a href="#" class="breaking-link" onclick="showPage('accueil');return false;">Lire le tract →</a>
+      <span class="breaking-badge">Info</span>
+      <span class="breaking-text"><strong>[TEXTE À COMPLÉTER]</strong> — annonce ou actualité urgente à afficher ici.</span>
     </div>
   </div>
 
@@ -590,74 +258,15 @@
         <div class="sec-title">Actualités récentes</div>
         <a href="#" class="sec-more">Toutes les actualités →</a>
       </div>
-
       <div class="news-featured anim">
-        <div class="news-featured-img">
-          <div class="img-placeholder">
-            <div class="news-img-overlay"></div>
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="opacity:0.15;z-index:1;position:relative">
-              <circle cx="32" cy="32" r="28" stroke="white" stroke-width="2"/>
-              <path d="M20 32h24M32 20v24" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
+        <div class="news-featured-img"><div class="img-placeholder"><div class="news-img-overlay"></div></div></div>
         <div class="news-featured-body">
           <div>
-            <div class="pill-row">
-              <span class="pill pill-red">
-                <span class="dot dot-red" style="margin-right:4px"></span>Grève
-              </span>
-            </div>
-            <h3>Préavis de grève reconductible au pôle urgences</h3>
-            <p>Face au manque de personnel chronique et aux conditions de travail dégradées, la CGT dépose un préavis de grève à compter du 22 avril. La mobilisation est ouverte à l'ensemble des personnels.</p>
+            <div class="pill-row"><span class="pill pill-red"><span class="dot dot-red" style="margin-right:4px"></span>[Catégorie]</span></div>
+            <h3>[TEXTE À COMPLÉTER — titre de l'actu]</h3>
+            <p>[TEXTE À COMPLÉTER — chapô de l'actu, 2-3 phrases]</p>
           </div>
-          <div class="news-meta">
-            <span class="news-date">14 avril 2026</span>
-            <a href="#" class="news-pdf">
-              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="1" width="9" height="13" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 6h5M5 8.5h5M5 11h3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-              Tract PDF
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-list">
-        <div class="news-card anim anim-d1">
-          <div class="news-card-accent" style="background:#27a43a;"></div>
-          <div class="news-card-body">
-            <div class="pill-row"><span class="pill pill-green">Victoire syndicale</span></div>
-            <h3>Revalorisation des astreintes +15% — accord signé en CTe</h3>
-            <p>Après 6 mois de négociation, la direction accepte la revalorisation des indemnités d'astreinte. Un acquis concret pour tous les agents.</p>
-            <div class="news-card-footer">
-              <span class="news-date">8 avril 2026</span>
-              <a href="#" class="news-pdf" style="margin-left:0;">Compte-rendu PDF →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="news-card anim anim-d2">
-          <div class="news-card-accent" style="background:#2563eb;"></div>
-          <div class="news-card-body">
-            <div class="pill-row"><span class="pill pill-blue">Statut / RH</span></div>
-            <h3>3 jours de carence dans la FPH — analyse et recours CGT</h3>
-            <p>Le gouvernement impose 3 jours de carence aux agents. Notre analyse juridique et les recours possibles pour les personnels hospitaliers.</p>
-            <div class="news-card-footer">
-              <span class="news-date">1 avril 2026</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="news-card anim anim-d3">
-          <div class="news-card-accent" style="background:#d97706;"></div>
-          <div class="news-card-body">
-            <div class="pill-row"><span class="pill pill-amber">Élections</span></div>
-            <h3>CGT en tête des élections professionnelles 2025</h3>
-            <p>38% des suffrages. Première organisation de l'établissement. Merci à tous les agents qui nous font confiance. Résultats détaillés disponibles.</p>
-            <div class="news-card-footer">
-              <span class="news-date">24 mars 2026</span>
-              <a href="#" class="news-pdf" style="margin-left:0;">Résultats complets →</a>
-            </div>
-          </div>
+          <div class="news-meta"><span class="news-date">[date]</span></div>
         </div>
       </div>
     </div>
@@ -669,75 +278,8 @@
           Agenda syndical
         </div>
         <div class="agenda-item">
-          <div class="agenda-date"><div class="dd">22</div><div class="mm">avr</div></div>
-          <div class="agenda-info">
-            <span class="agenda-type at-greve">Grève</span>
-            <h4>Journée de grève — pôle urgences</h4>
-            <p>Rassemblement 8h · entrée principale</p>
-          </div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-date"><div class="dd">29</div><div class="mm">avr</div></div>
-          <div class="agenda-info">
-            <span class="agenda-type at-permanence">Permanence</span>
-            <h4>Permanence syndicale</h4>
-            <p>Local CGT · bât. admin · 12h–14h</p>
-          </div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-date"><div class="dd">15</div><div class="mm">mai</div></div>
-          <div class="agenda-info">
-            <span class="agenda-type at-reunion">Réunion</span>
-            <h4>Réunion CSE ordinaire</h4>
-            <p>Salle de conférence A · 14h</p>
-          </div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-date"><div class="dd">3</div><div class="mm">jun</div></div>
-          <div class="agenda-info">
-            <span class="agenda-type at-reunion">AG</span>
-            <h4>Assemblée générale CGT</h4>
-            <p>Amphithéâtre · 17h30</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="s-card anim anim-d1">
-        <div class="s-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          Documents clés
-        </div>
-        <div class="doc-item">
-          <div class="doc-ico doc-ico-red">PDF</div>
-          <div class="doc-info">
-            <div class="doc-name">Grilles de salaires 2026</div>
-            <div class="doc-sub">Catégories A, B et C · FPH</div>
-          </div>
-          <span class="doc-arrow">↓</span>
-        </div>
-        <div class="doc-item">
-          <div class="doc-ico doc-ico-red">PDF</div>
-          <div class="doc-info">
-            <div class="doc-name">Guide droit de grève</div>
-            <div class="doc-sub">Obligations et protections légales</div>
-          </div>
-          <span class="doc-arrow">↓</span>
-        </div>
-        <div class="doc-item">
-          <div class="doc-ico doc-ico-blue">PDF</div>
-          <div class="doc-info">
-            <div class="doc-name">Livret vos droits dans la FPH</div>
-            <div class="doc-sub">Mis à jour mars 2026</div>
-          </div>
-          <span class="doc-arrow">↓</span>
-        </div>
-        <div class="doc-item">
-          <div class="doc-ico doc-ico-blue">PDF</div>
-          <div class="doc-info">
-            <div class="doc-name">Temps de travail, CA, RTT, CET</div>
-            <div class="doc-sub">Réglementation en vigueur</div>
-          </div>
-          <span class="doc-arrow">↓</span>
+          <div class="agenda-date"><div class="dd">—</div><div class="mm">—</div></div>
+          <div class="agenda-info"><span class="agenda-type at-permanence">Permanence</span><h4>[TEXTE À COMPLÉTER]</h4><p>[lieu / horaire]</p></div>
         </div>
       </div>
 
@@ -748,22 +290,10 @@
           <div class="perk"><div class="perk-check"></div><span>Défense en cas de conflit avec l'employeur</span></div>
           <div class="perk"><div class="perk-check"></div><span>Accès à nos permanences et ressources juridiques</span></div>
         </div>
-        <button class="join-btn" onclick="showPage('adherent');return false;">Remplir le formulaire d'adhésion →</button>
-      </div>
-
-      <div class="contact-strip anim anim-d3">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.17 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-        </div>
-        <div class="contact-text">
-          <h4>Une question ?</h4>
-          <p>Permanence lun, mer, ven · 12h–14h</p>
-        </div>
-        <button class="contact-btn" onclick="showPage('contact');return false;">Nous contacter</button>
+        <div class="join-btn" role="button" tabindex="0" onclick="showPage('adherent');return false;">Remplir le formulaire d'adhésion →</div>
       </div>
     </div>
   </div>
-
 </div>
 
 <!-- PAGE: VOS DROITS -->
@@ -776,42 +306,53 @@
     </div>
   </div>
   <div class="droits-grid">
-    <div class="droit-card anim">
-      <div class="droit-icon" style="background:#fde8e8;">⚖️</div>
-      <h3>Droit de grève</h3>
-      <p>Conditions, obligations de déclaration, service minimum, protection contre les sanctions. Tout ce que vous devez savoir avant de faire grève.</p>
-      <a href="#" class="droit-link">Lire le guide complet →</a>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#fde8e8;">🩺</div><h3>Congés maladie</h3><p>[TEXTE À COMPLÉTER — congé maladie ordinaire, longue maladie, longue durée : droits et procédures.]</p><a href="#" class="droit-link">Lire le guide →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🎁</div><h3>CGOS</h3><p>[TEXTE À COMPLÉTER — prestations sociales, aides et loisirs du Comité de Gestion des Œuvres Sociales.]</p><a href="#" class="droit-link">Découvrir les aides →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#fde8e8;">🚨</div><h3>Harcèlement</h3><p>[TEXTE À COMPLÉTER — reconnaître, signaler, se faire accompagner en cas de harcèlement moral ou sexuel.]</p><a href="#" class="droit-link">Que faire →</a></div>
+    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#e6f4e8;">📅</div><h3>Autorisation d'absence spécifique</h3><p>[TEXTE À COMPLÉTER — événements familiaux, syndicaux, examens médicaux : quelles autorisations existent.]</p><a href="#" class="droit-link">Voir les cas →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#f3e8ff;">♿</div><h3>RQTH</h3><p>[TEXTE À COMPLÉTER — reconnaissance de la qualité de travailleur handicapé, démarches et droits associés.]</p><a href="#" class="droit-link">En savoir plus →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#fef3e2;">⚖️</div><h3>Droit syndical</h3><p>[TEXTE À COMPLÉTER — heures de délégation, droit de grève, protection des représentants du personnel.]</p><a href="#" class="droit-link">Consulter →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#e4effe;">💰</div><h3>Grilles de salaires</h3><p>[TEXTE À COMPLÉTER — grilles indiciaires par catégorie, primes, indemnités.]</p><a href="#" class="droit-link">Accéder aux grilles →</a></div>
+  </div>
+</div>
+
+<!-- PAGE: ÉVÉNEMENTS INDÉSIRABLES -->
+<div id="page-fei" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Sécurité et conditions de travail</div>
+      <h2>Les fiches événements indésirables</h2>
+      <p>Pourquoi et comment signaler un événement indésirable, lié aux soins ou non.</p>
     </div>
-    <div class="droit-card anim anim-d1">
-      <div class="droit-icon" style="background:#e4effe;">📋</div>
-      <h3>Statut et carrière</h3>
-      <p>Grilles indiciaires, avancements de grade, notation, mutation, temps partiel, disponibilité. Vos droits statutaires détaillés.</p>
-      <a href="#" class="droit-link">Consulter les statuts →</a>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <h3>Fiche événement indésirable — liée aux soins</h3>
+      <p>[TEXTE À COMPLÉTER — définition, exemples (erreur médicamenteuse, chute, incident lié aux soins), pourquoi la déclaration protège le patient et l'équipe.]</p>
+      <div class="fei-note">La déclaration se fait sur [nom de l'outil interne dédié — à préciser], pas sur ce site. Cette page explique l'intérêt de la démarche et son cadre.</div>
     </div>
-    <div class="droit-card anim anim-d2">
-      <div class="droit-icon" style="background:#e6f4e8;">🏥</div>
-      <h3>Congés et temps de travail</h3>
-      <p>RTT, CET, congés annuels, congé maternité/paternité, temps partiel thérapeutique. Calcul de vos droits et procédures.</p>
-      <a href="#" class="droit-link">Voir mes droits →</a>
+    <div class="fei-block anim anim-d1">
+      <h3>Fiche événement indésirable — non liée aux soins</h3>
+      <p>[TEXTE À COMPLÉTER — définition, exemples (dysfonctionnement matériel, organisation, conditions de travail), différence avec la fiche liée aux soins.]</p>
+      <div class="fei-note">Même principe : la déclaration se fait sur [nom de l'outil interne dédié — à préciser].</div>
     </div>
-    <div class="droit-card anim anim-d3">
-      <div class="droit-icon" style="background:#fef3e2;">💰</div>
-      <h3>Rémunération</h3>
-      <p>Grilles de salaires, primes, indemnités, heures supplémentaires, astreintes. Comment calculer et défendre votre rémunération.</p>
-      <a href="#" class="droit-link">Accéder aux grilles →</a>
+  </div>
+</div>
+
+<!-- PAGE: LE BUREAU -->
+<div id="page-bureau" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">L'équipe</div>
+      <h2>Le bureau syndical</h2>
+      <p>Vos représentants CGT au CH Charles Perrens.</p>
     </div>
-    <div class="droit-card anim">
-      <div class="droit-icon" style="background:#f3e8ff;">🛡️</div>
-      <h3>Protection sociale</h3>
-      <p>Retraite CNRACL, IRCANTEC, maladie ordinaire, longue maladie, accident de service. Vos droits à la protection.</p>
-      <a href="#" class="droit-link">Tout sur la retraite →</a>
-    </div>
-    <div class="droit-card anim anim-d1">
-      <div class="droit-icon" style="background:#fde8e8;">🚨</div>
-      <h3>En cas de conflit</h3>
-      <p>Procédure disciplinaire, droit de retrait, harcèlement, recours hiérarchique. Comment réagir et qui contacter en urgence.</p>
-      <a href="#" class="droit-link">Procédures d'urgence →</a>
-    </div>
+  </div>
+  <div class="bureau-grid">
+    <div class="bureau-card anim"><div class="bureau-photo">[Photo]</div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+    <div class="bureau-card anim anim-d1"><div class="bureau-photo">[Photo]</div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+    <div class="bureau-card anim anim-d2"><div class="bureau-photo">[Photo]</div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+    <div class="bureau-card anim anim-d3"><div class="bureau-photo">[Photo]</div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
   </div>
 </div>
 
@@ -821,57 +362,14 @@
     <div class="droits-hero-inner">
       <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Bibliothèque syndicale</div>
       <h2>Documents à télécharger</h2>
-      <p>Tracts, guides pratiques, grilles de salaires, comptes-rendus — tous nos documents en libre accès.</p>
+      <p>Tracts, guides pratiques, grilles de salaires, comptes-rendus.</p>
     </div>
   </div>
   <div style="max-width:1140px;margin:0 auto;padding:0 32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
     <div class="droit-card anim" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
       <div class="doc-ico doc-ico-red" style="width:42px;height:42px;font-size:11px;">PDF</div>
-      <div style="flex:1;">
-        <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">Grilles de salaires 2026</div>
-        <div style="font-size:12px;color:var(--gray-500);">Toutes catégories A, B et C · Mis à jour jan. 2026</div>
-      </div>
-      <button class="contact-btn">↓ PDF</button>
-    </div>
-    <div class="droit-card anim anim-d1" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
-      <div class="doc-ico doc-ico-red" style="width:42px;height:42px;font-size:11px;">PDF</div>
-      <div style="flex:1;">
-        <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">Guide droit de grève</div>
-        <div style="font-size:12px;color:var(--gray-500);">Obligations, protections, service minimum</div>
-      </div>
-      <button class="contact-btn">↓ PDF</button>
-    </div>
-    <div class="droit-card anim anim-d2" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
-      <div class="doc-ico doc-ico-blue" style="width:42px;height:42px;font-size:11px;">PDF</div>
-      <div style="flex:1;">
-        <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">Livret vos droits dans la FPH</div>
-        <div style="font-size:12px;color:var(--gray-500);">Guide complet · mars 2026</div>
-      </div>
-      <button class="contact-btn">↓ PDF</button>
-    </div>
-    <div class="droit-card anim anim-d3" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
-      <div class="doc-ico doc-ico-blue" style="width:42px;height:42px;font-size:11px;">PDF</div>
-      <div style="flex:1;">
-        <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">Temps de travail, CA, RTT, CET</div>
-        <div style="font-size:12px;color:var(--gray-500);">Réglementation en vigueur · FPH</div>
-      </div>
-      <button class="contact-btn">↓ PDF</button>
-    </div>
-    <div class="droit-card anim" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
-      <div class="doc-ico doc-ico-red" style="width:42px;height:42px;font-size:11px;">PDF</div>
-      <div style="flex:1;">
-        <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">Tract — préavis grève 22 avril</div>
-        <div style="font-size:12px;color:var(--gray-500);">Pôle urgences · avril 2026</div>
-      </div>
-      <button class="contact-btn">↓ PDF</button>
-    </div>
-    <div class="droit-card anim anim-d1" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
-      <div class="doc-ico" style="background:#e6f4e8;color:#1e6626;width:42px;height:42px;font-size:11px;font-weight:700;border-radius:6px;display:flex;align-items:center;justify-content:center;">CR</div>
-      <div style="flex:1;">
-        <div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">CR — accord astreintes +15%</div>
-        <div style="font-size:12px;color:var(--gray-500);">Compte-rendu CTe · avril 2026</div>
-      </div>
-      <button class="contact-btn">↓ PDF</button>
+      <div style="flex:1;"><div style="font-family:var(--serif);font-size:15px;font-weight:600;color:var(--black);margin-bottom:3px;">[TEXTE À COMPLÉTER — nom du document]</div><div style="font-size:12px;color:var(--gray-500);">[description courte]</div></div>
+      <div class="contact-btn" role="button" tabindex="0">↓ PDF</div>
     </div>
   </div>
 </div>
@@ -879,27 +377,15 @@
 <!-- PAGE: CONTACT -->
 <div id="page-contact" class="page-section">
   <div class="droits-hero">
-    <div class="droits-hero-inner">
-      <h2>Nous contacter</h2>
-      <p>Une question sur vos droits, une situation difficile ? Nos délégués sont là pour vous.</p>
-    </div>
+    <div class="droits-hero-inner"><h2>Nous contacter</h2><p>Une question sur vos droits, une situation difficile ? Nos délégués sont là pour vous.</p></div>
   </div>
   <div style="max-width:800px;margin:0 auto;padding:0 32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
     <div class="s-card anim">
       <div class="s-title">Permanence syndicale</div>
       <div style="font-size:14px;color:var(--gray-700);line-height:1.8;">
-        <div style="margin-bottom:10px;"><strong>Lundi, mercredi, vendredi</strong><br>12h00 – 14h00</div>
-        <div style="margin-bottom:10px;"><strong>Local CGT</strong><br>Bâtiment administratif · Rez-de-chaussée</div>
-        <div><strong>Email</strong><br><a href="mailto:cgt@ch-saintjean.fr" style="color:var(--red);">cgt@ch-saintjean.fr</a></div>
-      </div>
-    </div>
-    <div class="s-card anim anim-d1">
-      <div class="s-title">Message rapide</div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <input type="text" placeholder="Votre nom" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;">
-        <input type="email" placeholder="Votre email" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;">
-        <textarea placeholder="Votre message..." rows="4" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;resize:vertical;outline:none;background:#fff;"></textarea>
-        <button class="btn btn-red" style="align-self:flex-start;padding:10px 22px;">Envoyer →</button>
+        <div style="margin-bottom:10px;"><strong>[jours]</strong><br>[horaires]</div>
+        <div style="margin-bottom:10px;"><strong>Local CGT</strong><br>[localisation]</div>
+        <div><strong>Email</strong><br><a href="mailto:cgt@ch-perrens.fr" style="color:var(--red);">cgt@ch-perrens.fr</a></div>
       </div>
     </div>
   </div>
@@ -908,78 +394,12 @@
 <!-- PAGE: ADHÉSION -->
 <div id="page-adherent" class="page-section">
   <div class="droits-hero">
-    <div class="droits-hero-inner">
-      <h2>Adhérer à la CGT</h2>
-      <p>Rejoignez les 214 agents qui font confiance à la CGT CH Saint-Jean.</p>
-    </div>
+    <div class="droits-hero-inner"><h2>Adhérer à la CGT</h2><p>Rejoignez vos collègues qui font confiance à la CGT CH Charles Perrens.</p></div>
   </div>
   <div style="max-width:620px;margin:0 auto;padding:0 32px 48px;">
     <div class="s-card anim" style="padding:28px;">
       <div style="font-family:var(--serif);font-size:20px;font-weight:600;color:var(--black);margin-bottom:20px;">Formulaire d'adhésion</div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div>
-            <label style="font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:5px;">Prénom</label>
-            <input type="text" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;">
-          </div>
-          <div>
-            <label style="font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:5px;">Nom</label>
-            <input type="text" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;">
-          </div>
-        </div>
-        <div>
-          <label style="font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:5px;">Email professionnel</label>
-          <input type="email" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;">
-        </div>
-        <div>
-          <label style="font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:5px;">Pôle / Service</label>
-          <input type="text" style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;">
-        </div>
-        <div>
-          <label style="font-size:11px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:5px;">Catégorie</label>
-          <select style="width:100%;padding:10px 12px;border:1.5px solid #e0ddd9;border-radius:6px;font-family:var(--sans);font-size:13px;outline:none;background:#fff;color:var(--gray-700);">
-            <option>Sélectionner...</option>
-            <option>Catégorie A — Cadre de santé / Infirmier / Sage-femme</option>
-            <option>Catégorie A — Personnel médical</option>
-            <option>Catégorie B — Aide-soignant / AS</option>
-            <option>Catégorie C — Agent de service</option>
-            <option>Personnel administratif</option>
-            <option>Personnel technique</option>
-          </select>
-        </div>
-        <button class="btn btn-red" style="width:100%;padding:13px;font-size:14px;margin-top:4px;">Envoyer ma demande d'adhésion →</button>
-        <p style="font-size:11px;color:var(--gray-500);text-align:center;line-height:1.5;">Un délégué vous contactera dans les 48h pour finaliser votre adhésion.<br>Vos données ne sont pas partagées avec l'employeur.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PAGE: INSTANCES -->
-<div id="page-instances" class="page-section">
-  <div class="droits-hero">
-    <div class="droits-hero-inner">
-      <h2>Les instances paritaires</h2>
-      <p>La CGT est présente et vous représente dans toutes les instances de l'établissement.</p>
-    </div>
-  </div>
-  <div style="max-width:1140px;margin:0 auto;padding:0 32px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-    <div class="droit-card anim">
-      <div class="droit-icon" style="background:#fde8e8;font-size:22px;">🏛️</div>
-      <h3>CSE</h3>
-      <p>Comité Social d'Établissement. La CGT y détient 5 sièges. Réunion mensuelle. Ordre du jour et PV disponibles en téléchargement.</p>
-      <a href="#" class="droit-link">Voir nos élus →</a>
-    </div>
-    <div class="droit-card anim anim-d1">
-      <div class="droit-icon" style="background:#e4effe;font-size:22px;">⚕️</div>
-      <h3>CME</h3>
-      <p>Commission Médicale d'Établissement. Représentation des personnels médicaux. La CGT y siège depuis 2022.</p>
-      <a href="#" class="droit-link">En savoir plus →</a>
-    </div>
-    <div class="droit-card anim anim-d2">
-      <div class="droit-icon" style="background:#e6f4e8;font-size:22px;">📊</div>
-      <h3>Formations spécialisées</h3>
-      <p>CSSCT, commission formation, commission égalité. La CGT assure le suivi des conditions de travail et de la santé au travail.</p>
-      <a href="#" class="droit-link">Composition →</a>
+      <p style="font-size:13px;color:var(--gray-500);">[Formulaire — champs prénom/nom/email/pôle/catégorie]</p>
     </div>
   </div>
 </div>
@@ -987,42 +407,14 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <div class="logo-mark" style="margin-bottom:14px;">
-        <span class="l1">CGT</span>
-        <span class="l2">santé</span>
-      </div>
-      <p>Section syndicale CGT du Centre Hospitalier Saint-Jean. Affiliée à la Fédération CGT Santé et Action Sociale.</p>
+      <div class="logo-mark" style="margin-bottom:14px;"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <p>Section syndicale CGT du Centre Hospitalier Charles Perrens. Affiliée à la Fédération CGT Santé et Action Sociale.</p>
     </div>
-    <div class="footer-col">
-      <h5>Syndicat</h5>
-      <a href="#" onclick="showPage('accueil');return false;">Actualités</a>
-      <a href="#" onclick="showPage('instances');return false;">Les instances</a>
-      <a href="#">Nos élus</a>
-      <a href="#">Histoire</a>
-    </div>
-    <div class="footer-col">
-      <h5>Ressources</h5>
-      <a href="#" onclick="showPage('droits');return false;">Vos droits</a>
-      <a href="#" onclick="showPage('docs');return false;">Documents PDF</a>
-      <a href="#">Newsletter</a>
-      <a href="#">CGT Nationale</a>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <a href="mailto:cgt@ch-saintjean.fr">cgt@ch-saintjean.fr</a>
-      <a href="#" onclick="showPage('contact');return false;">Formulaire</a>
-      <a href="#" onclick="showPage('adherent');return false;">Adhérer</a>
-      <a href="#">Permanences</a>
-    </div>
+    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">Actualités</a><a href="#" onclick="showPage('bureau');return false;">Le bureau</a></div>
+    <div class="footer-col"><h5>Ressources</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('fei');return false;">Événements indésirables</a><a href="#" onclick="showPage('docs');return false;">Documents</a></div>
+    <div class="footer-col"><h5>Contact</h5><a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a><a href="#" onclick="showPage('adherent');return false;">Adhérer</a></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 CGT CH Saint-Jean · Site réalisé bénévolement par la section</p>
-    <div class="footer-bottom-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">Accessibilité</a>
-      <a href="#">Plan du site</a>
-    </div>
-  </div>
+  <div class="footer-bottom"><p>© 2026 CGT CH Charles Perrens</p></div>
 </footer>
 
 <script>
@@ -1032,10 +424,7 @@ function showPage(id) {
   const page = document.getElementById('page-' + id);
   if (page) {
     page.classList.add('active');
-    page.querySelectorAll('.anim').forEach((el, i) => {
-      el.style.animation = 'none';
-      setTimeout(() => { el.style.animation = ''; }, 10);
-    });
+    page.querySelectorAll('.anim').forEach((el) => { el.style.animation = 'none'; setTimeout(() => { el.style.animation = ''; }, 10); });
   }
   const navEl = document.getElementById('nav-' + id);
   if (navEl) navEl.classList.add('active');
