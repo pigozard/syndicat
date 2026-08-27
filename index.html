@@ -247,10 +247,10 @@
     .footer-main { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
-    .header-inner { padding: 0 16px; flex-wrap: wrap; }
+    .header-inner { padding: 0 16px; flex-wrap: wrap; height: auto; min-height: 70px; }
     .header-cta { display: none; }
     .nav-toggle { display: flex; }
-    nav { display: none; width: 100%; flex-direction: column; gap: 2px; order: 3; padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--gray-100); }
+    nav { display: none; width: 100%; flex-direction: column; gap: 2px; order: 3; padding-top: 10px; padding-bottom: 14px; margin-top: 10px; border-top: 1px solid var(--gray-100); background: var(--white); }
     nav.mobile-open { display: flex; }
     nav a { padding: 12px 10px; text-align: left; }
     nav a.nav-cta-mobile { display: block; margin-top: 6px; }
