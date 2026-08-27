@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CGT — CH Charles Perrens</title>
+<meta name="description" content="Section syndicale CGT du Centre Hospitalier Charles Perrens : vos droits dans la Fonction Publique Hospitalière, actualités, permanences et adhésion.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CGT — CH Charles Perrens">
+<meta property="og:description" content="Section syndicale CGT du Centre Hospitalier Charles Perrens : vos droits dans la Fonction Publique Hospitalière, actualités, permanences et adhésion.">
+<meta property="og:image" content="images/communique-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23B23B34'/%3E%3Ctext x='32' y='40' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='%23fff' text-anchor='middle'%3ECGT%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
@@ -50,6 +57,13 @@
   nav a { font-size: 12px; color: var(--gray-700); text-decoration: none; padding: 8px 10px; border-radius: var(--radius-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; transition: background 0.15s, color 0.15s; white-space: nowrap; }
   nav a:hover { background: var(--gray-100); color: var(--black); }
   nav a.active { color: #fff; background: var(--red); }
+  nav a.nav-cta-mobile { display: none; }
+
+  .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 4px; width: 34px; height: 34px; background: none; border: none; cursor: pointer; padding: 0; margin-left: 8px; }
+  .nav-toggle span { display: block; width: 100%; height: 2px; background: var(--black); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
   .header-cta { display: flex; gap: 8px; align-items: center; margin-left: 8px; }
   .btn { font-family: var(--sans); font-size: 13px; font-weight: 600; border-radius: var(--radius-sm); padding: 9px 18px; cursor: pointer; border: none; transition: opacity 0.15s, transform 0.1s; }
@@ -94,8 +108,8 @@
 
   .news-featured { background: var(--white); border-radius: var(--radius); overflow: hidden; border: var(--border); margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; }
   .news-featured-img { background: var(--gray-900); min-height: 220px; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+  .news-featured-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .news-img-overlay { position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, rgba(193,0,10,0.15) 0px, rgba(193,0,10,0.15) 1px, transparent 1px, transparent 8px); }
-  .news-featured-img .img-placeholder { width: 100%; height: 100%; background: #1c1c1c; }
   .news-featured-body { padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
   .news-featured-body .pill-row { margin-bottom: 14px; }
   .news-featured-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--black); line-height: 1.25; margin-bottom: 12px; }
@@ -114,14 +128,14 @@
 
   .pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 20px; }
   .pill-red { background: #f7e9e6; color: #7a2620; }
-  .pill-green { background: #e6f4e8; color: #1e6626; }
-  .pill-blue { background: #e4effe; color: #1a4fa0; }
+  .pill-green { background: #eef1e8; color: #4c5f3e; }
+  .pill-blue { background: #eceef0; color: #45566b; }
   .pill-amber { background: #fef3e2; color: #8a5700; }
   .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
   .dot-red { background: var(--red); }
-  .dot-green { background: #27a43a; }
-  .dot-blue { background: #2563eb; }
-  .dot-amber { background: #d97706; }
+  .dot-green { background: #6f8a5b; }
+  .dot-blue { background: #5c7488; }
+  .dot-amber { background: #b8730a; }
 
   .s-card { background: var(--white); border-radius: var(--radius); border: var(--border); padding: 20px; margin-bottom: 16px; }
   .s-title { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px; }
@@ -135,7 +149,7 @@
   .agenda-info h4 { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 2px; line-height: 1.3; }
   .agenda-info p { font-size: 11px; color: var(--gray-500); }
   .agenda-type { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 3px; margin-bottom: 4px; }
-  .at-permanence { background: #e6f4e8; color: #1e6626; }
+  .at-permanence { background: #eef1e8; color: #4c5f3e; }
 
   .doc-ico { width: 34px; height: 34px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
   .doc-ico-red { background: #f7e9e6; color: var(--red); }
@@ -229,8 +243,14 @@
     .footer-main { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
-    .header-inner { padding: 0 16px; }
-    nav { display: none; }
+    .header-inner { padding: 0 16px; flex-wrap: wrap; }
+    .header-cta { display: none; }
+    .nav-toggle { display: flex; }
+    nav { display: none; width: 100%; flex-direction: column; gap: 2px; order: 3; padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--gray-100); }
+    nav.mobile-open { display: flex; }
+    nav a { padding: 12px 10px; text-align: left; }
+    nav a.nav-cta-mobile { display: block; margin-top: 6px; }
+    nav a.nav-cta-mobile:last-child { background: var(--red); color: #fff; }
     .hero h2 { font-size: 30px; }
     .main { padding: 24px 16px; }
     .droits-grid { grid-template-columns: 1fr; }
@@ -257,17 +277,22 @@
       <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
       <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
     </a>
-    <nav>
+    <nav id="main-nav">
       <a href="#" id="nav-accueil" class="active" onclick="showPage('accueil');return false;">La CGT</a>
       <a href="#" id="nav-droits" onclick="showPage('droits');return false;">Vos droits</a>
       <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">L'équipe</a>
       <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Communiqués</a>
       <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
+      <a href="#" class="nav-cta-mobile" onclick="showPage('contact');return false;">Permanence</a>
+      <a href="#" class="nav-cta-mobile" onclick="showPage('adherent');return false;">Adhérer →</a>
     </nav>
     <div class="header-cta">
       <div class="btn btn-ghost" role="button" tabindex="0" onclick="showPage('contact');return false;">Permanence</div>
       <div class="btn btn-red" role="button" tabindex="0" onclick="showPage('adherent');return false;">Adhérer →</div>
     </div>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -301,7 +326,7 @@
         <a href="#" class="sec-more" onclick="showPage('docs');return false;">Toutes les actualités →</a>
       </div>
       <div class="news-featured anim" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-psychiatrie');return false;">
-        <div class="news-featured-img"><div class="img-placeholder"><div class="news-img-overlay"></div></div></div>
+        <div class="news-featured-img"><img src="images/communique-1.jpg" alt="Communiqué de presse — psychiatrie"><div class="news-img-overlay"></div></div>
         <div class="news-featured-body">
           <div>
             <div class="pill-row"><span class="pill pill-red"><span class="dot dot-red" style="margin-right:4px"></span>Communiqué de presse</span></div>
@@ -315,7 +340,7 @@
 
       <div class="news-list">
         <div class="news-card anim anim-d1" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-entretien-pro');return false;">
-          <div class="news-card-accent" style="background:#2563eb;"></div>
+          <div class="news-card-accent" style="background:#5c7488;"></div>
           <div class="news-card-body">
             <div class="pill-row"><span class="pill pill-blue">Conseils CGT</span></div>
             <h3>Entretien professionnel 2026 : les 5 critères qui font la différence</h3>
@@ -324,7 +349,7 @@
           </div>
         </div>
         <div class="news-card anim anim-d2" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-entretien-informel');return false;">
-          <div class="news-card-accent" style="background:#d97706;"></div>
+          <div class="news-card-accent" style="background:#b8730a;"></div>
           <div class="news-card-body">
             <div class="pill-row"><span class="pill pill-amber">Vigilance</span></div>
             <h3>Entretien informel : attention à la conversation qui vous échappe</h3>
@@ -333,7 +358,7 @@
           </div>
         </div>
         <div class="news-card anim anim-d3" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-cannes');return false;">
-          <div class="news-card-accent" style="background:#27a43a;"></div>
+          <div class="news-card-accent" style="background:#6f8a5b;"></div>
           <div class="news-card-body">
             <div class="pill-row"><span class="pill pill-green">Histoire</span></div>
             <h3>Un peu d'histoire : le rôle de la CGT dans la création du festival de Cannes</h3>
@@ -785,7 +810,7 @@
   <div class="droits-hero">
     <div class="droits-hero-inner"><h2>Nous contacter</h2><p>Une question sur vos droits, une situation difficile ? Nos délégués sont là pour vous.</p></div>
   </div>
-  <div style="max-width:800px;margin:0 auto;padding:0 32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+  <div style="max-width:560px;margin:0 auto;padding:0 32px 48px;">
     <div class="s-card anim">
       <div class="s-title">Permanence syndicale</div>
       <div style="font-size:14px;color:var(--gray-700);line-height:1.8;">
@@ -842,12 +867,36 @@ function showPage(id, anchor) {
   }
   const navEl = document.getElementById('nav-' + id);
   if (navEl) navEl.classList.add('active');
+  closeMobileNav();
   if (anchor) {
     const target = document.getElementById(anchor);
     if (target) { setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30); return; }
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function toggleMobileNav() {
+  const nav = document.getElementById('main-nav');
+  const btn = document.querySelector('.nav-toggle');
+  const open = nav.classList.toggle('mobile-open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+function closeMobileNav() {
+  const nav = document.getElementById('main-nav');
+  const btn = document.querySelector('.nav-toggle');
+  nav.classList.remove('mobile-open');
+  btn.setAttribute('aria-expanded', 'false');
+}
+
+document.querySelectorAll('[role="button"]').forEach((el) => {
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      el.click();
+    }
+  });
+});
 </script>
 </body>
 </html>
