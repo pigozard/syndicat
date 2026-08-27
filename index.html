@@ -260,8 +260,7 @@
     <nav>
       <a href="#" id="nav-accueil" class="active" onclick="showPage('accueil');return false;">La CGT</a>
       <a href="#" id="nav-droits" onclick="showPage('droits');return false;">Vos droits</a>
-      <a href="#" id="nav-elections" onclick="showPage('elections');return false;">Élections pro</a>
-      <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">Qui sommes-nous</a>
+      <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">L'équipe</a>
       <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Communiqués</a>
       <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
     </nav>
@@ -401,6 +400,7 @@
     <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🏥</div><h3>Mutuelle / Protection sociale complémentaire</h3><p>La réforme de la protection sociale complémentaire (PSC) dans la Fonction Publique Hospitalière change la participation de l'employeur au financement de votre complémentaire santé. Un sujet d'actualité 2026-2027 à suivre de près.</p><a href="#" onclick="showPage('detail-mutuelle');return false;" class="droit-link">Ce qui change →</a></div>
     <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#f7e9e6;">✊</div><h3>Droit de grève</h3><p>Préavis, service minimum, assignation vs réquisition, retenue sur salaire : un droit constitutionnel encadré dans la Fonction Publique Hospitalière compte tenu de la continuité du service public.</p><a href="#" onclick="showPage('detail-greve');return false;" class="droit-link">Ce qu'il faut savoir →</a></div>
     <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#e6f4e8;">📋</div><h3>Événements indésirables</h3><p>Pourquoi et comment signaler un événement indésirable, lié aux soins ou non — une démarche qui protège autant les patients que l'équipe.</p><a href="#" onclick="showPage('detail-fei');return false;" class="droit-link">Comment déclarer →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#f3e8ff;">🗳️</div><h3>Élections professionnelles</h3><p>Le vote au CH Charles Perrens se tient du 3 au 10 décembre 2026. Ce qu'il détermine (CSE, CAP), le calendrier du cycle électoral, et pourquoi voter CGT.</p><a href="#" onclick="showPage('detail-elections');return false;" class="droit-link">Tout savoir →</a></div>
   </div>
 </div>
 
@@ -630,13 +630,12 @@
   </div>
 </div>
 
-<!-- PAGE: ÉLECTIONS PROFESSIONNELLES -->
-<div id="page-elections" class="page-section">
+<!-- PAGE DÉTAIL (hors navbar) : ÉLECTIONS PROFESSIONNELLES -->
+<div id="page-detail-elections" class="page-section">
   <div class="droits-hero">
     <div class="droits-hero-inner">
-      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Vie syndicale</div>
-      <h2>Élections professionnelles</h2>
-      <p>Les instances qui se jouent, le calendrier du cycle électoral, pourquoi voter CGT.</p>
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>🗳️ Élections professionnelles</h2>
     </div>
   </div>
   <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
@@ -690,11 +689,19 @@
   <div class="droits-hero" style="margin-bottom:32px;padding:24px 0;">
     <div class="droits-hero-inner"><h2 style="font-size:26px;">L'équipe</h2><p>Vos représentants CGT au CH Charles Perrens.</p></div>
   </div>
-  <div class="bureau-grid">
+  <div style="max-width:1140px;margin:0 auto;padding:0 32px;">
+    <div class="sec-head"><div class="sec-title">Le bureau</div></div>
+  </div>
+  <div class="bureau-grid" style="margin-bottom:40px;">
     <div class="bureau-card anim"><div class="bureau-photo"><img src="images/bureau-1.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
     <div class="bureau-card anim anim-d1"><div class="bureau-photo"><img src="images/bureau-2.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
     <div class="bureau-card anim anim-d2"><div class="bureau-photo"><img src="images/bureau-3.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
     <div class="bureau-card anim anim-d3"><div class="bureau-photo"><img src="images/bureau-4.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  </div>
+  <div style="max-width:1140px;margin:0 auto;padding:0 32px;">
+    <div class="sec-head"><div class="sec-title">Le reste de l'équipe</div></div>
+  </div>
+  <div class="bureau-grid">
     <div class="bureau-card anim"><div class="bureau-photo"><img src="images/bureau-5.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
     <div class="bureau-card anim anim-d1"><div class="bureau-photo"><img src="images/bureau-6.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
     <div class="bureau-card anim anim-d2"><div class="bureau-photo"><img src="images/bureau-7.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
@@ -809,8 +816,8 @@
       <div class="logo-mark" style="margin-bottom:14px;"><span class="l1">CGT</span><span class="l2">perrens</span></div>
       <p>Section syndicale CGT du Centre Hospitalier Charles Perrens. Affiliée à la Fédération CGT Santé et Action Sociale.</p>
     </div>
-    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">La CGT</a><a href="#" onclick="showPage('bureau');return false;">Qui sommes-nous</a></div>
-    <div class="footer-col"><h5>Communiqués</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('elections');return false;">Élections pro</a><a href="#" onclick="showPage('docs');return false;">Communiqués</a></div>
+    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">La CGT</a><a href="#" onclick="showPage('bureau');return false;">L'équipe</a></div>
+    <div class="footer-col"><h5>Communiqués</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('docs');return false;">Communiqués</a></div>
     <div class="footer-col"><h5>Contact</h5><a href="mailto:syndicat.cgt@ch-perrens.fr">syndicat.cgt@ch-perrens.fr</a><a href="#">05.56.56.35.65</a><a href="#" onclick="showPage('adherent');return false;">Adhérer</a></div>
   </div>
   <div class="footer-bottom"><p>© 2026 CGT CH Charles Perrens</p></div>
