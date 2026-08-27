@@ -258,11 +258,11 @@
       <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
     </a>
     <nav>
-      <a href="#" id="nav-accueil" class="active" onclick="showPage('accueil');return false;">Actualités</a>
+      <a href="#" id="nav-accueil" class="active" onclick="showPage('accueil');return false;">La CGT</a>
       <a href="#" id="nav-droits" onclick="showPage('droits');return false;">Vos droits</a>
       <a href="#" id="nav-elections" onclick="showPage('elections');return false;">Élections pro</a>
       <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">Qui sommes-nous</a>
-      <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Ressources</a>
+      <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Communiqués</a>
       <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
     </nav>
     <div class="header-cta">
@@ -299,9 +299,9 @@
     <div class="left-col">
       <div class="sec-head">
         <div class="sec-title">Actualités récentes</div>
-        <a href="#" class="sec-more">Toutes les actualités →</a>
+        <a href="#" class="sec-more" onclick="showPage('docs');return false;">Toutes les actualités →</a>
       </div>
-      <div class="news-featured anim">
+      <div class="news-featured anim" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-psychiatrie');return false;">
         <div class="news-featured-img"><div class="img-placeholder"><div class="news-img-overlay"></div></div></div>
         <div class="news-featured-body">
           <div>
@@ -314,7 +314,7 @@
       </div>
 
       <div class="news-list">
-        <div class="news-card anim anim-d1">
+        <div class="news-card anim anim-d1" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-entretien-pro');return false;">
           <div class="news-card-accent" style="background:#2563eb;"></div>
           <div class="news-card-body">
             <div class="pill-row"><span class="pill pill-blue">Conseils CGT</span></div>
@@ -322,7 +322,7 @@
             <p>Maîtrise de soi, comportement avec autrui, travail en équipe, adaptation, rigueur : nos conseils pour préparer votre auto-évaluation et défendre votre avancement.</p>
           </div>
         </div>
-        <div class="news-card anim anim-d2">
+        <div class="news-card anim anim-d2" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-entretien-informel');return false;">
           <div class="news-card-accent" style="background:#d97706;"></div>
           <div class="news-card-body">
             <div class="pill-row"><span class="pill pill-amber">Vigilance</span></div>
@@ -330,7 +330,7 @@
             <p>Sans convocation ni cadre défini, un échange informel peut peser sur votre situation professionnelle. Vous avez le droit d'en demander la formalisation et d'être accompagné par la CGT.</p>
           </div>
         </div>
-        <div class="news-card anim anim-d3">
+        <div class="news-card anim anim-d3" role="button" tabindex="0" style="cursor:pointer;" onclick="showPage('docs','art-cannes');return false;">
           <div class="news-card-accent" style="background:#27a43a;"></div>
           <div class="news-card-body">
             <div class="pill-row"><span class="pill pill-green">Histoire</span></div>
@@ -712,12 +712,12 @@
   <div class="droits-hero">
     <div class="droits-hero-inner">
       <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Bibliothèque syndicale</div>
-      <h2>Ressources pratiques</h2>
+      <h2>Communiqués</h2>
       <p>Communiqués, conseils et actualités du syndicat, à lire directement ici.</p>
     </div>
   </div>
   <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
-    <div class="fei-block anim">
+    <div class="fei-block anim" id="art-psychiatrie">
       <img class="fei-thumb" src="images/communique-1.jpg" alt="Communiqué de presse - psychiatrie" onclick="window.open(this.src)">
       <h3>📢 Communiqué de presse — Psychiatrie : un déni honteux de la réalité</h3>
       <p style="font-size:12px;color:var(--gray-500);margin-bottom:14px;">Fédération CGT Santé et Action Sociale · Commission Nationale de Psychiatrie · 9 juin 2026</p>
@@ -727,7 +727,7 @@
       <p style="clear:both;">Pour la Fédération, les annonces ministérielles (enveloppe de 65 millions d'euros, dispositifs coupe-file, objectif « zéro contention » d'ici 2030) sont un affront supplémentaire aux professionnels et aux patients de psychiatrie, face à une réalité catastrophique que la ministre continue d'ignorer.</p>
     </div>
 
-    <div class="fei-block anim anim-d1">
+    <div class="fei-block anim anim-d1" id="art-entretien-pro">
       <img class="fei-thumb" src="images/entretien-pro-1.jpg" alt="Entretien professionnel 2026" onclick="window.open(this.src)">
       <h3>📋 Entretien professionnel 2026 : les 5 critères qui font la différence</h3>
       <p>Pour votre avancement, l'entretien évalue 5 critères — pour chacun, valorisez une situation concrète que vous avez bien gérée :</p>
@@ -740,13 +740,21 @@
       <div class="fei-note" style="clear:both;">Les 5 conseils CGT : préparez votre auto-évaluation, listez vos réalisations de l'année, préparez un exemple concret par critère, faites inscrire les difficultés rencontrées (conditions de travail, moyens, organisation), relisez attentivement votre compte-rendu avant de signer. Rappel : l'atteinte des objectifs dépend aussi des effectifs, des moyens et de l'organisation — vous n'êtes pas responsable de tout ce qui dysfonctionne dans l'établissement.</div>
     </div>
 
-    <div class="fei-block anim anim-d2">
+    <div class="fei-block anim anim-d2" id="art-entretien-informel">
       <img class="fei-thumb" src="images/entretien-informel-1.jpg" alt="L'entretien informel" onclick="window.open(this.src)">
       <h3>⚠️ L'entretien informel : la conversation qui peut vous échapper</h3>
       <p>Un entretien informel est un échange « spontané » : sans convocation officielle, sans cadre clairement défini. Parler, échanger, faire confiance, c'est sain — mais ce qui se dit sans formalisme peut peser sur votre situation professionnelle et avoir des conséquences réelles : mutation, évaluation, pression sur le poste.</p>
       <p><strong>Que pouvez-vous faire ?</strong> Vous avez le droit de mettre fin à cet échange : « Je ne souhaite pas poursuivre cet échange dans ce cadre » ou « Pouvez-vous préciser l'objet de cet entretien ? ». Vous pouvez à tout moment demander qu'un échange soit formalisé et être accompagné par la CGT.</p>
       <p><strong>Et après ?</strong> Ne restez pas seul, contactez la CGT. Notez les éléments de l'échange (date, heure, interlocuteur, circonstances) et envoyez un mail qui résume ce qui a été dit (« Suite à notre discussion de ce jour... ») — ce que vous avez dit sans préparation peut être nuancé, précisé, rectifié par écrit.</p>
       <div class="fei-note" style="clear:both;">Dans la fonction publique, vous pouvez être assisté d'un représentant CGT dans toute situation où vos intérêts professionnels sont en jeu, pas seulement en disciplinaire (loi n°83-634, art. 19).</div>
+    </div>
+
+    <div class="fei-block anim anim-d3" id="art-cannes">
+      <h3>🎬 Un peu d'histoire : le rôle de la CGT dans la création du festival de Cannes</h3>
+      <p>Né en 1946 comme contre-festival antifasciste, le festival de Cannes doit beaucoup à des ouvriers CGT. En 1939, une première édition avortée avait été montée en réaction au festival de cinéma de Venise, alors récupéré par les régimes fasciste et nazi qui y récompensaient leur propre propagande.</p>
+      <p>Des techniciens et ouvriers du spectacle, syndiqués à la CGT, ont participé à la construction matérielle des premières éditions du festival — décors, installations, logistique — à une époque où le cinéma français se reconstruisait après-guerre avec une forte présence syndicale dans ses métiers techniques.</p>
+      <p>Cet ancrage n'a rien d'anecdotique : la Fédération CGT du Spectacle siège encore aujourd'hui à son comité d'organisation, et continue de porter la voix des salariés du secteur (intermittents, techniciens, personnels d'accueil) lors de chaque édition.</p>
+      <div class="fei-note" style="clear:both;">Un rappel utile : les grands événements culturels reposent sur le travail, souvent invisible, de professionnels syndiqués — la CGT y défend leurs conditions de travail comme partout ailleurs.</div>
     </div>
 
     <div class="fei-block anim anim-d3">
@@ -801,15 +809,15 @@
       <div class="logo-mark" style="margin-bottom:14px;"><span class="l1">CGT</span><span class="l2">perrens</span></div>
       <p>Section syndicale CGT du Centre Hospitalier Charles Perrens. Affiliée à la Fédération CGT Santé et Action Sociale.</p>
     </div>
-    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">Actualités</a><a href="#" onclick="showPage('bureau');return false;">Qui sommes-nous</a></div>
-    <div class="footer-col"><h5>Ressources</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('elections');return false;">Élections pro</a><a href="#" onclick="showPage('docs');return false;">Ressources pratiques</a></div>
+    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">La CGT</a><a href="#" onclick="showPage('bureau');return false;">Qui sommes-nous</a></div>
+    <div class="footer-col"><h5>Communiqués</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('elections');return false;">Élections pro</a><a href="#" onclick="showPage('docs');return false;">Communiqués</a></div>
     <div class="footer-col"><h5>Contact</h5><a href="mailto:syndicat.cgt@ch-perrens.fr">syndicat.cgt@ch-perrens.fr</a><a href="#">05.56.56.35.65</a><a href="#" onclick="showPage('adherent');return false;">Adhérer</a></div>
   </div>
   <div class="footer-bottom"><p>© 2026 CGT CH Charles Perrens</p></div>
 </footer>
 
 <script>
-function showPage(id) {
+function showPage(id, anchor) {
   document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
   const page = document.getElementById('page-' + id);
@@ -819,6 +827,10 @@ function showPage(id) {
   }
   const navEl = document.getElementById('nav-' + id);
   if (navEl) navEl.classList.add('active');
+  if (anchor) {
+    const target = document.getElementById(anchor);
+    if (target) { setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30); return; }
+  }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
