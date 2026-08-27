@@ -5,24 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CGT — CH Charles Perrens</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #C1000A;
-    --red-dark: #8a0007;
-    --red-light: #fdf0f0;
-    --black: #111010;
-    --gray-900: #1c1c1c;
-    --gray-700: #3d3d3d;
-    --gray-500: #6b6b6b;
-    --gray-300: #c8c5c0;
-    --gray-100: #f2f0ed;
-    --gray-50: #f8f7f5;
+    --red: #B23B34;
+    --red-dark: #7a2620;
+    --red-light: #f7e9e6;
+    --black: #16130f;
+    --gray-900: #201c17;
+    --gray-700: #46403a;
+    --gray-500: #726b62;
+    --gray-300: #d8d3cb;
+    --gray-100: #f0ede7;
+    --gray-50: #faf9f7;
     --white: #ffffff;
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Instrument Sans', system-ui, sans-serif;
-    --radius: 10px;
-    --radius-sm: 6px;
+    --serif: 'Inter', system-ui, sans-serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --comic: 'Bebas Neue', var(--sans);
+    --radius: 3px;
+    --radius-sm: 2px;
+    --border: 1px solid rgba(0,0,0,0.12);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,9 +47,9 @@
   .logo-text p { font-size: 11px; color: var(--gray-500); margin-top: 1px; }
 
   nav { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
-  nav a { font-size: 12.5px; color: var(--gray-700); text-decoration: none; padding: 8px 10px; border-radius: var(--radius-sm); font-weight: 500; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+  nav a { font-size: 12px; color: var(--gray-700); text-decoration: none; padding: 8px 10px; border-radius: var(--radius-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; transition: background 0.15s, color 0.15s; white-space: nowrap; }
   nav a:hover { background: var(--gray-100); color: var(--black); }
-  nav a.active { color: var(--red); background: var(--red-light); }
+  nav a.active { color: #fff; background: var(--red); }
 
   .header-cta { display: flex; gap: 8px; align-items: center; margin-left: 8px; }
   .btn { font-family: var(--sans); font-size: 13px; font-weight: 600; border-radius: var(--radius-sm); padding: 9px 18px; cursor: pointer; border: none; transition: opacity 0.15s, transform 0.1s; }
@@ -57,13 +59,12 @@
   .btn-red { background: var(--red); color: var(--white); }
 
   .hero { background: var(--red); overflow: hidden; position: relative; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(0,0,0,0.03) 60px, rgba(0,0,0,0.03) 61px); pointer-events: none; }
   .hero-inner { max-width: 1140px; margin: 0 auto; padding: 64px 32px 0; position: relative; }
   .hero-text { padding-bottom: 60px; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.15); }
+  .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-sm); margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.25); }
   .hero-tag::before { content: ''; width: 6px; height: 6px; background: rgba(255,255,255,0.7); border-radius: 50%; }
-  .hero h2 { font-family: var(--serif); font-size: 44px; color: #fff; font-weight: 600; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.5px; }
-  .hero h2 em { font-style: italic; font-weight: 400; }
+  .hero h2 { font-family: var(--comic); font-size: 60px; color: #fff; font-weight: 400; line-height: 0.98; margin-bottom: 18px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .hero h2 em { font-style: normal; background: #fff; color: var(--red); padding: 0 10px; display: inline-block; }
   .hero-sub { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; max-width: 440px; }
   .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .btn-white { background: #fff; color: var(--red); font-size: 13px; font-weight: 700; padding: 11px 22px; border-radius: var(--radius-sm); border: none; cursor: pointer; font-family: var(--sans); transition: opacity 0.15s; }
@@ -87,11 +88,11 @@
   .main { max-width: 1140px; margin: 0 auto; padding: 40px 32px; display: grid; grid-template-columns: 1fr 320px; gap: 32px; }
 
   .sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-  .sec-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--black); display: flex; align-items: center; gap: 10px; }
+  .sec-title { font-family: var(--sans); font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; color: var(--black); display: flex; align-items: center; gap: 10px; }
   .sec-title::before { content: ''; width: 4px; height: 20px; background: var(--red); border-radius: 2px; flex-shrink: 0; }
   .sec-more { font-size: 12px; color: var(--red); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; }
 
-  .news-featured { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.07); margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; }
+  .news-featured { background: var(--white); border-radius: var(--radius); overflow: hidden; border: var(--border); margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; }
   .news-featured-img { background: var(--gray-900); min-height: 220px; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
   .news-img-overlay { position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, rgba(193,0,10,0.15) 0px, rgba(193,0,10,0.15) 1px, transparent 1px, transparent 8px); }
   .news-featured-img .img-placeholder { width: 100%; height: 100%; background: #1c1c1c; }
@@ -103,7 +104,7 @@
   .news-date { font-size: 11px; color: var(--gray-500); }
 
   .news-list { display: flex; flex-direction: column; gap: 12px; }
-  .news-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
+  .news-card { background: var(--white); border-radius: var(--radius); border: var(--border); padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
   .news-card-accent { width: 4px; height: 100%; min-height: 60px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
   .news-card-body { flex: 1; }
   .news-card-body .pill-row { margin-bottom: 8px; }
@@ -112,7 +113,7 @@
   .news-card-footer { margin-top: 10px; display: flex; align-items: center; gap: 8px; }
 
   .pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 20px; }
-  .pill-red { background: #fde8e8; color: #8a0007; }
+  .pill-red { background: #f7e9e6; color: #7a2620; }
   .pill-green { background: #e6f4e8; color: #1e6626; }
   .pill-blue { background: #e4effe; color: #1a4fa0; }
   .pill-amber { background: #fef3e2; color: #8a5700; }
@@ -122,7 +123,7 @@
   .dot-blue { background: #2563eb; }
   .dot-amber { background: #d97706; }
 
-  .s-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 20px; margin-bottom: 16px; }
+  .s-card { background: var(--white); border-radius: var(--radius); border: var(--border); padding: 20px; margin-bottom: 16px; }
   .s-title { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px; }
   .s-title svg { width: 16px; height: 16px; color: var(--red); flex-shrink: 0; }
 
@@ -137,17 +138,18 @@
   .at-permanence { background: #e6f4e8; color: #1e6626; }
 
   .doc-ico { width: 34px; height: 34px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
-  .doc-ico-red { background: #fde8e8; color: var(--red); }
+  .doc-ico-red { background: #f7e9e6; color: var(--red); }
 
   .join-box { background: var(--gray-900); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; position: relative; overflow: hidden; }
   .join-box::before { content: ''; position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--red); border-radius: 50%; opacity: 0.15; }
-  .join-box h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: #fff; line-height: 1.2; margin-bottom: 10px; position: relative; }
+  .join-box h3 { font-family: var(--comic); font-size: 30px; font-weight: 400; letter-spacing: 0.3px; text-transform: uppercase; color: #fff; line-height: 1.1; margin-bottom: 10px; position: relative; }
   .join-perks { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; position: relative; }
   .perk { display: flex; align-items: flex-start; gap: 8px; }
   .perk-check { width: 16px; height: 16px; background: rgba(193,0,10,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
   .perk-check::after { content: '✓'; font-size: 9px; color: #ff8080; }
   .perk span { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.4; }
-  .join-btn { width: 100%; background: var(--red); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 700; padding: 12px; border-radius: var(--radius-sm); border: none; cursor: pointer; position: relative; }
+  .join-btn { width: 100%; background: var(--red); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 12px; border-radius: var(--radius-sm); border: none; cursor: pointer; position: relative; transition: opacity 0.15s; }
+  .join-btn:hover { opacity: 0.88; }
 
   .contact-btn { font-size: 12px; font-weight: 600; color: var(--red); background: var(--red-light); border: none; padding: 7px 14px; border-radius: 5px; cursor: pointer; font-family: var(--sans); white-space: nowrap; }
 
@@ -161,28 +163,31 @@
   .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.25); }
 
   .cta-band { background: var(--red); border-radius: var(--radius); padding: 32px; max-width: 1140px; margin: 0 auto 32px; text-align: center; }
-  .cta-band h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 14px; }
-  .cta-band h3 span { color: #fde08a; }
+  .cta-band h3 { font-family: var(--comic); font-size: 32px; font-weight: 400; letter-spacing: 0.3px; text-transform: uppercase; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+  .cta-band h3 span { background: #fff; color: var(--red); padding: 0 8px; }
   .cta-band p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.8; }
-  .cta-band a { color: #fde08a; text-decoration: none; font-weight: 600; }
+  .cta-band a { color: #fff; text-decoration: underline; font-weight: 700; }
 
   .page-section { display: none; }
   .page-section.active { display: block; }
 
-  .droits-hero { background: var(--gray-900); padding: 40px 0; margin-bottom: 32px; }
+  .droits-hero { background: var(--gray-900); padding: 40px 0; margin-bottom: 32px; position: relative; border-bottom: 4px solid var(--red); }
   .droits-hero-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
-  .droits-hero h2 { font-family: var(--serif); font-size: 36px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .droits-hero h2 { font-family: var(--comic); font-size: 44px; font-weight: 400; letter-spacing: 0.5px; text-transform: uppercase; color: #fff; margin-bottom: 10px; }
   .droits-hero p { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 14px; }
+  .back-link:hover { color: #fff; }
 
   .droits-grid { max-width: 1140px; margin: 0 auto; padding: 0 32px 48px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .droit-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 24px; }
+  .droit-card { background: var(--white); border-radius: var(--radius); border: var(--border); padding: 24px; }
   .droit-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
   .droit-card h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
   .droit-card p { font-size: 13px; color: var(--gray-500); line-height: 1.6; margin-bottom: 14px; }
   .droit-link { font-size: 12px; font-weight: 600; color: var(--red); text-decoration: none; }
 
   .bureau-grid { max-width: 1140px; margin: 0 auto; padding: 0 32px 48px; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
-  .bureau-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); overflow: hidden; }
+  .bureau-card { background: var(--white); border-radius: var(--radius); border: var(--border); overflow: hidden; transition: transform 0.15s; }
+  .bureau-card:hover { transform: translateY(-3px); }
   .bureau-photo { width: 100%; aspect-ratio: 1; background: var(--gray-100); display: flex; align-items: center; justify-content: center; color: var(--gray-300); font-size: 11px; overflow: hidden; }
   .bureau-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .bureau-info { padding: 16px; }
@@ -197,10 +202,18 @@
   .fei-thumb { width: 130px; height: auto; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); float: left; margin: 0 18px 12px 0; cursor: pointer; }
   @media (max-width: 500px) { .fei-thumb { width: 90px; margin: 0 14px 8px 0; } }
 
-  .fei-block { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.07); padding: 28px; margin-bottom: 20px; }
+  .fei-block { background: var(--white); border-radius: var(--radius); border: var(--border); padding: 28px; margin-bottom: 20px; }
   .fei-block h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--black); margin-bottom: 12px; }
   .fei-block p { font-size: 14px; color: var(--gray-700); line-height: 1.7; margin-bottom: 10px; }
   .fei-note { background: var(--red-light); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 12.5px; color: var(--red-dark); line-height: 1.6; margin-top: 14px; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 4px 20px; }
+  .faq-item summary { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--black); padding: 14px 0; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-family: var(--sans); font-size: 20px; font-weight: 400; color: var(--red); flex-shrink: 0; transition: transform 0.15s; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { font-size: 13px; color: var(--gray-700); line-height: 1.6; padding-bottom: 16px; }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
   .anim { animation: fadeUp 0.35s ease both; }
@@ -247,8 +260,8 @@
     <nav>
       <a href="#" id="nav-accueil" class="active" onclick="showPage('accueil');return false;">Actualités</a>
       <a href="#" id="nav-droits" onclick="showPage('droits');return false;">Vos droits</a>
-      <a href="#" id="nav-fei" onclick="showPage('fei');return false;">Événements indésirables</a>
-      <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">Le bureau</a>
+      <a href="#" id="nav-elections" onclick="showPage('elections');return false;">Élections pro</a>
+      <a href="#" id="nav-bureau" onclick="showPage('bureau');return false;">Qui sommes-nous</a>
       <a href="#" id="nav-docs" onclick="showPage('docs');return false;">Ressources</a>
       <a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a>
     </nav>
@@ -352,6 +365,18 @@
       </div>
     </div>
   </div>
+
+  <div style="max-width:1140px;margin:0 auto;padding:0 32px 48px;">
+    <div class="sec-head"><div class="sec-title">Foire aux questions</div></div>
+    <div class="faq-list">
+      <details class="faq-item anim"><summary>Comment adhérer à la CGT ?</summary><p>Remplissez le formulaire d'adhésion en ligne (bouton « Adhérer » en haut de page) ou contactez directement la permanence syndicale. L'adhésion peut aussi se faire en main propre auprès d'un délégué.</p></details>
+      <details class="faq-item anim"><summary>Dois-je informer mon employeur si je me syndique ?</summary><p>Non, aucune obligation légale. Se syndiquer est un droit constitutionnel et la discrimination syndicale est punie par la loi (art. L1132-1 du Code du travail, applicable par analogie aux principes de la Fonction Publique).</p></details>
+      <details class="faq-item anim"><summary>Puis-je être accompagné en cas d'entretien disciplinaire ou informel ?</summary><p>Oui, dans toute situation où vos intérêts professionnels sont en jeu (pas seulement en disciplinaire), vous pouvez être assisté par un représentant CGT (loi n°83-634, art. 19). Contactez-nous avant l'entretien si possible.</p></details>
+      <details class="faq-item anim"><summary>Que faire en cas d'arrêt maladie contesté ?</summary><p>Ne restez pas seul : contactez la permanence CGT avec vos justificatifs. Nous pouvons vous accompagner dans les démarches auprès de l'administration et, si besoin, dans un recours.</p></details>
+      <details class="faq-item anim"><summary>Où et quand se déroule la permanence juridique ?</summary><p>La permanence CGT-LDAJ se tient les mercredis de 12h à 14h au local CGT, avec des avocats et intervenants juridiques. Ouverte à tous, syndiqués ou non.</p></details>
+      <details class="faq-item anim"><summary>Je ne suis pas syndiqué, la CGT peut-elle quand même m'aider ?</summary><p>Oui. Notre porte est toujours ouverte, syndiqué ou non — pour une question rapide comme pour un accompagnement plus long.</p></details>
+    </div>
+  </div>
 </div>
 
 <!-- PAGE: VOS DROITS -->
@@ -364,20 +389,32 @@
     </div>
   </div>
   <div class="droits-grid">
-    <div class="droit-card anim"><div class="droit-icon" style="background:#fde8e8;">🩺</div><h3>Congés maladie</h3><p>CMO : jusqu'à 1 an (3 mois à 90% + 9 mois à demi-traitement). CLM : jusqu'à 3 ans pour pathologies invalidantes (1 an plein traitement + 2 ans à 60%). CLD : jusqu'à 5 ans pour maladies spécifiques (3 ans plein traitement + 2 ans à demi-traitement). Certificat médical à transmettre sous 48h.</p><a href="#detail-conges" class="droit-link">Lire le guide complet →</a></div>
-    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🎁</div><h3>CGOS</h3><p>Naissance, décès, maladie, prestations vacances, aides financières, prestations scolaires : contractuels, stagiaires, titulaires, tout le monde est concerné. Créez votre dossier sur www.cgos.info dès votre arrivée — sans dossier, pas de prestation.</p><a href="#detail-cgos" class="droit-link">Direction cgos.info →</a></div>
-    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#fde8e8;">🚨</div><h3>Harcèlement</h3><p>Le harcèlement moral est un délit (art. L1152-1) : agissements répétés, dégradation des conditions de travail, atteinte aux droits ou à la santé. Plusieurs démarches possibles — alerter le CSE, l'inspection du travail, saisir les prud'hommes. La CGT écoute, protège, agit à vos côtés.</p><a href="#detail-harcelement" class="droit-link">Agir avec la CGT →</a></div>
-    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#e6f4e8;">📅</div><h3>Autorisation d'absence spécifique</h3><p>[TEXTE À COMPLÉTER — événements familiaux, syndicaux, examens médicaux : quelles autorisations existent.]</p><a href="#" class="droit-link">Voir les cas →</a></div>
-    <div class="droit-card anim"><div class="droit-icon" style="background:#f3e8ff;">♿</div><h3>RQTH</h3><p>Surveillance médicale adaptée, aménagements de poste, sécurisation du parcours professionnel. Démarche volontaire auprès de la MDPH de votre département — aucune obligation légale d'en informer votre employeur.</p><a href="#detail-rqth" class="droit-link">Comment l'obtenir →</a></div>
-    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#fef3e2;">⚖️</div><h3>Droit syndical</h3><p>La CGT vous défend individuellement (sanctions, entretiens disciplinaires, harcèlement), vous représente en CAP, F3SCT, CSE, et vous ouvre l'accès à des formations syndicales — même non syndiqué, vous avez droit à 12 jours de formation par an.</p><a href="#detail-syndical" class="droit-link">Ce que le syndicat fait pour vous →</a></div>
-    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#e4effe;">💰</div><h3>Grilles de salaires</h3><p>Grilles indiciaires par catégorie (A, B, C), valeur du point d'indice, CTI, primes et indemnités : la Fédération CGT Santé publie chaque année les grilles à jour de la Fonction Publique Hospitalière.</p><a href="#detail-salaires" class="droit-link">Comprendre ma paie →</a></div>
-    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#fef3e2;">⏱️</div><h3>Temps de travail</h3><p>Durée légale : 35h/semaine, maximum 1607h/an (1476h de nuit). Repos minimum 12h consécutives, 48h max/semaine. En arrêt maladie, un agent ne doit rendre aucune heure et ne génère pas de RTT — le demander est illégal.</p><a href="#detail-travail" class="droit-link">J'ai droit à quoi →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#f7e9e6;">🩺</div><h3>Congés maladie</h3><p>CMO : jusqu'à 1 an (3 mois à 90% + 9 mois à demi-traitement). CLM : jusqu'à 3 ans pour pathologies invalidantes (1 an plein traitement + 2 ans à 60%). CLD : jusqu'à 5 ans pour maladies spécifiques (3 ans plein traitement + 2 ans à demi-traitement). Certificat médical à transmettre sous 48h.</p><a href="#" onclick="showPage('detail-conges');return false;" class="droit-link">Lire le guide complet →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🎁</div><h3>CGOS</h3><p>Naissance, décès, maladie, prestations vacances, aides financières, prestations scolaires : contractuels, stagiaires, titulaires, tout le monde est concerné. Créez votre dossier sur www.cgos.info dès votre arrivée — sans dossier, pas de prestation.</p><a href="#" onclick="showPage('detail-cgos');return false;" class="droit-link">Direction cgos.info →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#f7e9e6;">🚨</div><h3>Harcèlement</h3><p>Le harcèlement moral est un délit (art. L1152-1) : agissements répétés, dégradation des conditions de travail, atteinte aux droits ou à la santé. Plusieurs démarches possibles — alerter le CSE, l'inspection du travail, saisir les prud'hommes. La CGT écoute, protège, agit à vos côtés.</p><a href="#" onclick="showPage('detail-harcelement');return false;" class="droit-link">Agir avec la CGT →</a></div>
+    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#e6f4e8;">📅</div><h3>Autorisation d'absence spécifique</h3><p>[TEXTE À COMPLÉTER — événements familiaux, syndicaux, examens médicaux : quelles autorisations existent.]</p><a href="#" onclick="showPage('detail-absence');return false;" class="droit-link">Voir les cas →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#f3e8ff;">♿</div><h3>RQTH</h3><p>Surveillance médicale adaptée, aménagements de poste, sécurisation du parcours professionnel. Démarche volontaire auprès de la MDPH de votre département — aucune obligation légale d'en informer votre employeur.</p><a href="#" onclick="showPage('detail-rqth');return false;" class="droit-link">Comment l'obtenir →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#fef3e2;">⚖️</div><h3>Droit syndical</h3><p>La CGT vous défend individuellement (sanctions, entretiens disciplinaires, harcèlement), vous représente en CAP, F3SCT, CSE, et vous ouvre l'accès à des formations syndicales — même non syndiqué, vous avez droit à 12 jours de formation par an.</p><a href="#" onclick="showPage('detail-syndical');return false;" class="droit-link">Ce que le syndicat fait pour vous →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#e4effe;">💰</div><h3>Grilles de salaires</h3><p>Grilles indiciaires par catégorie (A, B, C), valeur du point d'indice, CTI, primes et indemnités : la Fédération CGT Santé publie chaque année les grilles à jour de la Fonction Publique Hospitalière.</p><a href="#" onclick="showPage('detail-salaires');return false;" class="droit-link">Comprendre ma paie →</a></div>
+    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#fef3e2;">⏱️</div><h3>Temps de travail</h3><p>Durée légale : 35h/semaine, maximum 1607h/an (1476h de nuit). Repos minimum 12h consécutives, 48h max/semaine. En arrêt maladie, un agent ne doit rendre aucune heure et ne génère pas de RTT — le demander est illégal.</p><a href="#" onclick="showPage('detail-travail');return false;" class="droit-link">J'ai droit à quoi →</a></div>
+    <div class="droit-card anim"><div class="droit-icon" style="background:#fdf1cf;">👵</div><h3>Retraite (CNRACL)</h3><p>Catégorie sédentaire ou active, âge de départ, durée d'assurance, décote/surcote : les agents hospitaliers relèvent de la CNRACL, avec des règles propres à la Fonction Publique Hospitalière. Un simulateur officiel permet d'estimer sa pension.</p><a href="#" onclick="showPage('detail-retraite');return false;" class="droit-link">Comprendre ma retraite →</a></div>
+    <div class="droit-card anim anim-d1"><div class="droit-icon" style="background:#e4effe;">🏥</div><h3>Mutuelle / Protection sociale complémentaire</h3><p>La réforme de la protection sociale complémentaire (PSC) dans la Fonction Publique Hospitalière change la participation de l'employeur au financement de votre complémentaire santé. Un sujet d'actualité 2026-2027 à suivre de près.</p><a href="#" onclick="showPage('detail-mutuelle');return false;" class="droit-link">Ce qui change →</a></div>
+    <div class="droit-card anim anim-d2"><div class="droit-icon" style="background:#f7e9e6;">✊</div><h3>Droit de grève</h3><p>Préavis, service minimum, assignation vs réquisition, retenue sur salaire : un droit constitutionnel encadré dans la Fonction Publique Hospitalière compte tenu de la continuité du service public.</p><a href="#" onclick="showPage('detail-greve');return false;" class="droit-link">Ce qu'il faut savoir →</a></div>
+    <div class="droit-card anim anim-d3"><div class="droit-icon" style="background:#e6f4e8;">📋</div><h3>Événements indésirables</h3><p>Pourquoi et comment signaler un événement indésirable, lié aux soins ou non — une démarche qui protège autant les patients que l'équipe.</p><a href="#" onclick="showPage('detail-fei');return false;" class="droit-link">Comment déclarer →</a></div>
   </div>
+</div>
 
+<!-- PAGE DÉTAIL (hors navbar) : CONGÉS MALADIE -->
+<div id="page-detail-conges" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>🩺 Congés maladie</h2>
+    </div>
+  </div>
   <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
-    <div class="fei-block anim" id="detail-conges">
+    <div class="fei-block anim">
       <img class="fei-thumb" src="images/conges-maladie-1.jpg" alt="Tract congés maladie" onclick="window.open(this.src)">
-      <h3>🩺 Congés maladie — le détail</h3>
       <p><strong>CMO — Congé de Maladie Ordinaire :</strong> jusqu'à 1 an maximum. 3 mois à 90% du salaire (avec un jour de carence) + 9 mois à demi-traitement. Certificat médical à transmettre dans les 48h.</p>
       <p><strong>CLM — Congé Longue Maladie :</strong> pour pathologies invalidantes (selon liste réglementée), jusqu'à 3 ans. 1 an à plein traitement + 2 ans à 60% du salaire.</p>
       <p><strong>CLD — Congé Longue Durée :</strong> pour maladies spécifiques (cancer, tuberculose, etc.), jusqu'à 5 ans. 3 ans à plein traitement + 2 ans à demi-traitement.</p>
@@ -385,20 +422,40 @@
       <p><strong>Maladie professionnelle :</strong> maladie reconnue comme liée au travail. Délai de déclaration : 2 ans à partir de la première constatation médicale, ou à partir du lien établi avec l'activité professionnelle.</p>
       <div class="fei-note" style="clear:both;">Besoin d'aide pour un arrêt contesté ou une procédure ? Contactez la permanence CGT.</div>
     </div>
+  </div>
+</div>
 
-    <div class="fei-block anim" id="detail-cgos">
+<!-- PAGE DÉTAIL (hors navbar) : CGOS -->
+<div id="page-detail-cgos" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>🎁 CGOS</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
       <img class="fei-thumb" src="images/cgos-1.jpg" alt="Tract CGOS" onclick="window.open(this.src)">
-      <h3>🎁 CGOS — le détail</h3>
       <p>De la naissance d'un enfant au décès d'un proche, d'une maladie aux prestations vacances, des aides financières aux prestations scolaires : nous avons tous besoin un jour du CGOS. Contractuels, stagiaires, titulaires — tout le monde est concerné.</p>
       <p><strong>Direction votre espace agent :</strong> www.cgos.info. Il est important de faire votre dossier dès l'ouverture pour ne pas perdre de temps le jour où vous en aurez besoin — sans dossier, pas de prestation.</p>
       <p><strong>Pour ouvrir un dossier la première fois :</strong> numéro de sécurité sociale, dernier bulletin de paie, dernier avis d'imposition, RIB.</p>
       <p><strong>Si vous avez déjà un dossier</strong> (votre numéro CGOS reste le même) : dernier avis d'imposition suffit. Pour les prestations enfants : certificat de scolarité (secondaire), certificat d'hébergement (internat, CROUS...), attestation CAF si garde alternée.</p>
       <div class="fei-note" style="clear:both;">Nouveauté 2026 : plus de date limite pour la prestation étude — elle est versée dès que le dossier est validé.</div>
     </div>
+  </div>
+</div>
 
-    <div class="fei-block anim" id="detail-harcelement">
+<!-- PAGE DÉTAIL (hors navbar) : HARCÈLEMENT -->
+<div id="page-detail-harcelement" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>🚨 Harcèlement moral</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
       <img class="fei-thumb" src="images/harcelement-1.jpg" alt="Tract harcèlement moral" onclick="window.open(this.src)">
-      <h3>🚨 Harcèlement moral — le détail</h3>
       <p>« Aucun·e salarié·e ne doit subir les agissements répétés de harcèlement moral qui ont pour objet ou pour effet une dégradation de ses conditions de travail susceptible de porter atteinte à ses droits et à sa dignité, d'altérer sa santé physique ou mentale ou de compromettre son avenir professionnel » (article L1152-1, défini en termes identiques dans le Code du travail et le Code général de la Fonction Publique).</p>
       <p><strong>3 conditions pour le caractériser :</strong> des agissements répétés (un acte isolé, même grave, ne suffit pas) ; une dégradation des conditions de travail ; une atteinte aux droits, à la dignité, à la santé ou à l'avenir professionnel.</p>
       <p>Le harcèlement moral n'est pas « un conflit entre deux personnes » : c'est un mécanisme de domination souvent lié à une organisation du travail toxique, qui peut se dérouler au vu et au su de tous.</p>
@@ -406,36 +463,92 @@
       <p><strong>Démarches possibles</strong> (non cumulatives) : prévenir l'employeur, alerter le CSE, alerter l'inspection du travail, engager une médiation, saisir le conseil des prud'hommes ou le tribunal administratif, saisir le défenseur des droits.</p>
       <div class="fei-note" style="clear:both;">Le rôle du syndicat : écouter, protéger, agir. L'employeur a l'obligation légale de protéger votre santé physique et mentale (Code du travail, art. L4121-1).</div>
     </div>
+  </div>
+</div>
 
-    <div class="fei-block anim" id="detail-rqth">
+<!-- PAGE DÉTAIL (hors navbar) : AUTORISATION D'ABSENCE -->
+<div id="page-detail-absence" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>📅 Autorisation d'absence spécifique</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <p>[TEXTE À COMPLÉTER — liste des événements ouvrant droit à autorisation d'absence : événements familiaux (mariage, naissance, décès), examens médicaux, dons du sang, activité syndicale, jury/examens, etc. Préciser les durées et justificatifs à fournir.]</p>
+      <div class="fei-note" style="clear:both;">Un cas particulier n'est pas couvert ici ? Contactez la permanence CGT.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE DÉTAIL (hors navbar) : RQTH -->
+<div id="page-detail-rqth" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>♿ RQTH</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
       <img class="fei-thumb" src="images/rqth-1.jpg" alt="Tract RQTH" onclick="window.open(this.src)">
-      <h3>♿ RQTH — le détail</h3>
       <p>La Reconnaissance en Qualité de Travailleur Handicapé est une démarche <strong>personnelle et volontaire</strong> réalisée auprès de la MDPH (Maison Départementale des Personnes Handicapées) de votre département de résidence.</p>
       <p><strong>Elle permet :</strong> une surveillance médicale particulière, des conditions de travail adaptées (aménagement de l'organisation, matériel adapté), de sécuriser son parcours professionnel en cas d'évolution de son état de santé. La visite auprès du médecin du travail permet de clarifier vos besoins spécifiques.</p>
       <p><strong>Comment l'obtenir :</strong> complétez le dossier RQTH disponible sur le site de la MDPH de votre département ; faites compléter le Cerfa 13788*01 par votre médecin traitant ou spécialiste ; transmettez le dossier accompagné des pièces médicales à la MDPH.</p>
       <div class="fei-note" style="clear:both;">Aucune obligation légale d'informer votre employeur de votre état de santé — l'initiative de se déclarer revient uniquement à l'agent.</div>
     </div>
+  </div>
+</div>
 
-    <div class="fei-block anim" id="detail-syndical">
+<!-- PAGE DÉTAIL (hors navbar) : DROIT SYNDICAL -->
+<div id="page-detail-syndical" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>⚖️ Droit syndical — ce que la CGT fait pour vous</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
       <img class="fei-thumb" src="images/syndicat-1.jpg" alt="Tract ce que votre syndicat peut faire" onclick="window.open(this.src)">
-      <h3>⚖️ Droit syndical — ce que la CGT fait pour vous</h3>
       <p><strong>Vous défendre individuellement :</strong> accompagnement en cas de sanction, d'entretien disciplinaire, de refus de mobilité, d'arrêt de travail contesté ; aide à la rédaction de courriers officiels, recours, demandes administratives ; soutien en cas de harcèlement moral ou sexuel, de souffrance au travail ou de mal-être.</p>
       <p><strong>Vous informer sur vos droits :</strong> explications claires sur vos droits statutaires, votre fiche de paie, vos congés, votre carrière et votre rémunération ; suivi des évolutions réglementaires ; réunions d'information syndicale ; mise en lien avec des avocats lors des permanences juridiques du mercredi.</p>
       <p><strong>Agir collectivement :</strong> mobilisation contre les injustices locales, négociation collective sur les conditions de travail, les horaires, les primes, action commune contre des décisions injustes ou arbitraires.</p>
       <p><strong>Vous représenter dans les instances :</strong> CAP (Commission Administrative Paritaire), F3SCT (Formation Spécialisée Santé, Sécurité et Conditions de Travail), CSE (Comité Social d'Établissement) — pour porter votre voix face à l'administration.</p>
       <div class="fei-note" style="clear:both;">Même sans être syndiqué, vous avez droit à 12 jours de formation syndicale par an pour vous outiller et vous rendre plus fort face à l'institution.</div>
     </div>
+  </div>
+</div>
 
-    <div class="fei-block anim" id="detail-salaires">
-      <h3>💰 Grilles de salaires — comprendre ma paie</h3>
+<!-- PAGE DÉTAIL (hors navbar) : GRILLES DE SALAIRES -->
+<div id="page-detail-salaires" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>💰 Grilles de salaires</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
       <p>Le traitement mensuel de base se calcule ainsi : <strong>Indice Majoré × Valeur du point d'indice</strong>. S'y ajoutent éventuellement le CTI (complément de traitement indiciaire), la NBI, l'indemnité de résidence, le supplément familial, et les primes propres à certains grades ou sujétions. Les cotisations (RAFP, CNRACL, CSG, CRDS) et le transfert primes-points sont ensuite déduits.</p>
       <p>Les grilles complètes (catégories A, B et C, tous corps et grades) sont publiées chaque année par la Fédération CGT Santé et Action Sociale.</p>
       <a class="droit-link" href="pdfs/grilles-salaires.pdf" target="_blank">Télécharger le livret complet des grilles →</a>
     </div>
+  </div>
+</div>
 
-    <div class="fei-block anim" id="detail-travail">
+<!-- PAGE DÉTAIL (hors navbar) : TEMPS DE TRAVAIL -->
+<div id="page-detail-travail" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>⏱️ Temps de travail</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
       <img class="fei-thumb" src="images/temps-travail-1.jpg" alt="Tract temps de travail" onclick="window.open(this.src)">
-      <h3>⏱️ Temps de travail — le détail</h3>
       <p><strong>Durée légale :</strong> 35 heures par semaine, avec un maximum annuel de 1 607 heures, réduit à 1 582h pour certains agents et à 1 476h pour le travail de nuit.</p>
       <p><strong>Garanties légales :</strong> maximum 48 heures par semaine, 9 heures par jour pour les équipes de jour, repos minimum de 12 heures consécutives.</p>
       <p><strong>Cycles et horaires :</strong> le travail est organisé en cycles définis par service ou fonction. Le planning doit être affiché au moins 15 jours avant son application, et toute modification inscrite au moins 48 heures à l'avance.</p>
@@ -445,37 +558,137 @@
   </div>
 </div>
 
-<!-- PAGE: ÉVÉNEMENTS INDÉSIRABLES -->
-<div id="page-fei" class="page-section">
+<!-- PAGE DÉTAIL (hors navbar) : RETRAITE CNRACL -->
+<div id="page-detail-retraite" class="page-section">
   <div class="droits-hero">
     <div class="droits-hero-inner">
-      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Sécurité et conditions de travail</div>
-      <h2>Les fiches événements indésirables</h2>
-      <p>Pourquoi et comment signaler un événement indésirable, lié aux soins ou non.</p>
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>👵 Retraite CNRACL</h2>
     </div>
   </div>
   <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
     <div class="fei-block anim">
-      <h3>Fiche événement indésirable — liée aux soins</h3>
-      <p>[TEXTE À COMPLÉTER — définition, exemples (erreur médicamenteuse, chute, incident lié aux soins), pourquoi la déclaration protège le patient et l'équipe.]</p>
-      <div class="fei-note">La déclaration se fait sur [nom de l'outil interne dédié — à préciser], pas sur ce site. Cette page explique l'intérêt de la démarche et son cadre.</div>
-    </div>
-    <div class="fei-block anim anim-d1">
-      <h3>Fiche événement indésirable — non liée aux soins</h3>
-      <p>[TEXTE À COMPLÉTER — définition, exemples (dysfonctionnement matériel, organisation, conditions de travail), différence avec la fiche liée aux soins.]</p>
-      <div class="fei-note">Même principe : la déclaration se fait sur [nom de l'outil interne dédié — à préciser].</div>
+      <p>Les agents titulaires de la Fonction Publique Hospitalière cotisent à la <strong>CNRACL</strong> (Caisse Nationale de Retraites des Agents des Collectivités Locales). Deux catégories déterminent l'âge de départ : la <strong>catégorie sédentaire</strong> (âge légal comme dans le régime général) et la <strong>catégorie active</strong>, ouverte à certains métiers exposés à un risque particulier ou à des fatigues exceptionnelles (une partie des soignants, notamment en psychiatrie), qui permet un départ anticipé sous condition de durée de services actifs.</p>
+      <p><strong>Ce qui compte dans le calcul :</strong> la durée d'assurance tous régimes confondus, le nombre de trimestres validés dans la catégorie active le cas échéant, et le traitement indiciaire des 6 derniers mois. Un départ avant d'avoir la durée requise entraîne une décote ; l'inverse peut ouvrir droit à une surcote.</p>
+      <p><strong>Simuler sa pension :</strong> le simulateur officiel est accessible sur <em>info-retraite.fr</em> (compte retraite unique tous régimes) et sur l'espace personnel CNRACL. Le relevé de situation individuelle (RIS) permet de vérifier que tous les trimestres sont bien enregistrés.</p>
+      <div class="fei-note" style="clear:both;">[À COMPLÉTER — préciser si des agents du service relèvent de la catégorie active, et les contacts RH/CNRACL de l'établissement pour lancer une demande de départ.]</div>
     </div>
   </div>
 </div>
 
-<!-- PAGE: LE BUREAU -->
+<!-- PAGE DÉTAIL (hors navbar) : MUTUELLE / PSC -->
+<div id="page-detail-mutuelle" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>🏥 Mutuelle / Protection sociale complémentaire</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <p>La réforme de la <strong>protection sociale complémentaire (PSC)</strong> dans la Fonction Publique Hospitalière prévoit une participation croissante de l'employeur au financement de la complémentaire santé des agents, dans une logique proche de ce qui existe déjà dans le privé et la Fonction Publique d'État.</p>
+      <p><strong>Ce que ça change concrètement :</strong> le niveau de la participation employeur, les modalités de choix ou d'adhésion à un contrat collectif (ou le maintien d'un contrat individuel), et le calendrier de mise en œuvre sont fixés par accords nationaux et déclinés ensuite au niveau de chaque établissement.</p>
+      <p>La CGT porte au niveau national l'exigence d'une participation employeur élevée et d'une couverture de qualité (santé et prévoyance), sans reste à charge excessif pour les agents.</p>
+      <div class="fei-note" style="clear:both;">[À COMPLÉTER — état d'avancement de la négociation PSC à Charles Perrens, échéances locales, contrat retenu le cas échéant. Contactez la permanence CGT pour le point d'actualité.]</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE DÉTAIL (hors navbar) : DROIT DE GRÈVE -->
+<div id="page-detail-greve" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>✊ Droit de grève</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <p>Le droit de grève est reconnu par le préambule de la Constitution de 1946. Dans la Fonction Publique Hospitalière, il s'exerce dans un cadre spécifique compte tenu de la continuité du service public — la grève y est un droit, pas une faute, mais elle obéit à des règles de procédure précises.</p>
+      <p><strong>Le préavis :</strong> un préavis de grève doit être déposé par une organisation syndicale représentative au moins 5 jours francs avant le déclenchement du mouvement. Il précise les motifs, le lieu, la date, l'heure de début et la durée envisagée. Aucun agent ne peut se mettre en grève avant l'expiration de ce délai. Des négociations doivent s'engager pendant le préavis entre l'autorité administrative et les organisations syndicales — c'est une obligation, pas une option.</p>
+      <p><strong>Service minimum, assignation et réquisition :</strong> un service minimum doit être assuré pour garantir la sécurité des patients et la continuité des soins essentiels. Pour l'assurer, la direction peut <em>assigner</em> nommément certains agents à leur poste par décision écrite et individuelle motivée — un agent assigné n'est plus en grève pour les heures concernées et doit travailler ; en cas de désaccord sur la légalité d'une assignation, contactez immédiatement la CGT. La <em>réquisition</em>, plus exceptionnelle, relève d'une décision préfectorale (et non de l'employeur) en cas de menace grave pour l'ordre public ou la santé de la population.</p>
+      <p><strong>Retenue sur salaire :</strong> une journée de grève entraîne en principe une retenue correspondant à 1/30e du traitement mensuel (règle du « trentième indivisible »), quelle que soit sa durée dans la journée. Elle doit apparaître clairement sur le bulletin de paie du mois concerné.</p>
+      <div class="fei-note" style="clear:both;">Se déclarer gréviste n'a pas à être justifié : vous n'avez pas à motiver votre participation à un mouvement de grève auprès de votre hiérarchie. Un doute sur une assignation ou une retenue de salaire ? Contactez la permanence CGT.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE DÉTAIL (hors navbar) : ÉVÉNEMENTS INDÉSIRABLES -->
+<div id="page-detail-fei" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <a href="#" class="back-link" onclick="showPage('droits');return false;">← Retour à Vos droits</a>
+      <h2>📋 Événements indésirables</h2>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <p><strong>Fiche liée aux soins :</strong> [TEXTE À COMPLÉTER — définition, exemples (erreur médicamenteuse, chute, incident lié aux soins), pourquoi la déclaration protège le patient et l'équipe.]</p>
+      <p><strong>Fiche non liée aux soins :</strong> [TEXTE À COMPLÉTER — définition, exemples (dysfonctionnement matériel, organisation, conditions de travail), différence avec la fiche liée aux soins.]</p>
+      <div class="fei-note" style="clear:both;">La déclaration se fait sur [nom de l'outil interne dédié — à préciser], pas sur ce site. Cette page explique l'intérêt de la démarche et son cadre.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: ÉLECTIONS PROFESSIONNELLES -->
+<div id="page-elections" class="page-section">
+  <div class="droits-hero">
+    <div class="droits-hero-inner">
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">Vie syndicale</div>
+      <h2>Élections professionnelles</h2>
+      <p>Les instances qui se jouent, le calendrier du cycle électoral, pourquoi voter CGT.</p>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 48px;">
+    <div class="fei-block anim">
+      <h3>🗳️ Le vote au CH Charles Perrens : du 3 au 10 décembre 2026</h3>
+      <p>Les prochaines élections professionnelles se tiendront <strong>du 3 au 10 décembre 2026</strong>. Elles déterminent qui vous représente pour les 4 prochaines années dans les instances de l'établissement — c'est le moment où votre voix pèse directement sur les décisions qui concernent vos conditions de travail.</p>
+      <div class="fei-note" style="clear:both;">[À COMPLÉTER — modalités pratiques du vote à Charles Perrens : vote électronique, papier, ou les deux ; bureaux de vote ; horaires.]</div>
+    </div>
+
+    <div class="fei-block anim anim-d1">
+      <h3>🏛️ Ce que ces élections déterminent</h3>
+      <p><strong>Le CSE (Comité Social d'Établissement) :</strong> instance de représentation du personnel consultée sur l'organisation, les conditions de travail, la gestion et l'évolution de l'établissement. Sa composition et sa formation spécialisée en matière de santé, sécurité et conditions de travail (F3SCT) sont directement issues du résultat des élections.</p>
+      <p><strong>La CAP (Commission Administrative Paritaire) :</strong> instance paritaire qui examine les décisions individuelles concernant la carrière des agents (avancement, mobilité, discipline). La représentativité syndicale qui en ressort conditionne le poids de chaque organisation lorsqu'elle défend un agent.</p>
+      <p>La représentativité syndicale obtenue lors de ces élections détermine aussi les moyens syndicaux (décharges d'activité, droits de communication) accordés à chaque organisation pour les 4 années suivantes.</p>
+    </div>
+
+    <div class="fei-block anim anim-d2">
+      <h3>📅 Le cycle électoral, grandes étapes</h3>
+      <p>Le calendrier électoral de la Fonction Publique Hospitalière comprend plusieurs étapes encadrées réglementairement, avant le scrutin lui-même : détermination et publication des listes électorales, dépôt des candidatures par les organisations syndicales, période de campagne électorale, puis vote et dépouillement.</p>
+      <div class="fei-note" style="clear:both;">[À COMPLÉTER — dates précises de chaque étape pour Charles Perrens : date limite de dépôt des listes, période de campagne, modalités de dépouillement.]</div>
+    </div>
+
+    <div class="fei-block anim anim-d3">
+      <h3>✅ Pourquoi voter CGT</h3>
+      <p>Voter CGT, c'est choisir une organisation qui vous défend individuellement au quotidien (entretiens, sanctions, arrêts contestés) autant qu'elle porte des revendications collectives (effectifs, salaires, conditions de travail) — et qui siège dans toutes les instances où se décide votre avenir professionnel.</p>
+      <a class="droit-link" href="#" onclick="showPage('adherent');return false;">Rejoindre la CGT dès maintenant →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: QUI SOMMES-NOUS -->
 <div id="page-bureau" class="page-section">
   <div class="droits-hero">
     <div class="droits-hero-inner">
-      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">L'équipe</div>
-      <h2>Le bureau syndical</h2>
-      <p>Vos représentants CGT au CH Charles Perrens.</p>
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:10px;letter-spacing:0.06em;text-transform:uppercase;">La section syndicale</div>
+      <h2>Qui sommes-nous</h2>
+      <p>Notre histoire, nos valeurs, et l'équipe qui vous représente au quotidien au CH Charles Perrens.</p>
     </div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 32px 32px;">
+    <div class="fei-block anim">
+      <h3>📖 Notre histoire</h3>
+      <p>[TEXTE À COMPLÉTER — date de création de la section syndicale CGT à Charles Perrens, contexte de sa fondation, grandes étapes ou luttes marquantes menées localement au fil des années.]</p>
+      <p>Notre section est affiliée à la Fédération CGT Santé et Action Sociale, elle-même rattachée à la confédération CGT — première organisation syndicale de la Fonction Publique Hospitalière.</p>
+    </div>
+    <div class="fei-block anim anim-d1">
+      <h3>🤝 Nos valeurs</h3>
+      <p>[TEXTE À COMPLÉTER — ce qui distingue l'approche de la section : défense individuelle systématique, priorité donnée aux conditions de travail en psychiatrie, indépendance vis-à-vis de la direction, fonctionnement démocratique interne, etc.]</p>
+    </div>
+  </div>
+  <div class="droits-hero" style="margin-bottom:32px;padding:24px 0;">
+    <div class="droits-hero-inner"><h2 style="font-size:26px;">L'équipe</h2><p>Vos représentants CGT au CH Charles Perrens.</p></div>
   </div>
   <div class="bureau-grid">
     <div class="bureau-card anim"><div class="bureau-photo"><img src="images/bureau-1.jpg" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
@@ -588,8 +801,8 @@
       <div class="logo-mark" style="margin-bottom:14px;"><span class="l1">CGT</span><span class="l2">perrens</span></div>
       <p>Section syndicale CGT du Centre Hospitalier Charles Perrens. Affiliée à la Fédération CGT Santé et Action Sociale.</p>
     </div>
-    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">Actualités</a><a href="#" onclick="showPage('bureau');return false;">Le bureau</a></div>
-    <div class="footer-col"><h5>Ressources</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('fei');return false;">Événements indésirables</a><a href="#" onclick="showPage('docs');return false;">Ressources pratiques</a></div>
+    <div class="footer-col"><h5>Syndicat</h5><a href="#" onclick="showPage('accueil');return false;">Actualités</a><a href="#" onclick="showPage('bureau');return false;">Qui sommes-nous</a></div>
+    <div class="footer-col"><h5>Ressources</h5><a href="#" onclick="showPage('droits');return false;">Vos droits</a><a href="#" onclick="showPage('elections');return false;">Élections pro</a><a href="#" onclick="showPage('docs');return false;">Ressources pratiques</a></div>
     <div class="footer-col"><h5>Contact</h5><a href="mailto:syndicat.cgt@ch-perrens.fr">syndicat.cgt@ch-perrens.fr</a><a href="#">05.56.56.35.65</a><a href="#" onclick="showPage('adherent');return false;">Adhérer</a></div>
   </div>
   <div class="footer-bottom"><p>© 2026 CGT CH Charles Perrens</p></div>
