@@ -1,8 +1,10 @@
-# 18 — Contact
+# 19 — Contact
 
 **URL Jimdo :** `/contact`  
 **Titre de la page :** `Nous contacter · CGT — CH Charles Perrens`  
 **Maquette :** `contact.html`
+
+**Fichiers à uploader avant de coller :** `[IMG:local-exterieur-2]`, `[IMG:logo-cgt-perrens]`
 
 | # | Widget |
 |---|---|
@@ -21,7 +23,7 @@ Jimdo : **+ → Élément HTML** → coller → Enregistrer
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="/">
-      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <img class="logo-img" src="[IMG:logo-cgt-perrens]" alt="Logo CGT Charles Perrens">
       <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
     </a>
     <nav id="main-nav">
@@ -78,15 +80,19 @@ Jimdo : **+ → Élément HTML** → coller → Enregistrer
 <div class="wrap wrap--contact wrap--pb">
   <div class="s-card anim">
     <div class="s-title">Permanence syndicale</div>
-    <div style="font-size:14px;color:var(--gray-700);line-height:1.8;">
-      <div style="margin-bottom:10px;"><strong>Local CGT</strong><br>121 rue de la Béchade – CS 81285 – 33076 Bordeaux Cedex</div>
-      <div style="margin-bottom:10px;"><strong>Permanence syndicale</strong><br>[jours et horaires à préciser]</div>
-      <div style="margin-bottom:10px;"><strong>Permanence juridique CGT-LDAJ</strong><br>Les mercredis de 12h à 14h · local CGT · ouvert aux syndiqués comme aux non-syndiqués</div>
-      <div style="margin-bottom:10px;"><strong>Téléphone</strong><br>05.56.56.34.10 (standard) · 05.56.56.35.65 (35.65) · Portable : 07.68.03.34.15</div>
-      <div style="margin-bottom:10px;"><strong>Email</strong><br><a href="mailto:cgt@ch-perrens.fr" style="color:var(--red);">cgt@ch-perrens.fr</a></div>
-      <div><strong>Réseaux</strong><br><a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener" style="color:var(--red);">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener" style="color:var(--red);">Instagram @cgt.perrens</a></div>
+    <div class="contact-list">
+      <div><strong>Local CGT</strong><br>121 rue de la Béchade – CS 81285 – 33076 Bordeaux Cedex</div>
+      <div><strong>Permanence syndicale</strong><br>Du lundi au vendredi, de 9h à 17h</div>
+      <div><strong>Permanence juridique CGT-LDAJ</strong><br>Les mercredis de 12h à 14h · local CGT · ouvert aux syndiqués comme aux non-syndiqués</div>
+      <div><strong>Téléphone</strong><br>05 56 56 35 65 (poste 35.65) · Portable : 07 68 03 34 15 · Standard : 05 56 56 34 10</div>
+      <div><strong>Email</strong><br><a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a></div>
+      <div><strong>Réseaux</strong><br><a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">Instagram @cgt.perrens</a></div>
     </div>
   </div>
+  <figure class="photo-local anim anim-d1">
+    <img src="[IMG:local-exterieur-2]" alt="Entrée du local CGT au CH Charles Perrens, avec le drapeau CGT Charles Perrens" loading="lazy">
+    <figcaption>L'entrée du local CGT : porte vitrée, plaque « CGT » et drapeau rouge et jaune.</figcaption>
+  </figure>
 </div>
 ```
 

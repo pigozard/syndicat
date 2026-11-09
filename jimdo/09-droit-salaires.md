@@ -4,7 +4,7 @@
 **Titre de la page :** `Grilles de salaires · CGT — CH Charles Perrens`  
 **Maquette :** `droit-salaires.html`
 
-**Fichiers à uploader avant de coller :** `[PDF:grilles-salaires]`
+**Fichiers à uploader avant de coller :** `[IMG:logo-cgt-perrens]`, `[PDF:grilles-salaires]`
 
 | # | Widget |
 |---|---|
@@ -23,7 +23,7 @@ Jimdo : **+ → Élément HTML** → coller → Enregistrer
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="/">
-      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <img class="logo-img" src="[IMG:logo-cgt-perrens]" alt="Logo CGT Charles Perrens">
       <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
     </a>
     <nav id="main-nav">

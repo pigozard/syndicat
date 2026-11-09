@@ -18,7 +18,7 @@
     10. En-têtes de pages intérieures
     11. Vos droits : grille des fiches
     12. Blocs de texte (fiches, communiqués)
-    13. L'équipe
+    13. L'équipe (+ 13b histoire, 13c contact / adhésion / élections)
     14. FAQ
     15. Animations
     16. Responsive (tablette, mobile)
@@ -83,6 +83,7 @@ img { max-width: 100%; }
 .logo-mark { width: 46px; height: 46px; background: var(--red); border-radius: var(--radius-sm); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; flex-shrink: 0; }
 .logo-mark .l1 { font-family: var(--serif); font-size: 16px; color: #fff; font-weight: 600; line-height: 1; letter-spacing: -0.5px; }
 .logo-mark .l2 { font-size: 8px; color: rgba(255,255,255,0.6); letter-spacing: 0.14em; margin-top: 1px; }
+.logo-img { height: 58px; width: auto; display: block; flex-shrink: 0; }
 .logo-text h1 { font-family: var(--serif); font-size: 17px; color: var(--black); font-weight: 600; }
 .logo-text p { font-size: 11px; color: var(--gray-500); margin-top: 1px; }
 
@@ -287,6 +288,80 @@ a.news-featured, a.news-card { text-decoration: none; color: inherit; }
 .bureau-info h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 2px; }
 .bureau-role { font-size: 11px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
 .bureau-info p { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+.bureau-info p.bureau-meta { font-size: 11px; color: var(--gray-500); opacity: 0.85; margin-top: 4px; }
+.bureau-grid--spaced { margin-bottom: 40px; }
+
+
+/* ---------------------------------------------------------------------
+   13b. LA CGT EXPLIQUÉE : frise, familles syndicales, listes, sources
+   --------------------------------------------------------------------- */
+.txt-list { margin: 4px 0 12px 20px; }
+.txt-list li { font-size: 14px; color: var(--gray-700); line-height: 1.7; margin-bottom: 6px; }
+
+.timeline { list-style: none; display: grid; grid-template-columns: repeat(9, 1fr); gap: 0; margin: 8px 0 20px; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 0; right: 0; top: 30px; height: 2px; background: var(--gray-300); }
+.timeline li { position: relative; padding: 44px 4px 0; font-size: 11px; color: var(--gray-500); line-height: 1.35; text-align: center; }
+.timeline li::before { content: ''; position: absolute; top: 25px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--white); border: 2px solid var(--gray-500); }
+.timeline li.tl-key::before { background: var(--red); border-color: var(--red); }
+.timeline .tl-year { position: absolute; top: 0; left: 0; right: 0; font-family: var(--comic); font-size: 20px; color: var(--black); letter-spacing: 0.5px; }
+.timeline li.tl-key .tl-year { color: var(--red); }
+.timeline strong { display: block; font-size: 11.5px; color: var(--black); font-weight: 600; }
+
+.famille { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 16px; }
+.famille-ligne { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.famille-tag { width: 100%; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500); }
+.famille-org { background: var(--gray-50); border: var(--border); border-radius: var(--radius); padding: 6px 12px; font-size: 13px; font-weight: 700; color: var(--black); }
+.famille-org small { display: block; font-size: 11px; font-weight: 400; color: var(--gray-500); }
+.famille-org--cgt { border-color: var(--red); background: var(--red-light); color: var(--red-dark); }
+.famille-fleche { color: var(--gray-500); font-size: 16px; }
+
+.sources { font-size: 12px; color: var(--gray-500); line-height: 1.6; padding: 0 4px; }
+.sources ul { margin: 6px 0 0 18px; }
+.sources a { color: var(--red); }
+
+
+/* ---------------------------------------------------------------------
+   13c. CONTACT, ADHÉSION, ÉLECTIONS
+   --------------------------------------------------------------------- */
+.contact-list { font-size: 14px; color: var(--gray-700); line-height: 1.8; }
+.contact-list > div { margin-bottom: 10px; }
+.contact-list > div:last-child { margin-bottom: 0; }
+.contact-list a { color: var(--red); }
+
+.photo-local { margin: 0 0 16px; }
+.photo-local img { width: 100%; height: auto; display: block; border-radius: var(--radius); border: var(--border); }
+.photo-local figcaption { font-size: 12px; color: var(--gray-500); margin-top: 6px; }
+
+.adh-form { padding: 28px; }
+.adh-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.adh-intro { font-size: 13px; color: var(--gray-700); line-height: 1.6; margin-bottom: 20px; }
+.adh-form fieldset { border: none; border-top: 1px solid var(--gray-100); padding: 16px 0 8px; margin: 0; }
+.adh-form legend { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--red); padding-right: 8px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.form-grid .full { grid-column: 1 / -1; }
+.form-grid label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: var(--gray-700); }
+.form-grid input { font: inherit; font-size: 14px; font-weight: 400; color: var(--black); padding: 9px 10px; border: 1px solid var(--gray-300); border-radius: var(--radius-sm); background: var(--white); width: 100%; }
+.form-grid input:focus { outline: 2px solid var(--red); outline-offset: -1px; border-color: var(--red); }
+.form-grid input.maj { text-transform: uppercase; }
+.choice-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-top: 14px; font-size: 13px; color: var(--gray-700); }
+.choice-row > span { font-weight: 600; }
+.choice-row label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.choice-row input { accent-color: var(--red); }
+.cotis-result { margin-top: 16px; background: var(--red-light); color: var(--red-dark); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 13px; line-height: 1.6; }
+.adh-note { font-size: 12px; color: var(--gray-500); line-height: 1.6; margin-top: 10px; }
+.adh-form .join-btn { margin-top: 20px; }
+
+.table-scroll { overflow-x: auto; }
+.cotis-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.cotis-table th, .cotis-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--gray-100); white-space: nowrap; }
+.cotis-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-500); font-weight: 700; }
+.cotis-table td:first-child { font-weight: 700; color: var(--black); }
+.cotis-note { font-size: 12px; font-weight: 600; color: var(--red); margin-top: 12px; }
+
+.liste-cgt { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 16px; margin: 6px 0 4px; }
+.liste-cgt li { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--gray-500); line-height: 1.4; }
+.liste-cgt strong { font-size: 13px; color: var(--black); }
+.liste-cgt .liste-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--red); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 
 
 /* ---------------------------------------------------------------------
@@ -322,6 +397,13 @@ a.news-featured, a.news-card { text-decoration: none; color: inherit; }
   .news-featured { grid-template-columns: 1fr; }
   .droits-grid { grid-template-columns: 1fr 1fr; }
   .bureau-grid { grid-template-columns: 1fr 1fr; }
+  .liste-cgt { grid-template-columns: 1fr 1fr; }
+  /* Frise : passe à la verticale */
+  .timeline { grid-template-columns: 1fr; padding-left: 8px; }
+  .timeline::before { left: 13px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; }
+  .timeline li { padding: 0 0 12px 32px; text-align: left; }
+  .timeline li::before { top: 6px; left: 0; margin-left: 0; }
+  .timeline .tl-year { position: static; display: block; font-size: 18px; }
 }
 
 /* Mobile */
@@ -337,8 +419,12 @@ a.news-featured, a.news-card { text-decoration: none; color: inherit; }
   .hero h2 { font-size: 30px; }
   .main { padding: 24px 16px; }
   .droits-grid { grid-template-columns: 1fr; }
-  .bureau-grid { grid-template-columns: 1fr; }
+  .bureau-grid { grid-template-columns: 1fr 1fr; }
   .pdf-gallery img { height: 280px; }
+  .logo-img { height: 48px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .liste-cgt { grid-template-columns: 1fr; }
+  .adh-form { padding: 20px; }
 }
 
 @media (max-width: 500px) {

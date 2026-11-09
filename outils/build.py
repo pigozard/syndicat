@@ -45,6 +45,7 @@ PAGES = [
     ("droit-fei.html",        "droits",      "/droit-fei",           "Événements indésirables"),
     ("droit-elections.html",  "droits",      "/droit-elections",     "Élections professionnelles"),
     ("equipe.html",           "equipe",      "/equipe",              "L'équipe"),
+    ("histoire.html",         "equipe",      "/histoire",            "La CGT expliquée"),
     ("communiques.html",      "communiques", "/communiques",         "Communiqués"),
     ("contact.html",          "contact",     "/contact",             "Contact"),
     ("adherer.html",          "",            "/adherer",             "Adhérer"),

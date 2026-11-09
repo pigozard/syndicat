@@ -1,0 +1,290 @@
+# 17 — La CGT expliquée
+
+**URL Jimdo :** `/histoire`  
+**Titre de la page :** `La CGT expliquée · CGT — CH Charles Perrens`  
+**Maquette :** `histoire.html`
+
+**Fichiers à uploader avant de coller :** `[IMG:logo-cgt-perrens]`
+
+| # | Widget |
+|---|---|
+| 0 | Navigation |
+| 1 | En-tête de page |
+| 2 | Un syndicat, à quoi ça sert ? |
+| 3 | 130 ans de conquêtes |
+| 4 | Pourquoi plusieurs syndicats ? |
+| 5 | Révolutionnaire ou réformiste |
+| 6 | La CGT, un syndicat de communistes ? |
+| 7 | La psychiatrie, un combat syndical |
+| 8 | Et dans notre hôpital ? |
+| 9 | Sources |
+| 10 | Bandeau d'aide |
+
+---
+
+## Widget 0 — Navigation
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <img class="logo-img" src="[IMG:logo-cgt-perrens]" alt="Logo CGT Charles Perrens">
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="/" data-nav="accueil">La CGT</a>
+      <a href="/droits" data-nav="droits">Vos droits</a>
+      <a href="/equipe" data-nav="equipe" class="active">L'équipe</a>
+      <a href="/communiques" data-nav="communiques">Communiqués</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+      <a href="/contact" class="nav-cta-mobile">Permanence</a>
+      <a href="/adherer" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/contact" class="btn btn-ghost">Permanence</a>
+      <a href="/adherer" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+```
+
+---
+
+## Widget 1 — En-tête de page
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <a href="/equipe" class="back-link">← Retour à L'équipe</a>
+    <div class="droits-hero-kicker">De 1895 à aujourd'hui</div>
+    <h2>La CGT expliquée</h2>
+    <p>Congés payés, Sécurité sociale, salaire minimum : rien de tout cela n'est tombé du ciel. Ce sont des conquêtes syndicales.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 2 — Un syndicat, à quoi ça sert ?
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>🤝 Un syndicat, à quoi ça sert ?</h3>
+    <p><strong>Seul, on ne pèse pas.</strong> Face à un employeur, un salarié isolé négocie mal son salaire ou ses horaires. Un syndicat, c'est des salariés qui s'unissent pour parler d'une seule voix.</p>
+    <p><strong>Un droit conquis.</strong> Les syndicats sont interdits en France jusqu'à la loi Waldeck-Rousseau de 1884. Depuis 1946, le droit syndical et le droit de grève figurent dans la Constitution.</p>
+    <p><strong>Deux niveaux d'action.</strong> Dans votre établissement, le syndicat défend les collègues au quotidien (plannings, sanctions, sécurité). Au niveau national, une <strong>confédération</strong> comme la CGT négocie et se mobilise sur les grandes lois : salaires, retraites, santé.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 3 — 130 ans de conquêtes
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>📅 130 ans de conquêtes</h3>
+    <ol class="timeline">
+      <li><span class="tl-year">1895</span><strong>Congrès de Limoges</strong>naissance de la CGT</li>
+      <li><span class="tl-year">1906</span><strong>Charte d'Amiens</strong>indépendance syndicale</li>
+      <li><span class="tl-year">1921</span><strong>Première scission</strong>naissance de la CGTU</li>
+      <li><span class="tl-year">1936</span><strong>Front populaire</strong>congés payés, 40 heures</li>
+      <li class="tl-key"><span class="tl-year">1945</span><strong>Sécurité sociale</strong>avec Ambroise Croizat</li>
+      <li><span class="tl-year">1947</span><strong>Scission</strong>naissance de FO</li>
+      <li><span class="tl-year">1968</span><strong>Grève générale</strong>accords de Grenelle</li>
+      <li><span class="tl-year">1995</span><strong>Grèves</strong>contre le plan Juppé</li>
+      <li><span class="tl-year">2023</span><strong>Sophie Binet</strong>1<sup>re</sup> femme à la tête</li>
+    </ol>
+    <p>Derrière chaque date, un droit que vous avez aujourd'hui :</p>
+    <ul class="txt-list">
+      <li><strong>Vos vacances</strong> viennent des grèves de 1936 et des congés payés.</li>
+      <li>Votre carte Vitale vient de la <strong>Sécurité sociale</strong>, bâtie en 1945 avec Ambroise Croizat, ministre et militant CGT.</li>
+      <li><strong>Votre salaire minimum</strong> a bondi de 35 % après la grève générale de 1968.</li>
+    </ul>
+    <p>Toutes ces avancées ont été obtenues par la mobilisation. Réélue en juin 2026, Sophie Binet dirige aujourd'hui une CGT d'environ 640 000 adhérents.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 4 — Pourquoi plusieurs syndicats ?
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>🌳 Pourquoi plusieurs syndicats ?</h3>
+    <p>En France, plusieurs syndicats coexistent : c'est le <strong>pluralisme syndical</strong>. Il est né de désaccords sur la religion, les rapports avec les partis ou la manière de lutter.</p>
+    <div class="famille">
+      <div class="famille-ligne">
+        <span class="famille-tag">Issus de la CGT</span>
+        <span class="famille-org famille-org--cgt">CGT <small>1895</small></span>
+        <span class="famille-fleche">→</span>
+        <span class="famille-org">FO <small>1948</small></span>
+        <span class="famille-org">FEN <small>1948, enseignants</small></span>
+        <span class="famille-fleche">→</span>
+        <span class="famille-org">FSU <small>1993</small></span>
+        <span class="famille-org">UNSA <small>1993</small></span>
+      </div>
+      <div class="famille-ligne">
+        <span class="famille-tag">Tradition chrétienne</span>
+        <span class="famille-org">CFTC <small>1919</small></span>
+        <span class="famille-fleche">→</span>
+        <span class="famille-org">CFDT <small>1964</small></span>
+        <span class="famille-fleche">→</span>
+        <span class="famille-org">Solidaires <small>1998 (SUD)</small></span>
+      </div>
+      <div class="famille-ligne">
+        <span class="famille-tag">Syndicat des cadres</span>
+        <span class="famille-org">CFE-CGC <small>1944</small></span>
+      </div>
+    </div>
+    <p>La CFDT est issue de la CFTC, qui abandonne sa référence chrétienne en 1964. Solidaires regroupe notamment les syndicats SUD, créés par des militants exclus de la CFDT. La plus grande cassure reste celle de 1947 entre la CGT et FO.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 5 — Révolutionnaire ou réformiste
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>⚖️ Révolutionnaire ou réformiste : quelle différence ?</h3>
+    <ul class="txt-list">
+      <li><strong>Syndicalisme révolutionnaire :</strong> améliorer le quotidien ne suffit pas, il faut aussi transformer la société en profondeur. L'outil central est le rapport de force, la grève, jusqu'à la grève générale. C'est la ligne de la Charte d'Amiens de 1906 : défendre les revendications immédiates <strong>et</strong> viser l'émancipation complète des travailleurs.</li>
+      <li><strong>Syndicalisme réformiste :</strong> faire progresser les droits pas à pas, à l'intérieur du système existant, en privilégiant la négociation et les accords avec le patronat et l'État.</li>
+    </ul>
+    <p>Dans les faits, la frontière est floue : tous les syndicats négocient, et tous font grève. La différence tient surtout à l'équilibre entre lutte et compromis. La CGT se définit comme un syndicalisme de transformation sociale ; la CFDT et FO revendiquent l'étiquette réformiste.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 6 — La CGT, un syndicat de communistes ?
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>❓ La CGT, un syndicat de communistes ? Non.</h3>
+    <p><strong>Ce lien est historique.</strong> De la Libération aux années 1990, beaucoup de dirigeants de la CGT étaient aussi membres de la direction du Parti communiste. C'est ce lien qui a nourri la scission de 1947.</p>
+    <p>En 1996, le secrétaire général Louis Viannet quitte le bureau politique du PCF, mettant fin à une tradition installée depuis 1945. En 1999, la CGT rejoint la Confédération européenne des syndicats. En 2001, son successeur Bernard Thibault quitte à son tour les instances du PCF.</p>
+    <p><strong>Aujourd'hui.</strong> La CGT est ouverte à tous les salariés, quelles que soient leurs opinions politiques, philosophiques ou religieuses. Ses adhérents votent pour des partis très différents, ou ne votent pas. Elle ne soutient aucun parti, mais appelle à faire barrage à l'extrême droite, qu'elle juge contraire aux intérêts des travailleurs.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 7 — La psychiatrie, un combat syndical
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>🧠 Pourquoi la psychiatrie est un combat syndical</h3>
+    <p>Depuis les années 1960, la psychiatrie publique est organisée en <strong>secteurs</strong> : sur chaque territoire, une même équipe suit les patients, à l'hôpital comme près de chez eux, dans des centres médico-psychologiques (CMP) gratuits.</p>
+    <p>Mais <strong>la psychiatrie est devenue le parent pauvre de l'hôpital</strong> avec une succession de fermetures de lits, des CMP saturés avec des mois d'attente et des soignants épuisés.</p>
+    <p>Les <strong>conditions de travail des soignants</strong> et la qualité des soins aux patients sont liées. C'est pourquoi la <strong>Fédération CGT Santé et Action sociale</strong> porte un plan d'action national (CNP-CGT, 2023) :</p>
+    <p><strong>La CGT dit non à la marchandisation.</strong> La réforme du financement de 2021 paie l'activité sans distinguer public et privé lucratif. Pour la CGT, elle ouvre la voie aux grands groupes de cliniques et met les hôpitaux en concurrence (CNP-CGT, 2024).</p>
+    <p><strong>Que penser de l'isolement et de la contention ?</strong> La loi en fait des mesures de dernier recours depuis 2016. Pour les réduire vraiment, <strong>il faut d'abord du personnel, du temps et des locaux adaptés.</strong></p>
+    <p>Des syndicats CGT (Le Vinatier, Le Césame, Sevrey, CHU de Nantes…) participent au <strong>Printemps de la psychiatrie</strong> aux côtés des soignants, usagers et familles (USP, 2022).</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 8 — Et dans notre hôpital ?
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>🏥 Et dans notre hôpital ?</h3>
+    <p>L'histoire de la CGT ne se joue pas qu'à Paris. Elle se joue aussi ici, dans nos services, chaque jour. Le syndicat CGT de Charles Perrens, ce sont des collègues : infirmiers, aides-soignants, ASH, agents techniques et administratifs, psychologues, éducateurs.</p>
+    <p><strong>Ce que nous faisons pour vous, concrètement :</strong></p>
+    <ul class="txt-list">
+      <li><strong>Vous accompagner</strong> lors d'un entretien avec la hiérarchie, d'une sanction, d'un conflit ou d'une demande de mutation.</li>
+      <li><strong>Vérifier vos droits :</strong> plannings, heures supplémentaires, congés, primes, formation, temps partiel.</li>
+      <li><strong>Vous représenter</strong> dans les instances de l'hôpital, où se décident les réorganisations, les effectifs et les conditions de travail.</li>
+      <li><strong>Porter vos alertes :</strong> manque de personnel, sécurité, fermetures de lits.</li>
+    </ul>
+    <p><strong>Titulaire, contractuel, de jour ou de nuit</strong>, vous pouvez venir nous voir, adhérent ou non.</p>
+    <div class="fei-note">Ensemble, on est plus forts. Pour nos conditions de travail, et pour la qualité des soins.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 9 — Sources
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow wrap--pb">
+  <div class="sources anim">
+    <strong>Sources</strong>
+    <ul>
+      <li><a href="https://www.ihs.cgt.fr/les-grandes-dates-de-lhistoire-de-la-cgt/" target="_blank" rel="noopener">IHS CGT, « Les grandes dates de l'histoire de la CGT »</a></li>
+      <li>Public Sénat, « Il y a 70 ans, la grande scission CGT-FO »</li>
+      <li>Wikipedia, General Confederation of Labour (France)</li>
+      <li>Sud Radio, réélection de Sophie Binet (2026)</li>
+      <li>CNP-CGT, tract du 29 octobre 2024</li>
+      <li>CNP-CGT, tract du 16 novembre 2023</li>
+      <li>Assemblée nationale, amendement n° 603, PLFSS 2026</li>
+      <li>Printemps de la psychiatrie, communiqué du 20 septembre 2022</li>
+    </ul>
+  </div>
+</div>
+```
+
+---
+
+## Widget 10 — Bandeau d'aide
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+```

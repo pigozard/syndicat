@@ -1,10 +1,10 @@
-# 17 — Communiqués
+# 18 — Communiqués
 
 **URL Jimdo :** `/communiques`  
 **Titre de la page :** `Communiqués · CGT — CH Charles Perrens`  
 **Maquette :** `communiques.html`
 
-**Fichiers à uploader avant de coller :** `[IMG:cgos-1]`, `[IMG:communique-1]`, `[IMG:conges-maladie-1]`, `[IMG:entretien-informel-1]`, `[IMG:entretien-pro-1]`, `[IMG:harcelement-1]`, `[IMG:rqth-1]`, `[IMG:syndicat-1]`, `[IMG:temps-travail-1]`, `[PDF:grilles-salaires]`
+**Fichiers à uploader avant de coller :** `[IMG:cgos-1]`, `[IMG:communique-1]`, `[IMG:conges-maladie-1]`, `[IMG:entretien-informel-1]`, `[IMG:entretien-pro-1]`, `[IMG:harcelement-1]`, `[IMG:logo-cgt-perrens]`, `[IMG:rqth-1]`, `[IMG:syndicat-1]`, `[IMG:temps-travail-1]`, `[PDF:grilles-salaires]`
 
 | # | Widget |
 |---|---|
@@ -41,7 +41,7 @@ Jimdo : **+ → Élément HTML** → coller → Enregistrer
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="/">
-      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <img class="logo-img" src="[IMG:logo-cgt-perrens]" alt="Logo CGT Charles Perrens">
       <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
     </a>
     <nav id="main-nav">
