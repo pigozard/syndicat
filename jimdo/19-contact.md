@@ -4,7 +4,7 @@
 **Titre de la page :** `Nous contacter · CGT — CH Charles Perrens`  
 **Maquette :** `contact.html`
 
-**Fichiers à uploader avant de coller :** `[IMG:local-exterieur-2]`, `[IMG:logo-cgt-perrens]`
+**Fichiers à uploader avant de coller :** `[IMG:local-exterieur-2]`, `[IMG:local-interieur-1]`, `[IMG:logo-cgt-perrens]`
 
 | # | Widget |
 |---|---|
@@ -92,6 +92,10 @@ Jimdo : **+ → Élément HTML** → coller → Enregistrer
   <figure class="photo-local anim anim-d1">
     <img src="[IMG:local-exterieur-2]" alt="Entrée du local CGT au CH Charles Perrens, avec le drapeau CGT Charles Perrens" loading="lazy">
     <figcaption>L'entrée du local CGT : porte vitrée, plaque « CGT » et drapeau rouge et jaune.</figcaption>
+  </figure>
+  <figure class="photo-local anim anim-d2">
+    <img src="[IMG:local-interieur-1]" alt="Intérieur du local CGT : bureau, tableaux des instances CSE et F3SCT, drapeau CGT au mur" loading="lazy">
+    <figcaption>Le local, côté bureau : plannings des instances au tableau, documentation et tracts à disposition.</figcaption>
   </figure>
 </div>
 ```
