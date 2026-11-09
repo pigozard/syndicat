@@ -1,0 +1,215 @@
+# 01 — Accueil
+
+**URL Jimdo :** `/`  
+**Titre de la page :** `CGT — CH Charles Perrens`  
+**Maquette :** `index.html`
+
+**Fichiers à uploader avant de coller :** `[IMG:syndicat-1]`
+
+| # | Widget |
+|---|---|
+| 0 | Navigation |
+| 1 | Hero |
+| 2 | Le saviez-vous |
+| 3 | Actualités + agenda + adhésion |
+| 4 | FAQ |
+| 5 | Bandeau d'aide |
+
+---
+
+## Widget 0 — Navigation
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="/" data-nav="accueil" class="active">La CGT</a>
+      <a href="/droits" data-nav="droits">Vos droits</a>
+      <a href="/equipe" data-nav="equipe">L'équipe</a>
+      <a href="/communiques" data-nav="communiques">Communiqués</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+      <a href="/contact" class="nav-cta-mobile">Permanence</a>
+      <a href="/adherer" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/contact" class="btn btn-ghost">Permanence</a>
+      <a href="/adherer" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+```
+
+---
+
+## Widget 1 — Hero
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text anim">
+      <div class="hero-tag">Section syndicale CGT — CH Charles Perrens</div>
+      <h2>Ensemble, défendons <em>nos droits</em> à l'hôpital</h2>
+      <p class="hero-sub">Grilles de salaires, conditions de travail, temps de repos — la CGT vous informe, vous accompagne et vous représente dans toutes les instances de l'établissement.</p>
+      <div class="hero-actions">
+        <a href="/droits" class="btn-white">Connaître vos droits</a>
+        <a href="/communiques" class="btn-outline-w">Voir nos ressources</a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 2 — Le saviez-vous
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="breaking">
+  <div class="breaking-inner">
+    <span class="breaking-badge">Le saviez-vous</span>
+    <span class="breaking-text">Se syndiquer est un <strong>droit constitutionnel</strong> — aucune obligation d'en informer votre employeur, la discrimination syndicale est punie par la loi.</span>
+  </div>
+</div>
+```
+
+---
+
+## Widget 3 — Actualités + agenda + adhésion
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="main">
+  <div class="left-col">
+    <div class="sec-head">
+      <div class="sec-title">Actualités récentes</div>
+      <a href="/communiques" class="sec-more">Toutes les actualités →</a>
+    </div>
+    <a href="/communiques#art-mobilisation" class="news-featured anim">
+      <div class="news-featured-img"><img src="[IMG:syndicat-1]" alt="La mobilisation au SECOP a payé"><div class="news-img-overlay"></div></div>
+      <div class="news-featured-body">
+        <div>
+          <div class="pill-row"><span class="pill pill-green"><span class="dot dot-green" style="margin-right:4px"></span>Victoire syndicale</span></div>
+          <h3>La mobilisation a payé !</h3>
+          <p>Grâce à la mobilisation des professionnels du SECOP et des unités, et à l'action de la CGT, la Direction a répondu à nos revendications et pris des engagements écrits le 16 juin 2026 : +1 ETP, renfort médical, groupe de travail post-urgences...</p>
+          <span class="droit-link">Lire la suite →</span>
+        </div>
+        <div class="news-meta"><span class="news-date">16 juin 2026</span></div>
+      </div>
+    </a>
+    <div class="news-list">
+      <a href="/communiques#art-preavis" class="news-card anim anim-d1">
+        <div class="news-card-accent" style="background:var(--red);"></div>
+        <div class="news-card-body">
+          <div class="pill-row"><span class="pill pill-red">Mobilisation</span></div>
+          <h3>Préavis de grève au SECOP — mercredi 17 juin 2026</h3>
+          <p>Conditions d'accueil dignes, sécurité des soins, respect des professionnels, moyens adaptés, fin de la sur-occupation chronique : la CGT appelle l'ensemble des personnels à se mobiliser.</p>
+          <div class="news-card-footer"><span class="droit-link">Lire la suite →</span></div>
+        </div>
+      </a>
+      <a href="/communiques#art-secop-alerte" class="news-card anim anim-d2">
+        <div class="news-card-accent" style="background:#b8730a;"></div>
+        <div class="news-card-body">
+          <div class="pill-row"><span class="pill pill-amber">Vigilance</span></div>
+          <h3>Alerte au SECOP : l'équipe soignante s'adresse à la direction</h3>
+          <p>Après une pétition et l'épuisement des recours internes, la CGT porte le courrier de l'équipe soignante à la Directrice Générale — des records à 17 patients pour 12 lits.</p>
+          <div class="news-card-footer"><span class="droit-link">Lire la suite →</span></div>
+        </div>
+      </a>
+      <a href="/communiques#art-valse" class="news-card anim anim-d3">
+        <div class="news-card-accent" style="background:#5c7488;"></div>
+        <div class="news-card-body">
+          <div class="pill-row"><span class="pill pill-blue">Élections pro</span></div>
+          <h3>La valse des cadres</h3>
+          <p>La continuité des soins passe aussi par la continuité de l'encadrement — la CGT Charles Perrens demande un encadrement stable et une véritable continuité managériale en Post-urgence.</p>
+          <div class="news-card-footer"><span class="droit-link">Lire la suite →</span></div>
+        </div>
+      </a>
+    </div>
+    <div class="s-card anim" style="text-align:center;">
+      <a href="/communiques" class="droit-link" style="font-size:13px;">Autres communiqués →</a>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="s-card anim">
+      <div class="s-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Agenda syndical
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-date"><div class="dd">Mer.</div><div class="mm">12h-14h</div></div>
+        <div class="agenda-info"><span class="agenda-type at-permanence">Permanence juridique</span><h4>Permanence CGT-LDAJ</h4><p>Local CGT · avocats et intervenants juridiques · ouvert à tous</p></div>
+      </div>
+    </div>
+    <div class="join-box anim anim-d2">
+      <h3>Rejoindre la CGT</h3>
+      <div class="join-perks">
+        <div class="perk"><div class="perk-check"></div><span>Accompagnement personnalisé tout au long de votre carrière</span></div>
+        <div class="perk"><div class="perk-check"></div><span>Défense en cas de conflit avec l'employeur</span></div>
+        <div class="perk"><div class="perk-check"></div><span>Accès à nos permanences et ressources juridiques</span></div>
+        <div class="perk"><div class="perk-check"></div><span>Aucune obligation d'en informer votre employeur</span></div>
+      </div>
+      <a href="/adherer" class="join-btn">Remplir le formulaire d'adhésion →</a>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 4 — FAQ
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--pb">
+  <div class="sec-head"><div class="sec-title">Foire aux questions</div></div>
+  <div class="faq-list">
+    <details class="faq-item anim"><summary>Comment adhérer à la CGT ?</summary><p>Remplissez le formulaire d'adhésion en ligne (bouton « Adhérer » en haut de page) ou contactez directement la permanence syndicale. L'adhésion peut aussi se faire en main propre auprès d'un délégué.</p></details>
+    <details class="faq-item anim"><summary>Dois-je informer mon employeur si je me syndique ?</summary><p>Non, aucune obligation légale. Se syndiquer est un droit constitutionnel et la discrimination syndicale est punie par la loi (art. L1132-1 du Code du travail, applicable par analogie aux principes de la Fonction Publique).</p></details>
+    <details class="faq-item anim"><summary>Puis-je être accompagné en cas d'entretien disciplinaire ou informel ?</summary><p>Oui, dans toute situation où vos intérêts professionnels sont en jeu (pas seulement en disciplinaire), vous pouvez être assisté par un représentant CGT (loi n°83-634, art. 19). Contactez-nous avant l'entretien si possible.</p></details>
+    <details class="faq-item anim"><summary>Que faire en cas d'arrêt maladie contesté ?</summary><p>Ne restez pas seul : contactez la permanence CGT avec vos justificatifs. Nous pouvons vous accompagner dans les démarches auprès de l'administration et, si besoin, dans un recours.</p></details>
+    <details class="faq-item anim"><summary>Où et quand se déroule la permanence juridique ?</summary><p>La permanence CGT-LDAJ se tient les mercredis de 12h à 14h au local CGT, avec des avocats et intervenants juridiques. Ouverte à tous, syndiqués ou non.</p></details>
+    <details class="faq-item anim"><summary>Je ne suis pas syndiqué, la CGT peut-elle quand même m'aider ?</summary><p>Oui. Notre porte est toujours ouverte, syndiqué ou non — pour une question rapide comme pour un accompagnement plus long.</p></details>
+  </div>
+</div>
+```
+
+---
+
+## Widget 5 — Bandeau d'aide
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+```

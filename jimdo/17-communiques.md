@@ -1,0 +1,483 @@
+# 17 — Communiqués
+
+**URL Jimdo :** `/communiques`  
+**Titre de la page :** `Communiqués · CGT — CH Charles Perrens`  
+**Maquette :** `communiques.html`
+
+**Fichiers à uploader avant de coller :** `[IMG:cgos-1]`, `[IMG:communique-1]`, `[IMG:conges-maladie-1]`, `[IMG:entretien-informel-1]`, `[IMG:entretien-pro-1]`, `[IMG:harcelement-1]`, `[IMG:rqth-1]`, `[IMG:syndicat-1]`, `[IMG:temps-travail-1]`, `[PDF:grilles-salaires]`
+
+| # | Widget |
+|---|---|
+| 0 | Navigation |
+| 1 | En-tête de page |
+| 2 | Communiqué — La CGT à vos côtés tout l'été ! |
+| 3 | Communiqué — Canicule : reconnaissance de la pénibilité |
+| 4 | Communiqué — Entretien professionnel 2026 : les 5 critères qui font la différence |
+| 5 | Communiqué — La mobilisation a payé ! |
+| 6 | Communiqué — Préavis de grève au SECOP — mercredi 17 juin 2026 |
+| 7 | Communiqué — Communiqué de presse — Psychiatrie : un déni honteux de la réalité |
+| 8 | Communiqué — La valse des cadres |
+| 9 | Communiqué — Statut d'inégalité |
+| 10 | Communiqué — Le 1er mai ne se négocie pas |
+| 11 | Communiqué — Juste une brève : se syndiquer est un droit |
+| 12 | Communiqué — L'entretien informel : la conversation qui peut vous échapper |
+| 13 | Communiqué — Encore une fois ! |
+| 14 | Communiqué — Alerte au SECOP : l'équipe soignante s'adresse à la direction |
+| 15 | Communiqué — Du mépris à la victoire |
+| 16 | Communiqué — En cas d'urgence : la CGT est là |
+| 17 | Communiqué — Le travail a plusieurs visages, la CGT a le tien |
+| 18 | Communiqué — Nos tracts d'information |
+| 19 | Communiqué — Un peu d'histoire : le rôle de la CGT dans la création du festival de Cannes |
+| 20 | Communiqué — Grilles de salaires — le livret complet |
+| 21 | Bandeau d'aide |
+
+---
+
+## Widget 0 — Navigation
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="/" data-nav="accueil">La CGT</a>
+      <a href="/droits" data-nav="droits">Vos droits</a>
+      <a href="/equipe" data-nav="equipe">L'équipe</a>
+      <a href="/communiques" data-nav="communiques" class="active">Communiqués</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+      <a href="/contact" class="nav-cta-mobile">Permanence</a>
+      <a href="/adherer" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/contact" class="btn btn-ghost">Permanence</a>
+      <a href="/adherer" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+```
+
+---
+
+## Widget 1 — En-tête de page
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <div class="droits-hero-kicker">Bibliothèque syndicale</div>
+    <h2>Communiqués</h2>
+    <p>Communiqués, conseils et actualités du syndicat, à lire directement ici.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 2 — Communiqué — La CGT à vos côtés tout l'été !
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim" id="art-ete">
+    <h3>🏖️ La CGT à vos côtés tout l'été !</h3>
+    <div class="pub-date"><span class="pub-month">JUILLET 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p><strong>Bonnes vacances à toutes et tous !</strong> Prenez le temps de souffler : profitez de vos proches, reposez-vous, ressourcez-vous. Vous l'avez bien mérité !</p>
+    <p><strong>La CGT reste mobilisée :</strong> même pendant l'été, nous restons à vos côtés pour défendre vos droits, le service public et de meilleures conditions de travail.</p>
+    <p><strong>Ensemble, plus forts !</strong> En 2026, faisons entendre notre voix. Votez CGT pour un syndicat déterminé, solidaire et toujours sur le terrain à vos côtés.</p>
+    <div class="fei-note">La CGT, votre force au quotidien !</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 3 — Communiqué — Canicule : reconnaissance de la pénibilité
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim" id="art-canicule">
+    <h3>☀️ Canicule : reconnaissance de la pénibilité</h3>
+    <div class="pub-date"><span class="pub-month">JUILLET 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>La canicule impacte le travail et la santé. La CGT réclame donc des dispositifs exceptionnels pour des circonstances elles-mêmes exceptionnelles — il est de la responsabilité de l'employeur d'agir concrètement. La CGT Charles Perrens demande :</p>
+    <p><strong>Une prime canicule exceptionnelle</strong> sur le modèle de 2003, pour des conditions de travail particulièrement difficiles — une mobilisation des personnels qui doit se traduire par une reconnaissance financière de l'engagement des équipes.</p>
+    <p><strong>Une autorisation spéciale d'absence et/ou un congé exceptionnel</strong> sur le modèle du Covid, pour les personnes vulnérables (grossesse, pathologie chronique, etc.), avec un point systématique fait avec la médecine préventive pour toutes les pathologies pouvant s'aggraver avec la chaleur.</p>
+    <p><strong>Le télétravail privilégié</strong> dès que les missions le permettent, sur le modèle du Covid, pour limiter l'exposition à la chaleur et préserver la santé des agents — avec un point sur les équipements de climatisation.</p>
+    <p><strong>Une organisation adaptée et anticipée</strong> : se caler sur les directives nationales et les alertes de Météo France (vigilance canicule), avec des horaires adaptés, voire décalés, en fonction des besoins des agents et de leurs capacités.</p>
+    <div class="fei-note">Merci à toutes et tous pour votre engagement au quotidien !</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 4 — Communiqué — Entretien professionnel 2026 : les 5 critères qui font la différence
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d1" id="art-entretien-pro">
+    <a href="[IMG:entretien-pro-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:entretien-pro-1]" alt="Entretien professionnel 2026"></a>
+    <h3>📋 Entretien professionnel 2026 : les 5 critères qui font la différence</h3>
+    <div class="pub-date"><span class="pub-month">JUILLET 2026</span><span class="pub-source">· Conseils CGT Charles Perrens</span></div>
+    <p>Pour votre avancement, l'entretien évalue 5 critères — pour chacun, valorisez une situation concrète que vous avez bien gérée :</p>
+    <p><strong>1. Maîtrise de soi :</strong> gérer son stress, prendre du recul, garder un comportement professionnel dans les situations difficiles (tension, surcharge, urgence, conflit).</p>
+    <p><strong>2. Comportement adapté à autrui :</strong> communiquer avec respect, collaborer avec ses collègues, adapter son attitude aux patients et familles, respecter la confidentialité.</p>
+    <p><strong>3. Capacité à travailler en équipe :</strong> partager les informations utiles, contribuer à la cohésion, participer aux projets collectifs, coopérer avec les autres professionnels.</p>
+    <p><strong>4. Capacité d'adaptation :</strong> s'adapter aux changements, intégrer de nouvelles organisations, utiliser de nouveaux outils, faire évoluer ses pratiques.</p>
+    <p><strong>5. Rigueur :</strong> réaliser un travail fiable, respecter les délais et les procédures, garantir la qualité des prises en charge.</p>
+    <p><strong>Vos droits :</strong> convocation au moins 8 jours avant l'entretien, document d'auto-évaluation, 15 jours pour formuler vos observations. Signer ne veut pas dire être d'accord avec le contenu — vous pouvez demander une révision et exercer un recours.</p>
+    <div class="fei-note">Les 5 conseils CGT : préparez votre auto-évaluation, listez vos réalisations de l'année, préparez un exemple concret par critère, faites inscrire les difficultés rencontrées (conditions de travail, moyens, organisation), relisez attentivement votre compte-rendu avant de signer. Rappel : l'atteinte des objectifs dépend aussi des effectifs, des moyens et de l'organisation — vous n'êtes pas responsable de tout ce qui dysfonctionne dans l'établissement.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 5 — Communiqué — La mobilisation a payé !
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d2" id="art-mobilisation">
+    <h3>🎉 La mobilisation a payé !</h3>
+    <div class="pub-date"><span class="pub-month">16 JUIN 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Grâce à la mobilisation des professionnels de Charles Perrens, ceux du SECOP comme ceux des unités, et à l'action de la CGT, la Direction a répondu à nos revendications et a pris des engagements écrits le 16 juin 2026.</p>
+    <p><strong>Ce que nous avons obtenu à ce jour et par écrit :</strong></p>
+    <p><strong>+1 ETP supplémentaire :</strong> passage à 23 ETP jusqu'au 31/12/2026 (22 + 1 ETP en CDD de remplacement à la place des Hublos) ; le +1 ETP sera réévalué au 31/12/2026.</p>
+    <p><strong>Renfort médical :</strong> possibilité d'un 3ᵉ PH en renfort ; recours à l'intérim PH à partir de septembre.</p>
+    <p><strong>Pratiques harmonisées :</strong> élaboration d'un vade-mecum médical recensant toutes les solutions d'aval disponibles pour harmoniser les pratiques et favoriser les alternatives.</p>
+    <p><strong>Groupe de travail post-urgences :</strong> groupe de travail flash dès cette semaine, avec pour objectif la création de lits de post-urgences adultes (unité dédiée à moyen terme).</p>
+    <p><strong>Information régulière :</strong> point mensuel minimum écrit à l'équipe sur les recrutements, avancées et évolutions de la situation.</p>
+    <p>Autres avancées obtenues : priorisation des formations OMÉGA et crise suicidaire pour tous les nouveaux professionnels du SECOP ; occupation cible du SECOP fixée à 11 lits + 1 CSI + 1 lit exceptionnel = 13 lits maximum ; élargissement des plages horaires du SAS jusqu'à 21h.</p>
+    <p><strong>Ce qui reste à obtenir :</strong> un effectif médical sécurisé et durable (objectif 4 PH), un retour à 24 ETP soignants et une organisation adaptée, une régulation claire et systématique des admissions, la reconnaissance du caractère urgentiste de l'activité du SECOP et les moyens associés.</p>
+    <div class="fei-note">Aux promesses et engagements écrits le 16 juin 2026 : notre vigilance et notre mobilisation restent intactes ! Cette suspension n'est pas un renoncement — c'est une étape. La CGT reste sur le terrain, à vos côtés, pour obtenir mieux !</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 6 — Communiqué — Préavis de grève au SECOP — mercredi 17 juin 2026
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d3" id="art-preavis">
+    <a href="[IMG:harcelement-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:harcelement-1]" alt="Préavis de grève au SECOP"></a>
+    <h3>✊ Préavis de grève au SECOP — mercredi 17 juin 2026</h3>
+    <div class="pub-date"><span class="pub-month">JUIN 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p><strong>Alerte depuis le 9 mars.</strong> La CGT Charles Perrens dépose un préavis de grève pour le mercredi 17 juin 2026, portant sur des conditions d'accueil dignes, la sécurité des soins, le respect des professionnels, des moyens adaptés, et la fin de la sur-occupation chronique.</p>
+    <p>Au-delà du SECOP, c'est l'ensemble de l'hôpital public qui est concerné lorsque les moyens ne permettent plus de répondre aux besoins des patients. La CGT Charles Perrens appelle l'ensemble des personnels à soutenir cette mobilisation, et invite également toutes les organisations syndicales partageant ces préoccupations à se joindre à cette démarche.</p>
+    <div class="fei-note">Ensemble, exigeons des réponses à la hauteur des enjeux ! Cette mobilisation nous concerne tous et toutes.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 7 — Communiqué — Communiqué de presse — Psychiatrie : un déni honteux de la réalité
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim" id="art-psychiatrie">
+    <a href="[IMG:communique-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:communique-1]" alt="Communiqué de presse - psychiatrie"></a>
+    <h3>📢 Communiqué de presse — Psychiatrie : un déni honteux de la réalité</h3>
+    <div class="pub-date"><span class="pub-month">9 JUIN 2026</span><span class="pub-source">· Fédération CGT Santé et Action Sociale · Commission Nationale de Psychiatrie</span></div>
+    <p>Depuis 30 ans, rapports, expertises et comités de suivi se sont multipliés sur la psychiatrie, dont le seul effet aura été de détruire la psychiatrie publique et de secteur — transformée en un grand marché de la santé mentale ouvert aux opérateurs privés lucratifs.</p>
+    <p>Le service public de psychiatrie a été démembré par la multiplication d'équipes mobiles, de projets soi-disant innovants, la disparition de formations spécifiques et un nouveau mode de financement.</p>
+    <p>Alors que le Ministère feint de s'intéresser à la prise en charge des enfants et des adolescents, la Fédération rappelle que les lits de pédopsychiatrie de la Fondation Vallée ont été fermés du jour au lendemain, que la pédopsychiatrie du CH Camille Claudel est en grand danger, que celle de l'Yonne est sinistrée, que 48 postes sont menacés à St Egrève, et que partout en France les listes d'attente s'allongent dans les CMPEA.</p>
+    <p>Pour la Fédération, les annonces ministérielles (enveloppe de 65 millions d'euros, dispositifs coupe-file, objectif « zéro contention » d'ici 2030) sont un affront supplémentaire aux professionnels et aux patients de psychiatrie, face à une réalité catastrophique que la ministre continue d'ignorer.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 8 — Communiqué — La valse des cadres
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d1" id="art-valse">
+    <h3>🎻 La valse des cadres</h3>
+    <div class="pub-date"><span class="pub-month">JUIN 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>La continuité des soins passe aussi par la continuité de l'encadrement. <strong>Post-urgence : une unité sans cap stable.</strong> Quand l'encadrement change sans cesse : les priorités changent, les consignes changent, les interlocuteurs changent, les décisions se dispersent — d'où perte de sens, fatigue organisationnelle, sentiment d'abandon et dilution des responsabilités.</p>
+    <p>Les cadres qui tournent ne sont pas responsables. La continuité managériale est une nécessité pour les équipes, les patients, la qualité des soins, l'organisation du travail et la sécurité des prises en charge.</p>
+    <p><strong>La CGT Charles Perrens demande :</strong> un encadrement stable et identifié, une véritable continuité managériale, du temps pour construire les projets d'équipe, des choix organisationnels cohérents, le respect du travail réel.</p>
+    <div class="fei-note">Élections professionnelles du 3 au 10 décembre 2026 — je vote CGT, je défends l'hôpital public.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 9 — Communiqué — Statut d'inégalité
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d2" id="art-inegalite">
+    <h3>⚖️ Statut d'inégalité</h3>
+    <div class="pub-date"><span class="pub-month">MAI 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p><strong>Même travail, mêmes responsabilités, mais pas les mêmes droits !</strong> Dans nos services, une réalité inacceptable : des professionnels avec les mêmes diplômes, les mêmes responsabilités, les mêmes contraintes, les mêmes horaires, les mêmes objectifs… mais pas le même salaire, pas les mêmes droits, pas la même reconnaissance — titulaires, stagiaires, CDD, CDI.</p>
+    <p>Légal ? Oui. Moral ? C'est une autre question. Quand deux professionnels font le même travail mais ne bénéficient pas des mêmes droits parce que la décision dépend de choix de direction, alors la question n'est plus seulement administrative — elle devient éthique. Derrière les statuts, il y a des personnes.</p>
+    <p>À force de multiplier les contrats précaires, les postes « hybrides » sans reconnaissance, les missions identiques sans égalité réelle, on finit par créer de l'injustice. Conséquences concrètes : démotivation, turnover accru, confiance altérée, banalisation des inégalités.</p>
+    <p><strong>La CGT demande :</strong> une transparence sur les écarts de traitement, une politique de titularisation lisible, la reconnaissance des fonctions exercées, une réflexion éthique sur les validations managériales, l'arrêt des inégalités statutaires.</p>
+    <div class="fei-note">Le service public hospitalier mérite mieux que des statuts à plusieurs vitesses !</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 10 — Communiqué — Le 1er mai ne se négocie pas
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d3" id="art-1ermai">
+    <h3>🌹 Le 1er mai ne se négocie pas</h3>
+    <div class="pub-date"><span class="pub-month">MAI 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Le 1er mai ne vient pas d'un calendrier. Il vient des luttes. Il vient du sang. En 1891, lors de la fusillade de Fourmies, des ouvriers sont tombés pour la journée de 8 heures. Ils réclamaient la dignité. On leur a répondu par des balles.</p>
+    <p>Aujourd'hui encore, on voudrait vider le 1er mai de son sens. On ne touche pas au 1er mai. Il appartient aux travailleurs. Nos droits ne sont pas des cadeaux. Ils ont été arrachés.</p>
+    <div class="fei-note">Le 1er mai ne se négocie pas.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 11 — Communiqué — Juste une brève : se syndiquer est un droit
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim" id="art-breve">
+    <h3>📌 Juste une brève : se syndiquer est un droit</h3>
+    <div class="pub-date"><span class="pub-month">MAI 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Savez-vous que se syndiquer est un droit constitutionnel, quelle que soit votre catégorie professionnelle ? Tout salarié est libre d'adhérer à une organisation syndicale.</p>
+    <p>Pour information, il n'y a pas d'obligation à en informer son employeur.</p>
+    <div class="fei-note">La discrimination syndicale est punie par la loi.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 12 — Communiqué — L'entretien informel : la conversation qui peut vous échapper
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d2" id="art-entretien-informel">
+    <a href="[IMG:entretien-informel-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:entretien-informel-1]" alt="L'entretien informel"></a>
+    <h3>⚠️ L'entretien informel : la conversation qui peut vous échapper</h3>
+    <div class="pub-date"><span class="pub-month">AVRIL 2026</span><span class="pub-source">· Conseils CGT Charles Perrens</span></div>
+    <p>Un entretien informel est un échange « spontané » : sans convocation officielle, sans cadre clairement défini. Parler, échanger, faire confiance, c'est sain — mais ce qui se dit sans formalisme peut peser sur votre situation professionnelle et avoir des conséquences réelles : mutation, évaluation, pression sur le poste.</p>
+    <p><strong>Que pouvez-vous faire ?</strong> Vous avez le droit de mettre fin à cet échange : « Je ne souhaite pas poursuivre cet échange dans ce cadre » ou « Pouvez-vous préciser l'objet de cet entretien ? ». Vous pouvez à tout moment demander qu'un échange soit formalisé et être accompagné par la CGT.</p>
+    <p><strong>Et après ?</strong> Ne restez pas seul, contactez la CGT. Notez les éléments de l'échange (date, heure, interlocuteur, circonstances) et envoyez un mail qui résume ce qui a été dit (« Suite à notre discussion de ce jour... ») — ce que vous avez dit sans préparation peut être nuancé, précisé, rectifié par écrit.</p>
+    <div class="fei-note">Dans la fonction publique, vous pouvez être assisté d'un représentant CGT dans toute situation où vos intérêts professionnels sont en jeu, pas seulement en disciplinaire (loi n°83-634, art. 19).</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 13 — Communiqué — Encore une fois !
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim" id="art-encore">
+    <h3>📣 Encore une fois !</h3>
+    <div class="pub-date"><span class="pub-month">MARS 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Nous avons alerté sur la situation d'un hôpital de jour — on nous a dit qu'on exagérait. Nous avons alerté sur le sous-effectif dans un autre service — même réponse. Dans les deux cas, les faits nous ont donné raison.</p>
+    <p>La CGT n'utilise pas de « grands moyens » par plaisir ou pour se mettre en avant, mais parce que c'est parfois la seule façon d'être entendue. Notre rôle n'est pas de créer des tensions, mais de porter des réalités que d'autres préfèrent ne pas voir. Et quand nous tirons la sonnette d'alarme, c'est que la situation l'exige — pas pour le spectacle.</p>
+    <div class="fei-note">Ce n'est ni de l'exagération ni de l'agitation : c'est simplement la réalité du terrain que nous portons.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 14 — Communiqué — Alerte au SECOP : l'équipe soignante s'adresse à la direction
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d3" id="art-secop-alerte">
+    <h3>🚨 Alerte au SECOP : l'équipe soignante s'adresse à la direction</h3>
+    <div class="pub-date"><span class="pub-month">9 MARS 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Cette lettre adressée le 9 mars 2026 à la Directrice Générale est le dernier cri de désespoir d'une équipe. Après une pétition en ligne, après avoir épuisé les recours internes, la CGT a été mandatée pour porter ce courrier écrit par l'équipe soignante à Mme la Directrice Générale.</p>
+    <p>La CGT demande qu'une réunion extraordinaire se tienne au SECOP en présence de l'ensemble des personnels et des médecins de l'équipe. L'objectif est de prendre en compte l'ensemble des problématiques et que chacun puisse faire entendre sa voix, en permettant à un maximum de personnel d'y participer. La CGT s'est engagée à accompagner cette situation et souhaite être impliquée lors de cette rencontre et dans les solutions qui y seront travaillées.</p>
+    <p><strong>Extrait de la lettre de l'équipe du SECOP à la Directrice Générale :</strong></p>
+    <p>« Le choix d'exercer dans un hôpital public tel que Charles Perrens est un choix conscient directement en lien à l'éthique du soin. […] Mais qu'en est-il du respect de la dignité et de la personne ? Ou de la qualité et de la sécurité des soins ?</p>
+    <p>En effet, les tensions capacitaires et la saturation du service nous conduisent régulièrement à hospitaliser des patients vulnérables et en souffrance psychique aux SECOP dans des conditions qui interrogent sur leur dignité et leur sécurité : patients installés sur des matelas au sol, dans les salons télés ou dans des espaces non prévus pour l'hospitalisation, parfois à plusieurs dans une même pièce sans accès adapté aux sanitaires comme c'est arrivé le mois dernier.</p>
+    <p>De manière insidieuse, ces situations de dépassement capacitaire, qui ont commencé il y a 6 mois, sont devenues une normalité et un quotidien, avec des records à 17/15 patients pour 12 lits. Et tout cela malgré l'implication et le professionnalisme des médecins du SECOP, de notre encadrement, ou encore du soutien des renforts médicaux des autres services pour pallier le sous-effectif important actuel au sein des urgences.</p>
+    <p>Malgré ces renforts, ce travail d'équipe et cette solidarité, les soignants sont aujourd'hui particulièrement éprouvés par la tension constante dans le service. Beaucoup d'entre nous expriment un épuisement important, du stress et une anxiété croissante face aux conditions de travail. De nombreuses fiches d'événements indésirables sont rédigées chaque semaine par les équipes, témoignant de ces difficultés.</p>
+    <p>Nous aimons notre travail, nous aimons prendre soin de l'autre. Notre intention n'est pas de désigner des responsabilités individuelles mais d'alerter sur une situation globale de tension qui impacte à la fois les patients, les professionnels et la qualité des soins. »</p>
+    <p style="text-align:right;font-style:italic;">— L'équipe du SECOP</p>
+    <div class="fei-note">À l'image des personnels du SECOP, la CGT Perrens souhaite travailler de manière collégiale pour améliorer les conditions de travail.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 15 — Communiqué — Du mépris à la victoire
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d1" id="art-mepris">
+    <h3>🏆 Du mépris à la victoire</h3>
+    <div class="pub-date"><span class="pub-month">JANV.-FÉV. 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Le 23 janvier 2026, la CGT a lancé une procédure d'alerte. Lors de ce F3SCT exceptionnel, nos représentants CGT ont été symboliquement lynchés, moqués, et l'accès a été refusé à deux d'entre elles le jour J. Notre secrétaire, seule, a subi un déferlement d'attaques personnelles plutôt que d'être écoutée.</p>
+    <p>Malgré ces disqualifications, elle a poursuivi sa démarche de mise en lumière des situations professionnelles qui mettaient les équipes en danger. Ces comportements se sont reproduits lors du CSE du 29 janvier 2026.</p>
+    <p><strong>Mais</strong> le compte rendu de l'audit nous a donné raison ! Des solutions se mettent en place.</p>
+    <div class="fei-note">La CGT ne lâche rien ! Pour vous, avec vous ! Nous resterons vigilants.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 16 — Communiqué — En cas d'urgence : la CGT est là
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d2" id="art-urgence">
+    <h3>🆘 En cas d'urgence : la CGT est là</h3>
+    <div class="pub-date"><span class="pub-month">FÉVRIER 2026</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Un problème ? Une question ? En cas d'urgence, brisez la glace. Le local CGT vous accueille du lundi au vendredi de 9h à 17h.</p>
+    <div class="fei-note">cgt@ch-perrens.fr · 05.56.56.35.65 (35.65)</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 17 — Communiqué — Le travail a plusieurs visages, la CGT a le tien
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim anim-d3" id="art-visages">
+    <h3>👥 Le travail a plusieurs visages, la CGT a le tien</h3>
+    <div class="pub-date"><span class="pub-month">2025</span><span class="pub-source">· CGT Charles Perrens</span></div>
+    <p>Dans la Fonction Publique Hospitalière, le travail a plusieurs visages : socio-éducatif, administratif, ASH, encadrement, ouvriers, soignants. Chaque métier a ses propres contraintes, sa propre charge, ses propres difficultés — mais un même besoin d'être défendu et représenté.</p>
+    <p>Quel que soit votre métier, votre statut ou votre service, la CGT est là pour vous accompagner face à un problème ou une question.</p>
+    <div class="fei-note">Un problème ? Une question ? La CGT vous accompagne — cgt@ch-perrens.fr · 05.56.56.35.65 (35.65).</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 18 — Communiqué — Nos tracts d'information
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>🗂️ Nos tracts d'information</h3>
+    <p style="font-size:12px;color:var(--gray-500);margin-bottom:14px;">Les visuels ci-dessous accompagnent nos fiches pratiques, disponibles en texte complet dans « Vos droits ».</p>
+    <a href="[IMG:conges-maladie-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:conges-maladie-1]" alt="Tract congés maladie"></a>
+    <a href="[IMG:cgos-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:cgos-1]" alt="Tract CGOS"></a>
+    <a href="[IMG:harcelement-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:harcelement-1]" alt="Tract harcèlement moral"></a>
+    <a href="[IMG:rqth-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:rqth-1]" alt="Tract RQTH"></a>
+    <a href="[IMG:syndicat-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:syndicat-1]" alt="Tract ce que votre syndicat peut faire"></a>
+    <a href="[IMG:temps-travail-1]" target="_blank" rel="noopener"><img class="fei-thumb" src="[IMG:temps-travail-1]" alt="Tract temps de travail"></a>
+    <div class="fei-note">Le texte complet de chaque fiche se trouve dans <a href="/droits" style="color:var(--red);font-weight:600;">Vos droits</a>.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 19 — Communiqué — Un peu d'histoire : le rôle de la CGT dans la création du festival de Cannes
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>🎬 Un peu d'histoire : le rôle de la CGT dans la création du festival de Cannes</h3>
+    <p>Le projet de ce festival a pris naissance avant la 2<sup>nde</sup> guerre mondiale, en tant que contre-festival antifasciste, en réponse à la Mostra de Venise, créée par Mussolini. Interrompu par la guerre et le gouvernement refusant de le financer, c'est en tenant face aux obstacles que la toute première édition du festival de Cannes prend place en 1946.</p>
+    <p><strong>Qui l'a permis ?</strong> Philippe Erlanger, chef des services des échanges artistiques aux Affaires Étrangères ; Louis Daquin, réalisateur de la Confédération Générale du Travail ; les ouvriers CGT, bâtisseurs bénévoles du premier Palais de la Croisette ; et le maire communiste de Cannes.</p>
+    <p><strong>Un engagement permanent :</strong> depuis 1946, la Fédération nationale du spectacle CGT siège au comité d'organisation du festival de Cannes. Si l'influence sociale et politique du Festival perdure face aux lois du marché, c'est grâce à cet engagement syndical historique.</p>
+    <div class="fei-note">Hier comme aujourd'hui, la culture est un terrain de lutte. S'organiser pour ne pas subir.</div>
+  </div>
+</div>
+```
+
+---
+
+## Widget 20 — Communiqué — Grilles de salaires — le livret complet
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow">
+  <div class="fei-block anim">
+    <h3>💰 Grilles de salaires — le livret complet</h3>
+    <p>Grilles indiciaires détaillées pour toutes les catégories (A, B, C), tous corps et grades de la Fonction Publique Hospitalière, publiées par la Fédération CGT Santé et Action Sociale (édition 2024, valeur du point d'indice à 4,92278 €). Ce document est volumineux (35 pages de tableaux) — il reste disponible en téléchargement plutôt qu'affiché en ligne.</p>
+    <a class="droit-link" href="[PDF:grilles-salaires]" target="_blank">Télécharger le livret →</a>
+  </div>
+</div>
+```
+
+---
+
+## Widget 21 — Bandeau d'aide
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+```

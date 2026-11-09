@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Élections professionnelles · CGT — CH Charles Perrens</title>
+<link rel="icon" href="images/favicon.svg">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ===== WIDGET : Navigation ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="index.html" data-nav="accueil">La CGT</a>
+      <a href="droits.html" data-nav="droits" class="active">Vos droits</a>
+      <a href="equipe.html" data-nav="equipe">L'équipe</a>
+      <a href="communiques.html" data-nav="communiques">Communiqués</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Permanence</a>
+      <a href="adherer.html" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-ghost">Permanence</a>
+      <a href="adherer.html" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : En-tête de page ===== -->
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <a href="droits.html" class="back-link">← Retour à Vos droits</a>
+    <h2>🗳️ Élections professionnelles</h2>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Contenu de la fiche ===== -->
+<div class="wrap wrap--narrow wrap--pb">
+  <div class="fei-block anim">
+    <h3>🗳️ Le vote au CH Charles Perrens : du 3 au 10 décembre 2026</h3>
+    <p>Les prochaines élections professionnelles se tiendront <strong>du 3 au 10 décembre 2026</strong>. Elles déterminent qui vous représente pour les 4 prochaines années dans les instances de l'établissement — c'est le moment où votre voix pèse directement sur les décisions qui concernent vos conditions de travail.</p>
+    <div class="fei-note">[À COMPLÉTER — modalités pratiques du vote à Charles Perrens : vote électronique, papier, ou les deux ; bureaux de vote ; horaires.]</div>
+  </div>
+  <div class="fei-block anim anim-d1">
+    <h3>🏛️ Ce que ces élections déterminent</h3>
+    <p><strong>Le CSE (Comité Social d'Établissement) :</strong> instance de représentation du personnel consultée sur l'organisation, les conditions de travail, la gestion et l'évolution de l'établissement. Sa composition et sa formation spécialisée en matière de santé, sécurité et conditions de travail (F3SCT) sont directement issues du résultat des élections.</p>
+    <p><strong>La CAP (Commission Administrative Paritaire) :</strong> instance paritaire qui examine les décisions individuelles concernant la carrière des agents (avancement, mobilité, discipline). La représentativité syndicale qui en ressort conditionne le poids de chaque organisation lorsqu'elle défend un agent.</p>
+    <p>La représentativité syndicale obtenue lors de ces élections détermine aussi les moyens syndicaux (décharges d'activité, droits de communication) accordés à chaque organisation pour les 4 années suivantes.</p>
+  </div>
+  <div class="fei-block anim anim-d2">
+    <h3>📅 Le cycle électoral, grandes étapes</h3>
+    <p>Le calendrier électoral de la Fonction Publique Hospitalière comprend plusieurs étapes encadrées réglementairement, avant le scrutin lui-même : détermination et publication des listes électorales, dépôt des candidatures par les organisations syndicales, période de campagne électorale, puis vote et dépouillement.</p>
+    <div class="fei-note">[À COMPLÉTER — dates précises de chaque étape pour Charles Perrens : date limite de dépôt des listes, période de campagne, modalités de dépouillement.]</div>
+  </div>
+  <div class="fei-block anim anim-d3">
+    <h3>✅ Pourquoi voter CGT</h3>
+    <p>Voter CGT, c'est choisir une organisation qui vous défend individuellement au quotidien (entretiens, sanctions, arrêts contestés) autant qu'elle porte des revendications collectives (effectifs, salaires, conditions de travail) — et qui siège dans toutes les instances où se décide votre avenir professionnel.</p>
+    <a href="adherer.html" class="droit-link">Rejoindre la CGT dès maintenant →</a>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Bandeau d'aide ===== -->
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+</body>
+</html>

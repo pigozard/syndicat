@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temps de travail · CGT — CH Charles Perrens</title>
+<link rel="icon" href="images/favicon.svg">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ===== WIDGET : Navigation ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="index.html" data-nav="accueil">La CGT</a>
+      <a href="droits.html" data-nav="droits" class="active">Vos droits</a>
+      <a href="equipe.html" data-nav="equipe">L'équipe</a>
+      <a href="communiques.html" data-nav="communiques">Communiqués</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Permanence</a>
+      <a href="adherer.html" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-ghost">Permanence</a>
+      <a href="adherer.html" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : En-tête de page ===== -->
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <a href="droits.html" class="back-link">← Retour à Vos droits</a>
+    <h2>⏱️ Temps de travail</h2>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Contenu de la fiche ===== -->
+<div class="wrap wrap--narrow wrap--pb">
+  <div class="fei-block anim">
+    <p><strong>Durée légale :</strong> 35 heures par semaine, avec un maximum annuel de 1 607 heures, réduit à 1 582h pour certains agents et à 1 476h pour le travail de nuit.</p>
+    <p><strong>Garanties légales :</strong> maximum 48 heures par semaine, 9 heures par jour pour les équipes de jour, repos minimum de 12 heures consécutives.</p>
+    <p><strong>Cycles et horaires :</strong> le travail est organisé en cycles définis par service ou fonction. Le planning doit être affiché au moins 15 jours avant son application, et toute modification inscrite au moins 48 heures à l'avance.</p>
+    <p><strong>Congés annuels :</strong> 25 jours ouvrés par an. Les congés non pris pour cause de maladie sont reportés automatiquement à l'année suivante, dans la limite de 4 semaines après reprise (report possible jusqu'à 15 mois maximum).</p>
+    <div class="fei-note">En arrêt maladie, un agent ne doit rendre aucune heure à son administration (absence égale à 1/5e des obligations hebdomadaires, art. 14 du décret 2002-9) et ne génère pas de RTT (loi 2021-1657). Demander à compenser des heures non faites en maladie est illégal.</div>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Bandeau d'aide ===== -->
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+</body>
+</html>

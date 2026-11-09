@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harcèlement moral · CGT — CH Charles Perrens</title>
+<link rel="icon" href="images/favicon.svg">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ===== WIDGET : Navigation ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="index.html" data-nav="accueil">La CGT</a>
+      <a href="droits.html" data-nav="droits" class="active">Vos droits</a>
+      <a href="equipe.html" data-nav="equipe">L'équipe</a>
+      <a href="communiques.html" data-nav="communiques">Communiqués</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Permanence</a>
+      <a href="adherer.html" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-ghost">Permanence</a>
+      <a href="adherer.html" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : En-tête de page ===== -->
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <a href="droits.html" class="back-link">← Retour à Vos droits</a>
+    <h2>🚨 Harcèlement moral</h2>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Contenu de la fiche ===== -->
+<div class="wrap wrap--narrow wrap--pb">
+  <div class="fei-block anim">
+    <p>« Aucun·e salarié·e ne doit subir les agissements répétés de harcèlement moral qui ont pour objet ou pour effet une dégradation de ses conditions de travail susceptible de porter atteinte à ses droits et à sa dignité, d'altérer sa santé physique ou mentale ou de compromettre son avenir professionnel » (article L1152-1, défini en termes identiques dans le Code du travail et le Code général de la Fonction Publique).</p>
+    <p><strong>3 conditions pour le caractériser :</strong> des agissements répétés (un acte isolé, même grave, ne suffit pas) ; une dégradation des conditions de travail ; une atteinte aux droits, à la dignité, à la santé ou à l'avenir professionnel.</p>
+    <p>Le harcèlement moral n'est pas « un conflit entre deux personnes » : c'est un mécanisme de domination souvent lié à une organisation du travail toxique, qui peut se dérouler au vu et au su de tous.</p>
+    <p><strong>Comment ça se manifeste :</strong> dévalorisations, critiques injustifiées, sarcasmes répétés, brimades, isolement, exclusion du collectif, surcharge ou absence de travail, humiliations, pressions, menaces, refus de communication.</p>
+    <p><strong>Démarches possibles</strong> (non cumulatives) : prévenir l'employeur, alerter le CSE, alerter l'inspection du travail, engager une médiation, saisir le conseil des prud'hommes ou le tribunal administratif, saisir le défenseur des droits.</p>
+    <p><strong>Le rôle du syndicat CGT — écouter, protéger, agir :</strong> accueil et écoute bienveillante, aide à qualifier les faits, à rédiger un signalement, accompagnement auprès de la direction et du médecin du travail.</p>
+    <div class="fei-note">L'employeur a l'obligation légale de protéger votre santé physique et mentale (Code du travail, art. L4121-1). Ensemble, refusons la peur, défendons notre dignité !</div>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Bandeau d'aide ===== -->
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+</body>
+</html>

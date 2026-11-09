@@ -1,0 +1,165 @@
+# 16 — L'équipe
+
+**URL Jimdo :** `/equipe`  
+**Titre de la page :** `Qui sommes-nous · CGT — CH Charles Perrens`  
+**Maquette :** `equipe.html`
+
+**Fichiers à uploader avant de coller :** `[IMG:bureau-10]`, `[IMG:bureau-11]`, `[IMG:bureau-12]`, `[IMG:bureau-13]`, `[IMG:bureau-1]`, `[IMG:bureau-2]`, `[IMG:bureau-3]`, `[IMG:bureau-4]`, `[IMG:bureau-5]`, `[IMG:bureau-6]`, `[IMG:bureau-7]`, `[IMG:bureau-8]`, `[IMG:bureau-9]`
+
+| # | Widget |
+|---|---|
+| 0 | Navigation |
+| 1 | En-tête de page |
+| 2 | Histoire et valeurs |
+| 3 | Titre « L'équipe » |
+| 4 | Le bureau |
+| 5 | Le reste de l'équipe |
+| 6 | Bandeau d'aide |
+
+---
+
+## Widget 0 — Navigation
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="/" data-nav="accueil">La CGT</a>
+      <a href="/droits" data-nav="droits">Vos droits</a>
+      <a href="/equipe" data-nav="equipe" class="active">L'équipe</a>
+      <a href="/communiques" data-nav="communiques">Communiqués</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+      <a href="/contact" class="nav-cta-mobile">Permanence</a>
+      <a href="/adherer" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/contact" class="btn btn-ghost">Permanence</a>
+      <a href="/adherer" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+```
+
+---
+
+## Widget 1 — En-tête de page
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <div class="droits-hero-kicker">La section syndicale</div>
+    <h2>Qui sommes-nous</h2>
+    <p>Notre histoire, nos valeurs, et l'équipe qui vous représente au quotidien au CH Charles Perrens.</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 2 — Histoire et valeurs
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap wrap--narrow wrap--pb-sm">
+  <div class="fei-block anim">
+    <h3>📖 Notre histoire</h3>
+    <p>[TEXTE À COMPLÉTER — date de création de la section syndicale CGT à Charles Perrens, contexte de sa fondation, grandes étapes ou luttes marquantes menées localement au fil des années.]</p>
+    <p>Notre section est affiliée à la Fédération CGT Santé et Action Sociale, elle-même rattachée à la confédération CGT — première organisation syndicale de la Fonction Publique Hospitalière.</p>
+  </div>
+  <div class="fei-block anim anim-d1">
+    <h3>🤝 Nos valeurs</h3>
+    <p>[TEXTE À COMPLÉTER — ce qui distingue l'approche de la section : défense individuelle systématique, priorité donnée aux conditions de travail en psychiatrie, indépendance vis-à-vis de la direction, fonctionnement démocratique interne, etc.]</p>
+  </div>
+</div>
+```
+
+---
+
+## Widget 3 — Titre « L'équipe »
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="droits-hero droits-hero--small">
+  <div class="droits-hero-inner"><h2>L'équipe</h2><p>Vos représentants CGT au CH Charles Perrens.</p></div>
+</div>
+```
+
+---
+
+## Widget 4 — Le bureau
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap">
+  <div class="sec-head"><div class="sec-title">Le bureau</div></div>
+</div>
+<div class="bureau-grid" style="margin-bottom:40px;">
+  <div class="bureau-card anim"><div class="bureau-photo"><img src="[IMG:bureau-1]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d1"><div class="bureau-photo"><img src="[IMG:bureau-2]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d2"><div class="bureau-photo"><img src="[IMG:bureau-3]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d3"><div class="bureau-photo"><img src="[IMG:bureau-4]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+</div>
+```
+
+---
+
+## Widget 5 — Le reste de l'équipe
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="wrap">
+  <div class="sec-head"><div class="sec-title">Le reste de l'équipe</div></div>
+</div>
+<div class="bureau-grid">
+  <div class="bureau-card anim"><div class="bureau-photo"><img src="[IMG:bureau-5]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d1"><div class="bureau-photo"><img src="[IMG:bureau-6]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d2"><div class="bureau-photo"><img src="[IMG:bureau-7]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d3"><div class="bureau-photo"><img src="[IMG:bureau-8]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim"><div class="bureau-photo"><img src="[IMG:bureau-9]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d1"><div class="bureau-photo"><img src="[IMG:bureau-10]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d2"><div class="bureau-photo"><img src="[IMG:bureau-11]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim anim-d3"><div class="bureau-photo"><img src="[IMG:bureau-12]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+  <div class="bureau-card anim"><div class="bureau-photo"><img src="[IMG:bureau-13]" alt="[Prénom Nom]"></div><div class="bureau-info"><h4>[Prénom Nom]</h4><div class="bureau-role">[Rôle]</div><p>[Service / contact]</p></div></div>
+</div>
+```
+
+---
+
+## Widget 6 — Bandeau d'aide
+
+Jimdo : **+ → Élément HTML** → coller → Enregistrer
+
+```html
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+```

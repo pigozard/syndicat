@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grilles de salaires · CGT — CH Charles Perrens</title>
+<link rel="icon" href="images/favicon.svg">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ===== WIDGET : Navigation ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-mark"><span class="l1">CGT</span><span class="l2">perrens</span></div>
+      <div class="logo-text"><h1>CGT — CH Charles Perrens</h1><p>Section syndicale · Fonction Publique Hospitalière</p></div>
+    </a>
+    <nav id="main-nav">
+      <a href="index.html" data-nav="accueil">La CGT</a>
+      <a href="droits.html" data-nav="droits" class="active">Vos droits</a>
+      <a href="equipe.html" data-nav="equipe">L'équipe</a>
+      <a href="communiques.html" data-nav="communiques">Communiqués</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Permanence</a>
+      <a href="adherer.html" class="nav-cta-mobile">Adhérer →</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-ghost">Permanence</a>
+      <a href="adherer.html" class="btn btn-red">Adhérer →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<script>
+/* Menu mobile : ouvre / ferme la liste des liens */
+(function () {
+  var nav = document.getElementById('main-nav');
+  var btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : En-tête de page ===== -->
+<div class="droits-hero">
+  <div class="droits-hero-inner">
+    <a href="droits.html" class="back-link">← Retour à Vos droits</a>
+    <h2>💰 Grilles de salaires</h2>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Contenu de la fiche ===== -->
+<div class="wrap wrap--narrow wrap--pb">
+  <div class="fei-block anim">
+    <p>Le traitement mensuel de base se calcule ainsi : <strong>Indice Majoré × Valeur du point d'indice</strong>. S'y ajoutent éventuellement le CTI (complément de traitement indiciaire), la NBI, l'indemnité de résidence, le supplément familial, et les primes propres à certains grades ou sujétions. Les cotisations (RAFP, CNRACL, CSG, CRDS) et le transfert primes-points sont ensuite déduits.</p>
+    <p>Les grilles complètes (catégories A, B et C, tous corps et grades) sont publiées chaque année par la Fédération CGT Santé et Action Sociale.</p>
+    <a class="droit-link" href="pdfs/grilles-salaires.pdf" target="_blank">Télécharger le livret complet des grilles →</a>
+  </div>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+<!-- ===== WIDGET : Bandeau d'aide ===== -->
+<div class="cta-band">
+  <h3>Si vous avez besoin d'aide, <span>notre porte vous est toujours ouverte</span> !</h3>
+  <p>Syndiqué ou non, notre porte vous est toujours ouverte.<br>
+  <a href="mailto:cgt@ch-perrens.fr">cgt@ch-perrens.fr</a> · 05.56.56.35.65 · 07.68.03.34.15 · <a href="https://facebook.com/CGT.Perrens" target="_blank" rel="noopener">Facebook.com/CGT.Perrens</a> · <a href="https://instagram.com/cgt.perrens" target="_blank" rel="noopener">@cgt.perrens</a></p>
+</div>
+<!-- ===== FIN WIDGET ===== -->
+
+</body>
+</html>
